@@ -3,16 +3,70 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NEXYA — Assistant IA · 18 Juin 2026</title>
-<meta name="description" content="NEXYA — Assistant IA nouvelle génération. Lancement officiel 18 Juin 2026."/>
+
+<title>NEXYA AI - Assistant IA multi-expert | Nexyalabs</title>
+<meta name="description" content="NEXYA AI, l'assistant IA multi-expert pour l'Afrique et au-delà. 11 experts, mémoire IA, droit OHADA, voix, vision et documents. Bientôt sur Google Play."/>
+<meta name="author" content="Nexyalabs - Loth Ivan Ngassa Yimga"/>
+<meta name="theme-color" content="#09090f"/>
+<link rel="canonical" href="https://nexyalabs.com/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Nexyalabs"/>
+<meta property="og:title" content="NEXYA AI - L'IA multi-expert pour l'Afrique et au-delà"/>
+<meta property="og:description" content="11 modes experts, mémoire IA, droit OHADA, cuisine camerounaise, voix, vision et documents pro. Bientôt sur Google Play."/>
+<meta property="og:url" content="https://nexyalabs.com/"/>
+<meta property="og:image" content="https://nexyalabs.com/assets/images/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="NEXYA AI - L'IA multi-expert pour l'Afrique et au-delà"/>
+<meta name="twitter:description" content="11 modes experts, mémoire IA, droit OHADA, cuisine camerounaise, voix, vision et documents pro. Bientôt sur Google Play."/>
+<meta name="twitter:image" content="https://nexyalabs.com/assets/images/og-image.png"/>
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192.png"/>
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 
-<!-- Countdown calculé IMMÉDIATEMENT avant tout rendu -->
+<!-- JSON-LD : entreprise + application -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nexyalabs",
+  "url": "https://nexyalabs.com",
+  "logo": "https://nexyalabs.com/assets/images/icon-512.png",
+  "founder": { "@type": "Person", "name": "Loth Ivan Ngassa Yimga" },
+  "foundingLocation": { "@type": "Place", "name": "Douala, Cameroun" },
+  "description": "Nexyalabs développe NEXYA AI, un assistant conversationnel mobile multi-expert et multi-modèles, pour l'Afrique et au-delà."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NEXYA AI",
+  "operatingSystem": "Android, iOS",
+  "applicationCategory": "ProductivityApplication",
+  "description": "Assistant IA multi-expert et multi-modèles : 11 modes experts, mémoire IA, droit OHADA, cuisine camerounaise, voix, vision, génération d'images et de documents.",
+  "publisher": { "@type": "Organization", "name": "Nexyalabs" }
+}
+</script>
+
+<!-- Countdown calculé immédiatement, avant tout rendu. Cible : 21 juin 2026 21h21 WAT (UTC+1) = 20h21 UTC -->
 <script>
 (function(){
-  var L = new Date(Date.UTC(2026,5,18,16,0,0));
+  var L = new Date(Date.UTC(2026,5,21,20,21,0));
   var diff = L - Date.now();
   if(diff < 0) diff = 0;
   window._CD = {
@@ -33,14 +87,15 @@ html{scroll-behavior:smooth}
   --bg:#09090f; --bg2:#111118; --bg3:#1a1a26; --bg4:#22222f;
   --primary:#2E9BF0; --pr:46,155,240; --pglow:rgba(46,155,240,.22);
   --gold:#E8A020;    --gr:232,160,32; --gglow:rgba(232,160,32,.22);
-  --text:#f0f0ff; --text2:#8888aa; --text3:#555570;
+  --text:#f0f0ff; --text2:#8888aa; --text3:#7c7ca2;
   --border:rgba(255,255,255,.06); --border2:rgba(255,255,255,.1);
   --glass:rgba(17,17,24,.75);
+  --ok:#17B130; --okr:23,177,48;
   --rsm:10px; --rmd:16px; --rlg:24px; --rxl:32px; --rpill:100px;
   --ease:cubic-bezier(.4,0,.2,1); --t:.3s;
 }
 [data-theme="light"]{
-  --bg:#f4f4fe; --bg2:#eaeaf8; --bg3:#ddddf0; --bg4:#d0d0e8;
+  --bg:#f4f4fe; --bg2:#ffffff; --bg3:#eef0f8; --bg4:#e2e4f2;
   --primary:#1a7dd4; --pr:26,125,212; --pglow:rgba(26,125,212,.18);
   --gold:#b8780a;    --gr:184,120,10; --gglow:rgba(184,120,10,.18);
   --text:#0a0a1e; --text2:#555570; --text3:#9999bb;
@@ -49,53 +104,58 @@ html{scroll-behavior:smooth}
 }
 
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background var(--t),color var(--t)}
+::selection{background:rgba(var(--pr),.3);color:#fff}
 
-/* CANVAS */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;padding:12px 20px;background:var(--primary);color:#fff;border-radius:0 0 10px 0;font-weight:700;font-size:14px}
+.skip-link:focus{left:0;text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:6px}
+
 #cvs{position:fixed;inset:0;pointer-events:none;z-index:0}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:background var(--t)}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-brand img{height:28px;object-fit:contain}
 .nav-brand-name{font-size:18px;font-weight:900;letter-spacing:3px;background:linear-gradient(120deg,var(--text) 0%,var(--primary) 50%,var(--gold) 100%);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradFlow 6s ease-in-out infinite}
 @keyframes gradFlow{0%,100%{background-position:0%}50%{background-position:100%}}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{font-size:13.5px;font-weight:600;color:var(--text2);text-decoration:none;transition:color var(--t)}
+.nav-link:hover{color:var(--text)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .lang-pill{display:flex;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rpill);padding:3px}
 .lang-btn{padding:5px 14px;border:none;background:transparent;color:var(--text2);font-family:'Inter',sans-serif;font-size:12px;font-weight:700;cursor:pointer;border-radius:var(--rpill);transition:all var(--t)}
 .lang-btn.on{background:var(--primary);color:#fff}
 .icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--bg3);color:var(--text);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--t)}
 .icon-btn:hover{border-color:var(--primary);transform:rotate(20deg)}
-.nav-cta{padding:9px 22px;border-radius:var(--rpill);background:linear-gradient(135deg,var(--primary),#1266b8);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px var(--pglow);transition:all var(--t)}
+.nav-cta{padding:9px 22px;border-radius:var(--rpill);background:linear-gradient(135deg,var(--primary),#1266b8);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px var(--pglow);transition:all var(--t);white-space:nowrap}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px var(--pglow)}
 
-/* HERO */
-#hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 80px;text-align:center;overflow:hidden}
+#hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:108px 24px 70px;text-align:center;overflow:hidden}
 .hero-glow-1{position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(var(--pr),.12) 0%,transparent 70%);pointer-events:none;animation:glowBreath 5s ease-in-out infinite}
-.hero-glow-2{position:absolute;bottom:0;left:20%;width:400px;height:400px;background:radial-gradient(circle,rgba(var(--gr),.08) 0%,transparent 65%);pointer-events:none;animation:glowBreath 7s ease-in-out infinite reverse}
+.hero-glow-2{position:absolute;bottom:0;left:18%;width:420px;height:420px;background:radial-gradient(circle,rgba(var(--gr),.08) 0%,transparent 65%);pointer-events:none;animation:glowBreath 7s ease-in-out infinite reverse}
 @keyframes glowBreath{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.1)}}
 .hero-chip{position:absolute;display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rpill);box-shadow:0 8px 32px rgba(0,0,0,.25);font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;animation:chipFloat var(--dur,5s) ease-in-out infinite;animation-delay:var(--delay,0s)}
-.chip-1{top:22%;left:4%;--dur:5.5s;--delay:0s}.chip-2{top:18%;right:4%;--dur:6s;--delay:.8s}.chip-3{top:58%;left:2%;--dur:7s;--delay:.4s}.chip-4{top:55%;right:2%;--dur:5s;--delay:1.2s}.chip-5{bottom:18%;left:10%;--dur:6.5s;--delay:.6s}.chip-6{bottom:15%;right:8%;--dur:5.8s;--delay:1s}
+.chip-1{top:21%;left:4%;--dur:5.5s;--delay:0s}.chip-2{top:17%;right:4%;--dur:6s;--delay:.8s}.chip-3{top:57%;left:2%;--dur:7s;--delay:.4s}.chip-4{top:54%;right:2%;--dur:5s;--delay:1.2s}.chip-5{bottom:17%;left:9%;--dur:6.5s;--delay:.6s}.chip-6{bottom:14%;right:7%;--dur:5.8s;--delay:1s}
 @keyframes chipFloat{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-14px) rotate(.5deg)}}
-.logo-wrap{position:relative;margin-bottom:20px}
-.logo-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(var(--pr),.15) 0%,transparent 65%);animation:ringPulse 4s ease-in-out infinite;pointer-events:none}
+.logo-wrap{position:relative;margin-bottom:18px}
+.logo-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(var(--pr),.15) 0%,transparent 65%);animation:ringPulse 4s ease-in-out infinite;pointer-events:none}
 @keyframes ringPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.7}50%{transform:translate(-50%,-50%) scale(1.12);opacity:1}}
-.hero-logo{width:min(220px,55vw);height:auto;position:relative;z-index:2;animation:logoLev 6s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(var(--pr),.4))}
+.hero-logo{width:min(200px,52vw);height:auto;position:relative;z-index:2;animation:logoLev 6s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(var(--pr),.4))}
 @keyframes logoLev{0%,100%{transform:translateY(0);filter:drop-shadow(0 0 30px rgba(var(--pr),.4))}33%{transform:translateY(-12px) rotate(.6deg);filter:drop-shadow(0 0 50px rgba(var(--pr),.7))}66%{transform:translateY(-6px) rotate(-.4deg);filter:drop-shadow(0 0 40px rgba(var(--pr),.5))}}
-.hero-title{font-size:clamp(72px,15vw,148px);font-weight:900;letter-spacing:clamp(8px,2.5vw,20px);line-height:1;margin-bottom:18px;background:linear-gradient(130deg,#fff 0%,#b8d8ff 20%,var(--primary) 45%,var(--gold) 70%,#fff 100%);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 7s ease-in-out infinite}
+.hero-title{font-size:clamp(66px,14vw,140px);font-weight:900;letter-spacing:clamp(8px,2.5vw,20px);line-height:1;margin-bottom:16px;background:linear-gradient(130deg,#fff 0%,#b8d8ff 20%,var(--primary) 45%,var(--gold) 70%,#fff 100%);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 7s ease-in-out infinite}
 [data-theme="light"] .hero-title{background:linear-gradient(130deg,var(--text) 0%,var(--primary) 40%,var(--gold) 70%,var(--primary) 100%);background-size:300%;-webkit-background-clip:text;background-clip:text}
 @keyframes shimmer{0%,100%{background-position:0%}50%{background-position:100%}}
-.hero-sub{font-size:clamp(14px,2.2vw,18px);font-weight:400;color:var(--text2);max-width:520px;margin-bottom:48px;line-height:1.75}
+.hero-sub{font-size:clamp(15px,2.2vw,19px);font-weight:400;color:var(--text2);max-width:580px;margin-bottom:14px;line-height:1.75}
 .hero-sub strong{color:var(--primary);font-weight:600}
-.launch-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;background:rgba(var(--gr),.07);border:1px solid rgba(var(--gr),.3);border-radius:var(--rpill);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:36px}
+.hero-tagline{font-size:13px;font-weight:700;letter-spacing:1px;color:var(--gold);margin-bottom:34px;text-transform:uppercase}
+.launch-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;background:rgba(var(--gr),.07);border:1px solid rgba(var(--gr),.3);border-radius:var(--rpill);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:30px}
 .dot-live{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:livePulse 2s ease-in-out infinite}
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(var(--gr),.5)}50%{opacity:.7;transform:scale(.85);box-shadow:0 0 0 8px rgba(var(--gr),0)}}
 
-/* COUNTDOWN */
-.countdown{margin-bottom:52px}
-.countdown-label-top{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:20px}
+.countdown{display:inline-block;margin-bottom:42px;padding:24px 40px;border-radius:var(--rxl);background:rgba(var(--pr),.04);border:1px solid rgba(var(--pr),.14);box-shadow:0 0 60px rgba(var(--pr),.06),inset 0 1px 0 rgba(255,255,255,.04)}
+.countdown-label-top{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:18px}
 .countdown-row{display:flex;align-items:flex-start;gap:12px;justify-content:center;flex-wrap:wrap}
 .cdi{display:flex;flex-direction:column;align-items:center;gap:10px}
-.flip{width:84px;height:84px;perspective:500px}
+.flip{width:82px;height:82px;perspective:500px}
 .flip-in{width:100%;height:100%;transform-style:preserve-3d}
 .flip-face{position:absolute;inset:0;border-radius:var(--rmd);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:700;color:var(--text);background:var(--bg2);border:1px solid var(--border2);box-shadow:0 4px 24px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06);backface-visibility:hidden}
 .flip.go .flip-in{animation:flipIt .45s ease-in-out}
@@ -104,30 +164,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .cdi-sep{font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:700;color:var(--primary);margin-top:22px;animation:sepBlink 1s step-end infinite}
 @keyframes sepBlink{0%,100%{opacity:1}50%{opacity:.1}}
 
-/* HERO BTNS */
-.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-p{padding:15px 34px;border-radius:var(--rpill);background:linear-gradient(135deg,var(--primary),#1266b8);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 8px 32px var(--pglow);transition:all var(--t)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.btn-p{padding:15px 30px;border-radius:var(--rpill);background:linear-gradient(135deg,var(--primary),#1266b8);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 8px 32px var(--pglow);transition:all var(--t)}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 16px 48px var(--pglow)}
-.btn-wa{padding:15px 34px;border-radius:var(--rpill);background:linear-gradient(135deg,#25D366,#128C7E);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,.3);transition:all var(--t)}
+.btn-wa{padding:15px 30px;border-radius:var(--rpill);background:linear-gradient(135deg,#25D366,#128C7E);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,.3);transition:all var(--t)}
 .btn-wa:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(37,211,102,.45)}
 .btn-wa svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
-.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text3);font-size:10px;letter-spacing:2px;text-transform:uppercase;animation:cueBounce 2.5s ease-in-out infinite;z-index:2}
+.btn-ghost{padding:15px 30px;border-radius:var(--rpill);background:var(--bg2);border:1px solid var(--border2);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:all var(--t)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--primary);box-shadow:0 12px 36px rgba(0,0,0,.2)}
+.hero-trust{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-size:12.5px;color:var(--text3);font-weight:600}
+.hero-trust span{display:inline-flex;align-items:center;gap:7px}
+.hero-trust svg{width:15px;height:15px;color:var(--ok)}
+.scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text3);font-size:10px;letter-spacing:2px;text-transform:uppercase;animation:cueBounce 2.5s ease-in-out infinite;z-index:2}
 .scroll-cue-arrow{width:16px;height:16px;border-right:2px solid var(--text3);border-bottom:2px solid var(--text3);transform:rotate(45deg)}
 @keyframes cueBounce{0%,100%{opacity:.4;transform:translateX(-50%) translateY(0)}50%{opacity:.9;transform:translateX(-50%) translateY(8px)}}
 
-/* SECTIONS */
 section{position:relative;z-index:1}
-.wrap{max-width:1180px;margin:0 auto;padding:100px 32px}
-.wrap-sm{max-width:760px;margin:0 auto;padding:100px 32px}
-.sec-header{text-align:center;margin-bottom:64px}
+.wrap{max-width:1180px;margin:0 auto;padding:96px 32px}
+.wrap-sm{max-width:780px;margin:0 auto;padding:96px 32px}
+.sec-header{text-align:center;margin-bottom:60px}
 .sec-badge{display:inline-block;padding:5px 16px;border-radius:var(--rpill);background:rgba(var(--pr),.07);border:1px solid rgba(var(--pr),.25);color:var(--primary);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px}
 .sec-title{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.15;margin-bottom:12px}
 .hl{background:linear-gradient(135deg,var(--primary),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .divider{width:52px;height:3px;background:linear-gradient(90deg,var(--primary),var(--gold));border-radius:2px;margin:16px auto 0}
-.sec-desc{font-size:16px;color:var(--text2);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+.sec-desc{font-size:16px;color:var(--text2);margin-top:16px;max-width:580px;margin-left:auto;margin-right:auto}
 .sep-line{max-width:1180px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent)}
 
-/* TERMINAL */
+.about-grid{display:grid;grid-template-columns:1.35fr .8fr;gap:42px;align-items:center}
 .terminal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rlg);overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.35)}
 .term-bar{display:flex;align-items:center;gap:7px;padding:13px 20px;background:var(--bg3);border-bottom:1px solid var(--border)}
 .td{width:12px;height:12px;border-radius:50%}
@@ -135,193 +198,259 @@ section{position:relative;z-index:1}
 .term-title{margin-left:8px;font-size:12px;color:var(--text2);font-weight:500}
 .term-badge{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--primary);font-weight:700}
 .term-dot{width:7px;height:7px;border-radius:50%;background:#17B130;animation:livePulse 2s ease-in-out infinite}
-.term-body{padding:36px 40px;min-height:240px}
-#stream-out{font-size:16px;font-weight:400;color:var(--text);line-height:1.9;white-space:pre-wrap}
+.term-body{padding:32px 36px;min-height:300px}
+#stream-out{font-size:15.5px;font-weight:400;color:var(--text);line-height:1.95;white-space:pre-wrap}
 .cursor{display:inline-block;width:2px;height:1.1em;background:var(--primary);margin-left:2px;vertical-align:middle;animation:curBlink 1s step-end infinite}
 @keyframes curBlink{0%,100%{opacity:1}50%{opacity:0}}
 
-/* FEATURE GRID */
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
-.feat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rlg);padding:32px 28px;transition:all .4s var(--ease);opacity:0;transform:translateY(30px);cursor:default;position:relative;overflow:hidden}
-.feat-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,var(--card-glow,.2) 0%,transparent 65%);pointer-events:none;opacity:0;transition:opacity .4s var(--ease)}
+.phone{position:relative;width:268px;margin:0 auto;animation:phoneLev 7s ease-in-out infinite}
+@keyframes phoneLev{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.phone-frame{position:relative;background:#05050a;border-radius:42px;padding:11px;box-shadow:0 50px 120px rgba(0,0,0,.5),0 0 0 2px rgba(255,255,255,.05),inset 0 0 0 1px rgba(255,255,255,.04)}
+.phone-frame::before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:96px;height:22px;background:#05050a;border-radius:0 0 16px 16px;z-index:5}
+.phone-frame::after{content:'';position:absolute;inset:0;border-radius:42px;background:linear-gradient(140deg,rgba(255,255,255,.10) 0%,transparent 38%);pointer-events:none;z-index:6}
+.phone-screen{background:#0c0c14;border-radius:32px;overflow:hidden;height:540px;display:flex;flex-direction:column}
+.ph-status{display:flex;justify-content:space-between;align-items:center;padding:14px 22px 8px;font-size:11px;font-weight:700;color:#e8e8ff}
+.ph-status .sig{display:flex;gap:3px;align-items:flex-end}
+.ph-status .sig i{display:block;width:3px;background:#e8e8ff;border-radius:1px}
+.ph-status .sig i:nth-child(1){height:5px}.ph-status .sig i:nth-child(2){height:8px}.ph-status .sig i:nth-child(3){height:11px}.ph-status .sig i:nth-child(4){height:14px;opacity:.4}
+.ph-header{display:flex;align-items:center;gap:9px;padding:8px 18px 12px;border-bottom:1px solid rgba(255,255,255,.06)}
+.ph-logo{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,#2E9BF0,#E8A020);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff}
+.ph-name{font-size:13px;font-weight:800;color:#f0f0ff}
+.ph-expert{display:inline-flex;align-items:center;gap:5px;margin-left:auto;padding:4px 11px;border-radius:100px;background:rgba(23,177,48,.12);border:1px solid rgba(23,177,48,.3);color:#2fd158;font-size:10px;font-weight:700}
+.ph-expert .d{width:5px;height:5px;border-radius:50%;background:#2fd158}
+.ph-chat{flex:1;padding:16px 14px;display:flex;flex-direction:column;gap:11px;overflow:hidden}
+.ph-bubble{max-width:84%;padding:10px 13px;border-radius:16px;font-size:11.5px;line-height:1.5}
+.ph-user{align-self:flex-end;background:linear-gradient(135deg,#2E9BF0,#1266b8);color:#fff;border-bottom-right-radius:5px}
+.ph-ai{align-self:flex-start;background:#1a1a26;color:#e8e8ff;border-bottom-left-radius:5px;border:1px solid rgba(255,255,255,.05)}
+.ph-ai code{background:rgba(46,155,240,.14);color:#7cc4ff;padding:1px 5px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:10px}
+.ph-typing{display:inline-flex;gap:4px;align-items:center;padding:4px 0}
+.ph-typing i{width:6px;height:6px;border-radius:50%;background:#5a5a78;animation:phType 1.2s ease-in-out infinite}
+.ph-typing i:nth-child(2){animation-delay:.2s}.ph-typing i:nth-child(3){animation-delay:.4s}
+@keyframes phType{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.ph-input{margin:8px 14px 16px;padding:9px 12px;background:#15151f;border:1px solid rgba(255,255,255,.07);border-radius:18px}
+.ph-pills{display:flex;gap:6px;margin-bottom:9px}
+.ph-pill{flex:1;text-align:center;padding:5px 0;border-radius:9px;font-size:9px;font-weight:800;letter-spacing:.5px}
+.ph-pill.geek{background:rgba(155,89,240,.14);color:#b78cf5;border:1px solid rgba(155,89,240,.3)}
+.ph-pill.loth{background:rgba(46,155,240,.18);color:#7cc4ff;border:1px solid rgba(46,155,240,.45)}
+.ph-pill.justo{background:rgba(232,160,32,.12);color:#f0b94e;border:1px solid rgba(232,160,32,.3)}
+.ph-inrow{display:flex;align-items:center;gap:8px}
+.ph-inrow .txt{flex:1;font-size:10.5px;color:#5a5a78}
+.ph-send{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2E9BF0,#1266b8);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ph-send svg{width:13px;height:13px;stroke:#fff;fill:none}
+
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rlg);padding:30px 22px;text-align:center;transition:all .4s var(--ease);opacity:0;transform:translateY(24px)}
+.stat.vis{opacity:1;transform:translateY(0)}
+.stat:hover{transform:translateY(-6px);border-color:rgba(var(--pr),.3);box-shadow:0 20px 50px var(--pglow)}
+.stat-num{font-size:clamp(30px,4vw,44px);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--primary),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;font-family:'JetBrains Mono',monospace}
+.stat-label{font-size:13px;color:var(--text2);font-weight:600;line-height:1.4}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.feat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rlg);padding:30px 26px;transition:all .4s var(--ease);opacity:0;transform:translateY(30px);cursor:default;position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,var(--card-glow,rgba(46,155,240,.15)) 0%,transparent 65%);pointer-events:none;opacity:0;transition:opacity .4s var(--ease)}
 .feat-card:hover::before{opacity:1}
 .feat-card.vis{opacity:1;transform:translateY(0)}
 .feat-card:hover{transform:translateY(-8px);border-color:var(--card-border,rgba(var(--pr),.35));box-shadow:0 24px 64px var(--card-shadow,var(--pglow))}
-.feat-icon-wrap{width:52px;height:52px;border-radius:var(--rmd);display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:var(--icon-bg,rgba(var(--pr),.08));border:1px solid var(--icon-border,rgba(var(--pr),.15))}
-.feat-name{font-size:17px;font-weight:700;margin-bottom:10px}
+.feat-icon-wrap{width:50px;height:50px;border-radius:var(--rmd);display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:var(--icon-bg,rgba(var(--pr),.08));border:1px solid var(--icon-border,rgba(var(--pr),.15))}
+.feat-name{font-size:17px;font-weight:700;margin-bottom:9px;transition:color .3s var(--ease)}
+.feat-card:hover .feat-name{color:var(--primary)}
 .feat-desc{font-size:14px;color:var(--text2);line-height:1.7}
 
-/* ORBS */
-#orbs{background:var(--bg)}
-.orbs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.orb-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rxl);padding:36px 28px 32px;text-align:center;transition:all .5s var(--ease);opacity:0;transform:translateY(24px) scale(.97);cursor:default;position:relative;overflow:hidden;animation:orbFloat var(--float-dur,6s) ease-in-out infinite;animation-delay:var(--float-del,0s);animation-play-state:paused}
-.orb-card.vis{opacity:1;transform:translateY(0) scale(1);animation-play-state:running}
-@keyframes orbFloat{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-10px) rotate(.4deg)}}
-.orb-card:hover{transform:translateY(-12px) scale(1.02) rotate(0deg)!important;border-color:var(--orb-color);box-shadow:0 28px 72px rgba(var(--orb-rgb),.18)}
-.orb-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(var(--orb-rgb),.07) 0%,transparent 60%);pointer-events:none;border-radius:inherit}
-.orb-circle{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;background:rgba(var(--orb-rgb),.1);border:2px solid rgba(var(--orb-rgb),.2);box-shadow:0 0 0 8px rgba(var(--orb-rgb),.04);transition:all .4s var(--ease)}
-.orb-card:hover .orb-circle{background:rgba(var(--orb-rgb),.16);border-color:rgba(var(--orb-rgb),.4);box-shadow:0 0 0 12px rgba(var(--orb-rgb),.07),0 0 40px rgba(var(--orb-rgb),.25);transform:scale(1.08)}
-.orb-name{font-size:16px;font-weight:800;margin-bottom:8px;color:var(--orb-color)}
-.orb-desc{font-size:13px;color:var(--text2);line-height:1.65}
-.orb-tag{display:inline-block;margin-top:14px;padding:4px 14px;border-radius:var(--rpill);font-size:10px;font-weight:700;letter-spacing:1px;background:rgba(var(--orb-rgb),.1);border:1px solid rgba(var(--orb-rgb),.25);color:var(--orb-color);text-transform:uppercase}
-
-/* ══════════════════════════════════════
-   EXPERT RECTANGLES
-   TOUJOURS VISIBLES — PAS DE JS REQUIS
-══════════════════════════════════════ */
 #experts{background:linear-gradient(180deg,transparent,rgba(var(--pr),.025) 50%,transparent)}
-.experts-list{display:flex;flex-direction:column;gap:24px}
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.exp-card{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rlg);padding:26px 24px;overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease;opacity:0;transform:translateY(26px)}
+.exp-card.vis{opacity:1;transform:translateY(0)}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ec);transition:width .3s ease}
+.exp-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 12% 0%,rgba(var(--ecr),.08) 0%,transparent 55%);pointer-events:none;opacity:0;transition:opacity .3s ease}
+.exp-card:hover{transform:translateY(-7px);border-color:rgba(var(--ecr),.5);box-shadow:0 20px 60px rgba(var(--ecr),.18)}
+.exp-card:hover::before{width:6px}
+.exp-card:hover::after{opacity:1}
+.exp-card.soon{opacity:.92}
+.exp-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;position:relative;z-index:1}
+.exp-icon{flex-shrink:0;width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(var(--ecr),.1);border:1px solid rgba(var(--ecr),.22);transition:all .3s ease}
+.exp-card:hover .exp-icon{background:rgba(var(--ecr),.18);box-shadow:0 0 30px rgba(var(--ecr),.3);transform:scale(1.05)}
+.exp-name{font-size:17px;font-weight:800;color:var(--text);line-height:1.2;margin-top:3px}
+.exp-status{position:absolute;top:0;right:0;padding:4px 12px;border-radius:var(--rpill);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;z-index:2}
+.exp-status.live{background:rgba(var(--okr),.1);border:1px solid rgba(var(--okr),.3);color:var(--ok)}
+.exp-status.soon{background:rgba(var(--gr),.08);border:1px solid rgba(var(--gr),.28);color:var(--gold)}
+.exp-desc{font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:14px;position:relative;z-index:1}
+.exp-tags{display:flex;flex-wrap:wrap;gap:7px;position:relative;z-index:1}
+.exp-tag{padding:4px 11px;border-radius:var(--rpill);background:rgba(var(--ecr),.08);border:1px solid rgba(var(--ecr),.2);color:var(--ec);font-size:10.5px;font-weight:700;letter-spacing:.3px}
+.exp-flag{display:inline-flex;align-items:center;gap:5px;margin-bottom:12px;padding:3px 10px;border-radius:var(--rpill);background:rgba(var(--ecr),.1);border:1px solid rgba(var(--ecr),.3);color:var(--ec);font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;position:relative;z-index:1}
 
-.exp-rect{
-  /* VISIBLE EN PERMANENCE */
-  display:block;
-  position:relative;
-  background:var(--bg2);
-  border:1px solid var(--border);
-  border-radius:var(--rxl);
-  overflow:hidden;
-  cursor:default;
-  opacity:1 !important;
-  visibility:visible !important;
-  /* Transition uniquement pour le hover */
-  transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease;
-}
+#diff{background:var(--bg)}
+.diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.diff-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rlg);padding:28px 24px;transition:all .4s var(--ease);opacity:0;transform:translateY(26px)}
+.diff-card.vis{opacity:1;transform:translateY(0)}
+.diff-card:hover{transform:translateY(-6px);border-color:rgba(var(--gr),.3);box-shadow:0 18px 48px var(--gglow)}
+.diff-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;background:rgba(var(--gr),.09);border:1px solid rgba(var(--gr),.2);color:var(--gold)}
+.diff-name{font-size:16px;font-weight:800;margin-bottom:8px}
+.diff-desc{font-size:13.5px;color:var(--text2);line-height:1.65}
 
-/* Barre colorée gauche */
-.exp-rect::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--er-color);border-radius:4px 0 0 4px;transition:width .3s ease}
-/* Glow interne */
-.exp-rect::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(var(--er-rgb),.08) 0%,transparent 55%);pointer-events:none;opacity:0;transition:opacity .3s ease}
+.pills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rxl);padding:34px 26px;text-align:center;transition:all .4s var(--ease);opacity:0;transform:translateY(26px) scale(.97);position:relative;overflow:hidden}
+.pill-card.vis{opacity:1;transform:translateY(0) scale(1)}
+.pill-card:hover{transform:translateY(-8px);border-color:rgba(var(--pcr),.5);box-shadow:0 24px 64px rgba(var(--pcr),.2)}
+.pill-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(var(--pcr),.08) 0%,transparent 60%);pointer-events:none}
+.pill-badge{display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;margin:0 auto 18px;background:rgba(var(--pcr),.12);border:2px solid rgba(var(--pcr),.3);color:var(--pc);position:relative;z-index:1}
+.pill-name{font-size:20px;font-weight:900;letter-spacing:1px;margin-bottom:6px;color:var(--pc);position:relative;z-index:1}
+.pill-tag{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:14px;position:relative;z-index:1}
+.pill-desc{font-size:13.5px;color:var(--text2);line-height:1.65;position:relative;z-index:1}
 
-/* ── HOVER ANIMATION VISIBLE ── */
-.exp-rect:hover{
-  border-color:rgba(var(--er-rgb),.5);
-  box-shadow:
-    0 0 0 1px rgba(var(--er-rgb),.15),
-    0 8px 32px rgba(var(--er-rgb),.15),
-    0 24px 80px rgba(var(--er-rgb),.2),
-    inset 0 1px 0 rgba(255,255,255,.07);
-  transform:translateY(-8px);
-}
-.exp-rect:hover::before{width:8px}
-.exp-rect:hover::after{opacity:1}
+#join{background:linear-gradient(180deg,transparent,rgba(var(--pr),.04),transparent)}
+.join-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rxl);padding:52px 44px;display:grid;grid-template-columns:1fr .9fr;gap:44px;align-items:center;position:relative;overflow:hidden}
+.join-card::before{content:'';position:absolute;top:-90px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,var(--pglow) 0%,transparent 65%);pointer-events:none}
+.join-card::after{content:'';position:absolute;bottom:-70px;left:-50px;width:300px;height:300px;background:radial-gradient(circle,var(--gglow) 0%,transparent 65%);pointer-events:none}
+.join-left{position:relative;z-index:1}
+.join-title{font-size:clamp(26px,4vw,38px);font-weight:900;line-height:1.15;margin-bottom:14px}
+.join-desc{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:26px;max-width:440px}
+.join-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.play-badge{display:inline-flex;align-items:center;gap:12px;padding:11px 22px;border-radius:14px;background:#000;border:1px solid rgba(255,255,255,.18);text-decoration:none;cursor:default;position:relative;opacity:.92}
+[data-theme="light"] .play-badge{background:#111;border-color:rgba(0,0,0,.2)}
+.play-badge .pg-ic{width:26px;height:26px;flex-shrink:0}
+.play-badge .pg-txt{display:flex;flex-direction:column;line-height:1.1;text-align:left}
+.play-badge .pg-txt small{font-size:9px;color:#bbb;letter-spacing:.5px}
+.play-badge .pg-txt b{font-size:16px;color:#fff;font-weight:700}
+.play-badge .pg-soon{position:absolute;top:-9px;right:-9px;background:var(--gold);color:#1a1205;font-size:9px;font-weight:900;padding:2px 8px;border-radius:var(--rpill);letter-spacing:.5px;text-transform:uppercase}
+.join-note{margin-top:20px;font-size:12.5px;color:var(--text3);position:relative;z-index:1}
+.join-right{position:relative;z-index:1;display:flex;justify-content:center}
 
-.exp-rect-inner{display:flex;align-items:center;gap:44px;padding:52px 60px 52px 72px;position:relative;z-index:1}
-
-.exp-rect-icon{flex-shrink:0;width:116px;height:116px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(var(--er-rgb),.08);border:2px solid rgba(var(--er-rgb),.2);box-shadow:0 0 0 10px rgba(var(--er-rgb),.04);transition:all .3s ease}
-.exp-rect:hover .exp-rect-icon{background:rgba(var(--er-rgb),.16);border-color:rgba(var(--er-rgb),.5);box-shadow:0 0 0 16px rgba(var(--er-rgb),.06),0 0 60px rgba(var(--er-rgb),.35);transform:scale(1.08) rotate(5deg)}
-
-.exp-rect-body{flex:1;min-width:0}
-.exp-rect-label{font-size:11px;font-weight:800;letter-spacing:3.5px;text-transform:uppercase;color:var(--er-color);margin-bottom:10px;opacity:.85}
-.exp-rect-title{font-size:clamp(26px,4vw,44px);font-weight:900;letter-spacing:-.5px;line-height:1.05;color:var(--text);margin-bottom:16px}
-.exp-mode-word{color:var(--er-color)}
-.exp-rect-desc{font-size:15px;color:var(--text2);line-height:1.75;max-width:560px;margin-bottom:22px}
-.exp-rect-tags{display:flex;flex-wrap:wrap;gap:8px}
-.exp-rect-tag{padding:6px 16px;border-radius:var(--rpill);background:rgba(var(--er-rgb),.08);border:1px solid rgba(var(--er-rgb),.2);color:var(--er-color);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;transition:all .25s ease}
-.exp-rect:hover .exp-rect-tag{background:rgba(var(--er-rgb),.16);border-color:rgba(var(--er-rgb),.4)}
-
-.exp-rect-num{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:clamp(100px,11vw,150px);font-weight:900;color:rgba(var(--er-rgb),.08);line-height:1;-webkit-user-select:none;user-select:none;transition:color .3s ease}
-.exp-rect:hover .exp-rect-num{color:rgba(var(--er-rgb),.18)}
-
-/* WAITLIST */
-#waitlist .wrap-sm{text-align:center}
-.wl-form{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:40px}
-.wl-input{flex:1;min-width:260px;padding:16px 24px;border-radius:var(--rpill);border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;outline:none;transition:all var(--t)}
-.wl-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--pglow)}
-.wl-input::placeholder{color:var(--text3)}
-.wl-btn{padding:16px 36px;border-radius:var(--rpill);background:linear-gradient(135deg,var(--primary),#1266b8);border:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px var(--pglow);white-space:nowrap;transition:all var(--t)}
-.wl-btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px var(--pglow)}
-.wl-ok{display:none;margin-top:24px;padding:16px 24px;border-radius:var(--rmd);background:rgba(23,177,48,.08);border:1px solid rgba(23,177,48,.3);color:#17B130;font-weight:600;font-size:15px}
-.wl-count{margin-top:20px;font-size:13px;color:var(--text2)}
-.wl-count strong{color:var(--primary)}
-
-/* FOUNDER */
-.founder-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rxl);padding:56px 44px;text-align:center;position:relative;overflow:hidden}
-.founder-card::before{content:'';position:absolute;top:-80px;right:-60px;width:360px;height:360px;background:radial-gradient(circle,var(--pglow) 0%,transparent 65%);pointer-events:none}
-.founder-card::after{content:'';position:absolute;bottom:-60px;left:-40px;width:280px;height:280px;background:radial-gradient(circle,var(--gglow) 0%,transparent 65%);pointer-events:none}
-.founder-av{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--gold));display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:#fff;margin:0 auto 22px;box-shadow:0 8px 32px var(--pglow);position:relative;z-index:1}
+.founder-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rxl);padding:52px 44px;text-align:center;position:relative;overflow:hidden}
+.founder-card::before{content:'';position:absolute;top:-80px;right:-60px;width:340px;height:340px;background:radial-gradient(circle,var(--pglow) 0%,transparent 65%);pointer-events:none}
+.founder-av{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--gold));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#fff;margin:0 auto 22px;box-shadow:0 8px 32px var(--pglow);position:relative;z-index:1}
 .founder-name{font-size:24px;font-weight:900;margin-bottom:6px;position:relative;z-index:1}
 .founder-role{font-size:12px;color:var(--primary);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;position:relative;z-index:1}
-.founder-bio{font-size:15px;color:var(--text2);max-width:500px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
+.founder-bio{font-size:15px;color:var(--text2);max-width:540px;margin:0 auto 30px;line-height:1.8;position:relative;z-index:1}
 
-/* FOOTER */
-footer{position:relative;z-index:1;padding:52px 32px 36px;border-top:1px solid var(--border);text-align:center}
-.footer-logo{height:36px;object-fit:contain;opacity:.55;transition:opacity var(--t);display:block;margin:0 auto 24px}
-.footer-logo:hover{opacity:1}
-.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
-.footer-link{font-size:13px;color:var(--text2);text-decoration:none;transition:color var(--t)}
-.footer-link:hover{color:var(--primary)}
-.footer-copy{font-size:12px;color:var(--text3)}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);background:var(--bg2)}
+.footer-top{max-width:1180px;margin:0 auto;padding:56px 32px 40px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.footer-brand img{height:32px;margin-bottom:16px;opacity:.9}
+.footer-brand p{font-size:13.5px;color:var(--text2);line-height:1.7;max-width:280px;margin-bottom:14px}
+.footer-brand .loc{font-size:12.5px;color:var(--text3)}
+.footer-col h4{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);margin-bottom:18px}
+.footer-col a{display:block;font-size:13.5px;color:var(--text2);text-decoration:none;margin-bottom:11px;transition:color var(--t)}
+.footer-col a:hover{color:var(--primary)}
+.footer-bottom{border-top:1px solid var(--border);padding:22px 32px;text-align:center}
+.footer-copy{font-size:12.5px;color:var(--text3)}
+.footer-copy strong{color:var(--text2);font-weight:600}
 
-/* WA FLOTTANT */
-.float-wa{position:fixed;bottom:28px;right:28px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:all var(--t);animation:waGlow 3.5s ease-in-out infinite}
+.float-wa{position:fixed;bottom:26px;right:26px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:all var(--t);animation:waGlow 3.5s ease-in-out infinite}
 .float-wa:hover{transform:scale(1.1);box-shadow:0 12px 44px rgba(37,211,102,.65)}
 .float-wa svg{width:26px;height:26px;fill:#fff}
 @keyframes waGlow{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.4)}50%{box-shadow:0 8px 48px rgba(37,211,102,.65)}}
 
-/* REVEAL */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
 .rv.vis{opacity:1;transform:translateY(0)}
 
-/* RESPONSIVE */
-@media(max-width:900px){.hero-chip{display:none}.exp-rect-num{display:none}.exp-rect-inner{gap:28px;padding:40px 36px 40px 48px}.exp-rect-icon{width:88px;height:88px}}
-@media(max-width:768px){nav{padding:0 16px}.nav-brand-name{font-size:16px}.nav-cta{display:none}.wrap,.wrap-sm{padding:70px 20px}.flip{width:68px;height:68px}.flip-face{font-size:27px}.cdi-sep{font-size:27px;margin-top:18px}.term-body{padding:24px 20px}.founder-card{padding:36px 24px}#stream-out{font-size:15px}.exp-rect-inner{flex-direction:column;align-items:flex-start;gap:20px;padding:36px 28px 36px 36px}.exp-rect-icon{width:76px;height:76px}.exp-rect-title{font-size:26px}}
-@media(max-width:480px){.countdown-row{gap:8px}.flip{width:56px;height:56px}.flip-face{font-size:22px}.cdi-sep{font-size:22px;margin-top:15px}.cdi-label{font-size:9px}.hero-btns{flex-direction:column;align-items:center}.btn-p,.btn-wa{width:100%;max-width:320px;justify-content:center}}
-@media(prefers-reduced-motion:reduce){.rv,.feat-card,.orb-card{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-grid .phone{order:-1}
+  .join-card{grid-template-columns:1fr;text-align:center;padding:44px 28px}
+  .join-cta{justify-content:center}
+  .join-desc{margin-left:auto;margin-right:auto}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .hero-chip{display:none}
+}
+@media(max-width:768px){
+  nav{padding:0 16px}.nav-brand-name{font-size:16px}.nav-cta{display:none}
+  .wrap,.wrap-sm{padding:70px 20px}
+  .flip{width:68px;height:68px}.flip-face{font-size:27px}.cdi-sep{font-size:27px;margin-top:18px}
+  .term-body{padding:24px 20px}.founder-card{padding:36px 24px}
+  .pills-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  #hero{padding:90px 16px 54px}.countdown{padding:18px 22px}
+  .countdown-row{gap:8px}.flip{width:56px;height:56px}.flip-face{font-size:22px}.cdi-sep{font-size:22px;margin-top:15px}.cdi-label{font-size:9px}
+  .hero-btns{flex-direction:column;align-items:center}.btn-p,.btn-wa,.btn-ghost{width:100%;max-width:320px;justify-content:center}
+  .stats-grid,.footer-top{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+  .rv,.feat-card,.stat,.exp-card,.diff-card,.pill-card{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
 
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><defs>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
 <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
 <symbol id="ic-cam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
 <symbol id="ic-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
 <symbol id="ic-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
-<symbol id="ic-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></symbol>
+<symbol id="ic-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 17l.7 2.1L8 20l-2.3.9L5 23l-.7-2.1L2 20l2.3-.9z"/></symbol>
 <symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
 <symbol id="ic-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
-<symbol id="ic-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="6 9 9 12 14 7"/></symbol>
+<symbol id="ic-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
 <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
 <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
 <symbol id="ic-cook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></symbol>
-<symbol id="ic-beaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-4"/><polyline points="9 3 9 11 5 21"/><polyline points="15 3 15 11 19 21"/><line x1="9" y1="3" x2="15" y2="3"/><line x1="6" y1="16" x2="18" y2="16"/></symbol>
+<symbol id="ic-beaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-4"/><polyline points="9 3 9 11 5 21"/><polyline points="15 3 15 11 19 21"/><line x1="6" y1="16" x2="18" y2="16"/></symbol>
 <symbol id="ic-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
 <symbol id="ic-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
+<symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h14l-2-3H7z"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l3 6a3 3 0 0 1-6 0z"/></symbol>
+<symbol id="ic-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+<symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="ic-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+<symbol id="ic-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.99.14 3 3 0 0 0-1.51 4.6 3 3 0 0 0 .2 5.3A3 3 0 0 0 9 19.5a3 3 0 0 0 3 .5 3 3 0 0 0 3-.5 3 3 0 0 0 4.3-4.46 3 3 0 0 0 .2-5.3 3 3 0 0 0-1.51-4.6A3 3 0 0 0 12 5z"/><path d="M12 5v15"/></symbol>
+<symbol id="ic-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></symbol>
+<symbol id="ic-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+<symbol id="ic-money" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><line x1="6" y1="12" x2="6.01" y2="12"/><line x1="18" y1="12" x2="18.01" y2="12"/></symbol>
+<symbol id="ic-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="ic-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
 <symbol id="ic-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" fill="currentColor"/></symbol>
 </defs></svg>
 
-<canvas id="cvs"></canvas>
+<canvas id="cvs" aria-hidden="true"></canvas>
 
-<a class="float-wa" href="https://wa.me/237673158050" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><use href="#ic-wa"/></svg>
+<a class="skip-link" href="#main" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
+
+<a class="float-wa" href="https://wa.me/237673158050?text=Bonjour%2C%20je%20veux%20%C3%AAtre%20pr%C3%A9venu%20au%20lancement%20de%20NEXYA" target="_blank" rel="noopener noreferrer" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-wa"/></svg>
 </a>
 
-<nav>
-  <a class="nav-brand" href="#">
-    <img src="assets/images/logo_nexya.png" alt="NEXYA"/>
+<nav aria-label="Navigation principale">
+  <a class="nav-brand" href="#hero" aria-label="NEXYA, accueil">
+    <picture><source srcset="assets/images/logo_nexya.webp" type="image/webp"/><img src="assets/images/logo_nexya_opt.png" alt="NEXYA" width="20" height="28" decoding="async"/></picture>
     <span class="nav-brand-name">NEXYA</span>
   </a>
+  <div class="nav-links">
+    <a class="nav-link" href="#about" data-fr="Le produit" data-en="Product">Le produit</a>
+    <a class="nav-link" href="#features" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+    <a class="nav-link" href="#experts" data-fr="Experts" data-en="Experts">Experts</a>
+    <a class="nav-link" href="#join" data-fr="Lancement" data-en="Launch">Lancement</a>
+  </div>
   <div class="nav-right">
     <div class="lang-pill">
-      <button type="button" class="lang-btn on" id="btn-fr" onclick="setLang('fr')">FR</button>
-      <button type="button" class="lang-btn"    id="btn-en" onclick="setLang('en')">EN</button>
+      <button type="button" class="lang-btn on" id="btn-fr" onclick="setLang('fr')" aria-label="Français">FR</button>
+      <button type="button" class="lang-btn"    id="btn-en" onclick="setLang('en')" aria-label="English">EN</button>
     </div>
-    <button type="button" class="icon-btn" id="theme-btn" onclick="toggleTheme()" title="Thème">🌙</button>
-    <a class="nav-cta" href="#waitlist" data-fr="Être notifié" data-en="Get Notified">Être notifié</a>
+    <button type="button" class="icon-btn" id="theme-btn" onclick="toggleTheme()" title="Thème" aria-label="Basculer le thème">&#9790;</button>
+    <a class="nav-cta" href="#join" data-fr="Pré-inscription" data-en="Pre-register">Pré-inscription</a>
   </div>
 </nav>
 
-<section id="hero">
+<main id="main">
+
+<section id="hero" aria-label="Présentation">
   <div class="hero-glow-1"></div><div class="hero-glow-2"></div>
-  <div class="hero-chip chip-1"><svg width="16" height="16" color="#2E9BF0"><use href="#ic-layers"/></svg><span data-fr="Multi-modèles IA" data-en="Multi-model AI">Multi-modèles IA</span></div>
-  <div class="hero-chip chip-2"><svg width="16" height="16" color="#17B130"><use href="#ic-cam"/></svg><span data-fr="Vision Caméra" data-en="Camera Vision">Vision Caméra</span></div>
-  <div class="hero-chip chip-3"><svg width="16" height="16" color="#9B59F0"><use href="#ic-cal"/></svg><span data-fr="Prompt Scheduler" data-en="Prompt Scheduler">Prompt Scheduler</span></div>
-  <div class="hero-chip chip-4"><svg width="16" height="16" color="#17B130"><use href="#ic-mic"/></svg><span data-fr="Voix Naturelle" data-en="Natural Voice">Voix Naturelle</span></div>
-  <div class="hero-chip chip-5"><svg width="16" height="16" color="#E8A020"><use href="#ic-spark"/></svg><span data-fr="5 Modes Experts" data-en="5 Expert Modes">5 Modes Experts</span></div>
-  <div class="hero-chip chip-6"><svg width="16" height="16" color="#E35406"><use href="#ic-heart"/></svg><span data-fr="Favoris &amp; Historique" data-en="Favorites &amp; History">Favoris &amp; Historique</span></div>
-  <div class="launch-badge"><div class="dot-live"></div><span data-fr="Lancement Officiel · 18 Juin 2026" data-en="Official Launch · June 18, 2026">Lancement Officiel · 18 Juin 2026</span></div>
-  <div class="logo-wrap"><div class="logo-ring"></div><img class="hero-logo" src="assets/images/logo_nexya.png" alt="NEXYA"/></div>
+  <div class="hero-chip chip-1"><svg width="16" height="16" style="color:#2E9BF0" aria-hidden="true"><use href="#ic-layers"/></svg><span data-fr="Multi-modèles" data-en="Multi-model">Multi-modèles</span></div>
+  <div class="hero-chip chip-2"><svg width="16" height="16" style="color:#9B59F0" aria-hidden="true"><use href="#ic-scale"/></svg><span data-fr="Droit OHADA" data-en="OHADA Law">Droit OHADA</span></div>
+  <div class="hero-chip chip-3"><svg width="16" height="16" style="color:#17B130" aria-hidden="true"><use href="#ic-brain"/></svg><span data-fr="Mémoire IA" data-en="AI Memory">Mémoire IA</span></div>
+  <div class="hero-chip chip-4"><svg width="16" height="16" style="color:#E35406" aria-hidden="true"><use href="#ic-cook"/></svg><span data-fr="Cuisine Cameroun" data-en="Cameroon Cooking">Cuisine Cameroun</span></div>
+  <div class="hero-chip chip-5"><svg width="16" height="16" style="color:#35A3F5" aria-hidden="true"><use href="#ic-mic"/></svg><span data-fr="Voix naturelle" data-en="Natural voice">Voix naturelle</span></div>
+  <div class="hero-chip chip-6"><svg width="16" height="16" style="color:#E8A020" aria-hidden="true"><use href="#ic-wifi"/></svg><span data-fr="Optimisé 2G" data-en="2G optimized">Optimisé 2G</span></div>
+
+  <div class="launch-badge"><span class="dot-live"></span><span data-fr="Lancement officiel le 21 juin 2026" data-en="Official launch June 21, 2026">Lancement officiel le 21 juin 2026</span></div>
+
+  <div class="logo-wrap"><div class="logo-ring"></div><picture><source srcset="assets/images/logo_nexya.webp" type="image/webp"/><img class="hero-logo" src="assets/images/logo_nexya_opt.png" alt="Logo NEXYA AI" width="311" height="440" decoding="async"/></picture></div>
   <h1 class="hero-title">NEXYA</h1>
-  <p class="hero-sub"><span data-fr="L'intelligence artificielle nouvelle génération." data-en="The next-generation artificial intelligence.">L'intelligence artificielle nouvelle génération.</span><br><strong data-fr="Chat IA · Modes Experts · Vision · Voix · Scheduler" data-en="AI Chat · Expert Modes · Vision · Voice · Scheduler">Chat IA · Modes Experts · Vision · Voix · Scheduler</strong></p>
+  <p class="hero-sub"><span data-fr="L'assistant IA multi-expert et multi-modèles." data-en="The multi-expert, multi-model AI assistant.">L'assistant IA multi-expert et multi-modèles.</span><br><strong data-fr="11 experts. Une mémoire. Un seul assistant." data-en="11 experts. One memory. One assistant.">11 experts. Une mémoire. Un seul assistant.</strong></p>
+  <p class="hero-tagline" data-fr="Pour l'Afrique et au-delà" data-en="For Africa and beyond">Pour l'Afrique et au-delà</p>
+
   <div class="countdown">
     <p class="countdown-label-top" data-fr="Compte à rebours jusqu'au lancement" data-en="Countdown to launch">Compte à rebours jusqu'au lancement</p>
     <div class="countdown-row">
@@ -334,123 +463,160 @@ footer{position:relative;z-index:1;padding:52px 32px 36px;border-top:1px solid v
       <div class="cdi"><div class="flip" id="fb-s"><div class="flip-in"><div class="flip-face" id="v-s">00</div></div></div><span class="cdi-label" data-fr="Secondes" data-en="Seconds">Secondes</span></div>
     </div>
   </div>
+
   <div class="hero-btns">
-    <a class="btn-p" href="#waitlist"><svg width="18" height="18" color="#fff"><use href="#ic-bell"/></svg><span data-fr="Être notifié au lancement" data-en="Notify Me at Launch">Être notifié au lancement</span></a>
-    <a class="btn-wa" href="https://wa.me/237673158050" target="_blank" rel="noopener noreferrer"><svg><use href="#ic-wa"/></svg><span data-fr="Contacter le Fondateur" data-en="Contact the Founder">Contacter le Fondateur</span></a>
+    <a class="btn-wa" href="https://wa.me/237673158050?text=Bonjour%2C%20je%20veux%20%C3%AAtre%20pr%C3%A9venu%20au%20lancement%20de%20NEXYA" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#ic-wa"/></svg><span data-fr="Être prévenu au lancement" data-en="Get notified at launch">Être prévenu au lancement</span></a>
+    <a class="btn-ghost" href="#features"><svg width="18" height="18" style="color:var(--primary)" aria-hidden="true"><use href="#ic-spark"/></svg><span data-fr="Découvrir NEXYA" data-en="Discover NEXYA">Découvrir NEXYA</span></a>
   </div>
+
+  <div class="hero-trust">
+    <span><svg aria-hidden="true"><use href="#ic-check"/></svg><span data-fr="Conforme RGPD et AI Act" data-en="GDPR and AI Act compliant">Conforme RGPD et AI Act</span></span>
+    <span><svg aria-hidden="true"><use href="#ic-check"/></svg><span data-fr="Optimisé jusqu'à la 2G" data-en="Optimized down to 2G">Optimisé jusqu'à la 2G</span></span>
+    <span><svg aria-hidden="true"><use href="#ic-check"/></svg><span data-fr="Français et anglais" data-en="French and English">Français et anglais</span></span>
+  </div>
+
   <div class="scroll-cue"><span data-fr="Découvrir" data-en="Discover">Découvrir</span><div class="scroll-cue-arrow"></div></div>
 </section>
 
-<section id="about"><div class="wrap" style="max-width:920px">
-  <div class="sec-header rv"><div class="sec-badge" data-fr="NEXYA · QU'EST-CE QUE C'EST ?" data-en="NEXYA · WHAT IS IT?">NEXYA · QU'EST-CE QUE C'EST ?</div><h2 class="sec-title"><span data-fr="Un assistant IA " data-en="A ">Un assistant IA </span><span class="hl" data-fr="qui travaille pour vous" data-en="next-gen AI that works for you">qui travaille pour vous</span></h2><div class="divider"></div></div>
-  <div class="terminal rv" id="terminal-el"><div class="term-bar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="term-title">nexya_ai · stream_response.log</span><div class="term-badge"><div class="term-dot"></div>NEXYA</div></div><div class="term-body"><span id="stream-out"></span><span class="cursor" id="stream-cur"></span></div></div>
+<section id="about"><div class="wrap">
+  <div class="sec-header rv"><div class="sec-badge" data-fr="NEXYA, QU'EST-CE QUE C'EST" data-en="WHAT IS NEXYA">NEXYA, QU'EST-CE QUE C'EST</div><h2 class="sec-title"><span data-fr="Un assistant IA " data-en="An AI assistant ">Un assistant IA </span><span class="hl" data-fr="qui travaille pour toi" data-en="that works for you">qui travaille pour toi</span></h2><div class="divider"></div></div>
+  <div class="about-grid">
+    <div class="terminal rv" id="terminal-el">
+      <div class="term-bar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="term-title">nexya_ai.stream</span><div class="term-badge"><div class="term-dot"></div>NEXYA</div></div>
+      <div class="term-body"><span id="stream-out"></span><span class="cursor" id="stream-cur"></span></div>
+    </div>
+    <div class="phone rv" aria-hidden="true">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="ph-status"><span>21:21</span><span class="sig"><i></i><i></i><i></i><i></i></span></div>
+          <div class="ph-header"><div class="ph-logo">N</div><span class="ph-name">NEXYA</span><span class="ph-expert"><span class="d"></span>Informatique</span></div>
+          <div class="ph-chat">
+            <div class="ph-bubble ph-user">Explique async/await en Python avec un exemple.</div>
+            <div class="ph-bubble ph-ai">Avec plaisir. <code>async/await</code> permet d'attendre une opération sans bloquer le reste du programme.<br><br>Imagine un serveur : pendant qu'une requête attend la base de données, il sert d'autres clients.</div>
+            <div class="ph-bubble ph-ai"><span class="ph-typing"><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="ph-input">
+            <div class="ph-pills"><span class="ph-pill geek">GEEK</span><span class="ph-pill loth">LOTH</span><span class="ph-pill justo">JUSTO</span></div>
+            <div class="ph-inrow"><span class="txt">Pose ta question...</span><span class="ph-send"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-send"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<div class="sep-line"></div>
+
+<section id="stats"><div class="wrap" style="padding-top:70px;padding-bottom:70px">
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-num">11</div><div class="stat-label" data-fr="Modes experts spécialisés" data-en="Specialized expert modes">Modes experts spécialisés</div></div>
+    <div class="stat"><div class="stat-num">8460</div><div class="stat-label" data-fr="Articles de droit OHADA et camerounais" data-en="OHADA and Cameroonian law articles">Articles de droit OHADA et camerounais</div></div>
+    <div class="stat"><div class="stat-num">107</div><div class="stat-label" data-fr="Recettes camerounaises propriétaires" data-en="Proprietary Cameroonian recipes">Recettes camerounaises propriétaires</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label" data-fr="Conforme RGPD et AI Act" data-en="GDPR and AI Act compliant">Conforme RGPD et AI Act</div></div>
+  </div>
 </div></section>
 
 <div class="sep-line"></div>
 
 <section id="features"><div class="wrap">
-  <div class="sec-header rv"><div class="sec-badge" data-fr="FONCTIONNALITÉS" data-en="FEATURES">FONCTIONNALITÉS</div><h2 class="sec-title"><span data-fr="Tout ce dont vous avez " data-en="Everything you ">Tout ce dont vous avez </span><span class="hl" data-fr="besoin" data-en="need">besoin</span></h2><div class="divider"></div></div>
+  <div class="sec-header rv"><div class="sec-badge" data-fr="FONCTIONNALITÉS" data-en="FEATURES">FONCTIONNALITÉS</div><h2 class="sec-title"><span data-fr="Bien plus qu'un " data-en="Far more than a ">Bien plus qu'un </span><span class="hl" data-fr="simple chatbot" data-en="simple chatbot">simple chatbot</span></h2><div class="divider"></div><p class="sec-desc" data-fr="Une seule application réunit le chat, la mémoire, la voix, la vision, les documents et 11 experts. Tu n'as plus besoin de dix outils." data-en="One single app brings together chat, memory, voice, vision, documents and 11 experts. You no longer need ten tools.">Une seule application réunit le chat, la mémoire, la voix, la vision, les documents et 11 experts. Tu n'as plus besoin de dix outils.</p></div>
   <div class="feat-grid">
-    <div class="feat-card" style="transition-delay:.0s;--card-glow:rgba(46,155,240,.15);--card-border:rgba(46,155,240,.3);--card-shadow:rgba(46,155,240,.15);--icon-bg:rgba(46,155,240,.08);--icon-border:rgba(46,155,240,.15)"><div class="feat-icon-wrap"><svg width="24" height="24" color="#2E9BF0"><use href="#ic-layers"/></svg></div><div class="feat-name" data-fr="Chat IA Multi-Modèles" data-en="Multi-Model AI Chat">Chat IA Multi-Modèles</div><div class="feat-desc" data-fr="GPT, Gemini, Qwen — les meilleurs modèles dans une seule interface. Réponses en temps réel via streaming SSE, optimisé même en 3G." data-en="GPT, Gemini, Qwen — the world's best models in one interface. Real-time SSE streaming, optimized even on 3G.">GPT, Gemini, Qwen — les meilleurs modèles dans une seule interface. Réponses en temps réel via streaming SSE, optimisé même en 3G.</div></div>
-    <div class="feat-card" style="transition-delay:.1s;--card-glow:rgba(155,89,240,.15);--card-border:rgba(155,89,240,.3);--card-shadow:rgba(155,89,240,.15);--icon-bg:rgba(155,89,240,.08);--icon-border:rgba(155,89,240,.15)"><div class="feat-icon-wrap"><svg width="24" height="24" color="#9B59F0"><use href="#ic-cal"/></svg></div><div class="feat-name" data-fr="Prompt Scheduler" data-en="Prompt Scheduler">Prompt Scheduler</div><div class="feat-desc" data-fr="Planifiez vos prompts IA : une fois, chaque jour, chaque semaine. NEXYA travaille pendant que vous dormez." data-en="Schedule your AI prompts: one-time, daily, weekly. NEXYA works while you sleep.">Planifiez vos prompts IA : une fois, chaque jour, chaque semaine. NEXYA travaille pendant que vous dormez.</div></div>
-    <div class="feat-card" style="transition-delay:.2s;--card-glow:rgba(23,177,48,.15);--card-border:rgba(23,177,48,.3);--card-shadow:rgba(23,177,48,.15);--icon-bg:rgba(23,177,48,.08);--icon-border:rgba(23,177,48,.15)"><div class="feat-icon-wrap"><svg width="24" height="24" color="#17B130"><use href="#ic-cam"/></svg></div><div class="feat-name" data-fr="Camera &amp; Vision IA" data-en="Camera &amp; AI Vision">Camera &amp; Vision IA</div><div class="feat-desc" data-fr="Pointez votre caméra sur n'importe quoi — NEXYA analyse et identifie en temps réel." data-en="Point your camera at anything — NEXYA analyzes and identifies in real time.">Pointez votre caméra sur n'importe quoi — NEXYA analyse et identifie en temps réel.</div></div>
-    <div class="feat-card" style="transition-delay:.3s;--card-glow:rgba(232,160,32,.15);--card-border:rgba(232,160,32,.3);--card-shadow:rgba(232,160,32,.15);--icon-bg:rgba(232,160,32,.08);--icon-border:rgba(232,160,32,.15)"><div class="feat-icon-wrap"><svg width="24" height="24" color="#E8A020"><use href="#ic-spark"/></svg></div><div class="feat-name" data-fr="5 Modes Experts" data-en="5 Expert Modes">5 Modes Experts</div><div class="feat-desc" data-fr="Informatique, Sciences, Finance, Langues, Cuisine. Des IA calibrées pour chaque domaine." data-en="Computer Science, Sciences, Finance, Languages, Cooking. AIs calibrated per domain.">Informatique, Sciences, Finance, Langues, Cuisine. Des IA calibrées pour chaque domaine.</div></div>
-    <div class="feat-card" style="transition-delay:.4s;--card-glow:rgba(53,163,245,.15);--card-border:rgba(53,163,245,.3);--card-shadow:rgba(53,163,245,.15);--icon-bg:rgba(53,163,245,.08);--icon-border:rgba(53,163,245,.15)"><div class="feat-icon-wrap"><svg width="24" height="24" color="#35A3F5"><use href="#ic-mic"/></svg></div><div class="feat-name" data-fr="Voix Naturelle" data-en="Natural Voice">Voix Naturelle</div><div class="feat-desc" data-fr="Parlez à NEXYA — Whisper transcrit, l'IA répond, une voix lit la réponse. 100% mains libres." data-en="Talk to NEXYA — Whisper transcribes, AI responds, a voice reads back. 100% hands-free.">Parlez à NEXYA — Whisper transcrit, l'IA répond, une voix lit la réponse. 100% mains libres.</div></div>
-    <div class="feat-card" style="transition-delay:.5s;--card-glow:rgba(227,84,6,.15);--card-border:rgba(227,84,6,.3);--card-shadow:rgba(227,84,6,.15);--icon-bg:rgba(227,84,6,.08);--icon-border:rgba(227,84,6,.15)"><div class="feat-icon-wrap"><svg width="24" height="24" color="#E35406"><use href="#ic-img"/></svg></div><div class="feat-name" data-fr="Bibliothèque &amp; Projets" data-en="Library &amp; Projects">Bibliothèque &amp; Projets</div><div class="feat-desc" data-fr="Organisez vos conversations par projets. Toutes vos créations IA dans votre bibliothèque." data-en="Organize conversations by projects. All your AI creations in your library.">Organisez vos conversations par projets. Toutes vos créations IA dans votre bibliothèque.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(46,155,240,.15);--card-border:rgba(46,155,240,.3);--card-shadow:rgba(46,155,240,.15);--icon-bg:rgba(46,155,240,.08);--icon-border:rgba(46,155,240,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#2E9BF0" aria-hidden="true"><use href="#ic-layers"/></svg></div><div class="feat-name" data-fr="Chat multi-modèles" data-en="Multi-model chat">Chat multi-modèles</div><div class="feat-desc" data-fr="NEXYA orchestre Gemini, GPT, Claude et Qwen et choisit le meilleur pour chaque tâche. Réponses en temps réel, fluides même en 3G." data-en="NEXYA orchestrates Gemini, GPT, Claude and Qwen and picks the best for each task. Real-time answers, smooth even on 3G.">NEXYA orchestre Gemini, GPT, Claude et Qwen et choisit le meilleur pour chaque tâche. Réponses en temps réel, fluides même en 3G.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(23,177,48,.15);--card-border:rgba(23,177,48,.3);--card-shadow:rgba(23,177,48,.15);--icon-bg:rgba(23,177,48,.08);--icon-border:rgba(23,177,48,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#17B130" aria-hidden="true"><use href="#ic-brain"/></svg></div><div class="feat-name" data-fr="Mémoire IA" data-en="AI Memory">Mémoire IA</div><div class="feat-desc" data-fr="NEXYA se souvient de toi d'une conversation à l'autre, dans le respect du RGPD. Tu contrôles, consultes et effaces ce qu'elle retient." data-en="NEXYA remembers you across conversations, GDPR-compliant. You control, view and delete what it keeps.">NEXYA se souvient de toi d'une conversation à l'autre, dans le respect du RGPD. Tu contrôles, consultes et effaces ce qu'elle retient.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(155,89,240,.15);--card-border:rgba(155,89,240,.3);--card-shadow:rgba(155,89,240,.15);--icon-bg:rgba(155,89,240,.08);--icon-border:rgba(155,89,240,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#9B59F0" aria-hidden="true"><use href="#ic-cal"/></svg></div><div class="feat-name" data-fr="Planificateur de tâches" data-en="Task scheduler">Planificateur de tâches</div><div class="feat-desc" data-fr="Crée un rappel directement dans la conversation. NEXYA exécute tes tâches planifiées pendant que tu vis ta vie." data-en="Create a reminder right in the chat. NEXYA runs your scheduled tasks while you live your life.">Crée un rappel directement dans la conversation. NEXYA exécute tes tâches planifiées pendant que tu vis ta vie.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(53,163,245,.15);--card-border:rgba(53,163,245,.3);--card-shadow:rgba(53,163,245,.15);--icon-bg:rgba(53,163,245,.08);--icon-border:rgba(53,163,245,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#35A3F5" aria-hidden="true"><use href="#ic-cam"/></svg></div><div class="feat-name" data-fr="Vision et caméra" data-en="Vision and camera">Vision et caméra</div><div class="feat-desc" data-fr="Pointe ta caméra sur n'importe quoi. NEXYA analyse, identifie et explique tes photos et documents en temps réel." data-en="Point your camera at anything. NEXYA analyzes, identifies and explains your photos and documents in real time.">Pointe ta caméra sur n'importe quoi. NEXYA analyse, identifie et explique tes photos et documents en temps réel.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(232,160,32,.15);--card-border:rgba(232,160,32,.3);--card-shadow:rgba(232,160,32,.15);--icon-bg:rgba(232,160,32,.08);--icon-border:rgba(232,160,32,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#E8A020" aria-hidden="true"><use href="#ic-mic"/></svg></div><div class="feat-name" data-fr="Voix naturelle" data-en="Natural voice">Voix naturelle</div><div class="feat-desc" data-fr="Parle à NEXYA, elle transcrit. Elle te répond à voix haute avec 6 voix NEXYA. Une expérience 100% mains libres." data-en="Talk to NEXYA, it transcribes. It answers out loud with 6 NEXYA voices. A 100% hands-free experience.">Parle à NEXYA, elle transcrit. Elle te répond à voix haute avec 6 voix NEXYA. Une expérience 100% mains libres.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(240,78,110,.15);--card-border:rgba(240,78,110,.3);--card-shadow:rgba(240,78,110,.15);--icon-bg:rgba(240,78,110,.08);--icon-border:rgba(240,78,110,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#F04E6E" aria-hidden="true"><use href="#ic-img"/></svg></div><div class="feat-name" data-fr="Génération d'images" data-en="Image generation">Génération d'images</div><div class="feat-desc" data-fr="Crée des visuels à la demande avec NEXYA Studio. Marquage NEXYA et provenance cryptographique conforme à l'AI Act." data-en="Create visuals on demand with NEXYA Studio. NEXYA watermark and cryptographic provenance, AI Act compliant.">Crée des visuels à la demande avec NEXYA Studio. Marquage NEXYA et provenance cryptographique conforme à l'AI Act.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(46,155,240,.15);--card-border:rgba(46,155,240,.3);--card-shadow:rgba(46,155,240,.15);--icon-bg:rgba(46,155,240,.08);--icon-border:rgba(46,155,240,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#2E9BF0" aria-hidden="true"><use href="#ic-doc"/></svg></div><div class="feat-name" data-fr="Documents pro" data-en="Pro documents">Documents pro</div><div class="feat-desc" data-fr="NEXYA génère de vrais documents PDF et Word brandés, prêts à envoyer. Lettres, rapports, comptes rendus, et bien plus." data-en="NEXYA generates real branded PDF and Word documents, ready to send. Letters, reports, summaries and more.">NEXYA génère de vrais documents PDF et Word brandés, prêts à envoyer. Lettres, rapports, comptes rendus, et bien plus.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(23,177,48,.15);--card-border:rgba(23,177,48,.3);--card-shadow:rgba(23,177,48,.15);--icon-bg:rgba(23,177,48,.08);--icon-border:rgba(23,177,48,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#17B130" aria-hidden="true"><use href="#ic-send"/></svg></div><div class="feat-name" data-fr="Brouillons actionnables" data-en="Actionable drafts">Brouillons actionnables</div><div class="feat-desc" data-fr="Demande un email, un message WhatsApp, un SMS, un post LinkedIn ou un tweet. NEXYA le rédige et tu l'envoies en un tap." data-en="Ask for an email, a WhatsApp message, an SMS, a LinkedIn post or a tweet. NEXYA writes it and you send it in one tap.">Demande un email, un message WhatsApp, un SMS, un post LinkedIn ou un tweet. NEXYA le rédige et tu l'envoies en un tap.</div></div>
+    <div class="feat-card" style="--card-glow:rgba(227,84,6,.15);--card-border:rgba(227,84,6,.3);--card-shadow:rgba(227,84,6,.15);--icon-bg:rgba(227,84,6,.08);--icon-border:rgba(227,84,6,.15)"><div class="feat-icon-wrap"><svg width="23" height="23" style="color:#E35406" aria-hidden="true"><use href="#ic-folder"/></svg></div><div class="feat-name" data-fr="Projets et bibliothèque" data-en="Projects and library">Projets et bibliothèque</div><div class="feat-desc" data-fr="Organise tes conversations par projet, dépose tes fichiers et NEXYA les comprend. Toutes tes créations dans ta bibliothèque." data-en="Organize conversations by project, drop your files and NEXYA understands them. All your creations in your library.">Organise tes conversations par projet, dépose tes fichiers et NEXYA les comprend. Toutes tes créations dans ta bibliothèque.</div></div>
   </div>
 </div></section>
 
 <div class="sep-line"></div>
 
-<section id="orbs"><div class="wrap">
-  <div class="sec-header rv"><div class="sec-badge" data-fr="TOUT EN UN" data-en="ALL IN ONE">TOUT EN UN</div><h2 class="sec-title"><span data-fr="Un écosystème " data-en="A complete ">Un écosystème </span><span class="hl" data-fr="complet" data-en="ecosystem">complet</span></h2><div class="divider"></div></div>
-  <div class="orbs-grid">
-    <div class="orb-card rv" style="--orb-color:#9B59F0;--orb-rgb:155,89,240;--float-dur:5.5s;--float-del:0s"><div class="orb-circle"><svg width="32" height="32" color="#9B59F0"><use href="#ic-cal"/></svg></div><div class="orb-name">Prompt Scheduler</div><div class="orb-desc" data-fr="Programmez vos tâches IA à l'avance. Unique, quotidien, hebdomadaire." data-en="Schedule your AI tasks in advance. One-time, daily, weekly.">Programmez vos tâches IA à l'avance. Unique, quotidien, hebdomadaire.</div><div class="orb-tag" data-fr="EXCLUSIF" data-en="EXCLUSIVE">EXCLUSIF</div></div>
-    <div class="orb-card rv" style="--orb-color:#F04E6E;--orb-rgb:240,78,110;--float-dur:6.5s;--float-del:.6s"><div class="orb-circle"><svg width="32" height="32" color="#F04E6E"><use href="#ic-heart"/></svg></div><div class="orb-name" data-fr="Favoris" data-en="Favorites">Favoris</div><div class="orb-desc" data-fr="Épinglez vos meilleures conversations. Retrouvez-les instantanément." data-en="Pin your best conversations. Find them instantly.">Épinglez vos meilleures conversations. Retrouvez-les instantanément.</div><div class="orb-tag" data-fr="ORGANISÉ" data-en="ORGANIZED">ORGANISÉ</div></div>
-    <div class="orb-card rv" style="--orb-color:#17B130;--orb-rgb:23,177,48;--float-dur:7s;--float-del:.3s"><div class="orb-circle"><svg width="32" height="32" color="#17B130"><use href="#ic-cam"/></svg></div><div class="orb-name" data-fr="Vision Caméra" data-en="Camera Vision">Vision Caméra</div><div class="orb-desc" data-fr="Pointez. Demandez. Obtenez. Analyse en temps réel." data-en="Point. Ask. Get answers. Real-time analysis.">Pointez. Demandez. Obtenez. Analyse en temps réel.</div><div class="orb-tag" data-fr="TEMPS RÉEL" data-en="REAL TIME">TEMPS RÉEL</div></div>
-    <div class="orb-card rv" style="--orb-color:#35A3F5;--orb-rgb:53,163,245;--float-dur:5.8s;--float-del:.9s"><div class="orb-circle"><svg width="32" height="32" color="#35A3F5"><use href="#ic-mic"/></svg></div><div class="orb-name" data-fr="Voix &amp; Audio" data-en="Voice &amp; Audio">Voix &amp; Audio</div><div class="orb-desc" data-fr="Transcription Whisper. Synthèse vocale avec personnalités." data-en="Whisper transcription. Voice synthesis with personalities.">Transcription Whisper. Synthèse vocale avec personnalités.</div><div class="orb-tag" data-fr="MULTIMODAL" data-en="MULTIMODAL">MULTIMODAL</div></div>
-    <div class="orb-card rv" style="--orb-color:#E35406;--orb-rgb:227,84,6;--float-dur:6.2s;--float-del:.5s"><div class="orb-circle"><svg width="32" height="32" color="#E35406"><use href="#ic-img"/></svg></div><div class="orb-name" data-fr="Bibliothèque" data-en="Library">Bibliothèque</div><div class="orb-desc" data-fr="Images, vidéos, audios générés classés par date et type." data-en="Images, videos, audio sorted by date and type.">Images, vidéos, audios générés classés par date et type.</div><div class="orb-tag" data-fr="ORGANISÉ" data-en="ORGANIZED">ORGANISÉ</div></div>
-    <div class="orb-card rv" style="--orb-color:#2E9BF0;--orb-rgb:46,155,240;--float-dur:6.8s;--float-del:.2s"><div class="orb-circle"><svg width="32" height="32" color="#2E9BF0"><use href="#ic-folder"/></svg></div><div class="orb-name" data-fr="Projets" data-en="Projects">Projets</div><div class="orb-desc" data-fr="Espaces de travail dédiés avec instructions IA personnalisées." data-en="Dedicated workspaces with custom AI instructions.">Espaces de travail dédiés avec instructions IA personnalisées.</div><div class="orb-tag">PRO</div></div>
-  </div>
-</div></section>
-
-<div class="sep-line"></div>
-
-<!-- ══════════════════════════════════════════
-     5 MODES EXPERTS — GRANDS RECTANGLES
-══════════════════════════════════════════ -->
 <section id="experts"><div class="wrap">
-  <div class="sec-header rv">
-    <div class="sec-badge" data-fr="MODES EXPERTS" data-en="EXPERT MODES">MODES EXPERTS</div>
-    <h2 class="sec-title"><span data-fr="5 IA spécialisées. " data-en="5 specialized AIs. ">5 IA spécialisées. </span><span class="hl" data-fr="Un seul assistant." data-en="One assistant.">Un seul assistant.</span></h2>
-    <div class="divider"></div>
-    <p class="sec-desc" data-fr="Chaque Mode Expert est une IA calibrée pour exceller dans son domaine — pas une IA générique, une vraie expertise." data-en="Each Expert Mode is an AI calibrated to excel in its domain — not a generic AI, real expertise.">Chaque Mode Expert est une IA calibrée pour exceller dans son domaine — pas une IA générique, une vraie expertise.</p>
-  </div>
-  <div class="experts-list">
+  <div class="sec-header rv"><div class="sec-badge" data-fr="MODES EXPERTS" data-en="EXPERT MODES">MODES EXPERTS</div><h2 class="sec-title"><span data-fr="11 IA spécialisées. " data-en="11 specialized AIs. ">11 IA spécialisées. </span><span class="hl" data-fr="Un seul assistant." data-en="One assistant.">Un seul assistant.</span></h2><div class="divider"></div><p class="sec-desc" data-fr="Chaque mode expert est une IA calibrée pour exceller dans son domaine, pas un chatbot standard. Six sont disponibles au lancement, cinq arrivent juste après." data-en="Each expert mode is an AI calibrated to excel in its field, not a one-size-fits-all chatbot. Six are available at launch, five follow right after.">Chaque mode expert est une IA calibrée pour exceller dans son domaine, pas un chatbot standard. Six sont disponibles au lancement, cinq arrivent juste après.</p></div>
 
-    <div class="exp-rect" style="--er-color:#17B130;--er-rgb:23,177,48">
-      <div class="exp-rect-inner">
-        <div class="exp-rect-icon"><svg width="52" height="52" color="#17B130"><use href="#ic-monitor"/></svg></div>
-        <div class="exp-rect-body">
-          <div class="exp-rect-label" data-fr="MODE EXPERT · 01" data-en="EXPERT MODE · 01">MODE EXPERT · 01</div>
-          <div class="exp-rect-title">EXPERT <span class="exp-mode-word">INFORMATIQUE</span></div>
-          <div class="exp-rect-desc" data-fr="Une IA taillée pour les développeurs et ingénieurs. Débogage ultra-précis, revue d'architecture, génération de code propre, cybersécurité et algorithmie avancée — avec la rigueur d'un senior dev." data-en="An AI built for developers and engineers. Ultra-precise debugging, architecture review, clean code generation, cybersecurity and advanced algorithms — with the rigor of a senior dev.">Une IA taillée pour les développeurs et ingénieurs. Débogage ultra-précis, revue d'architecture, génération de code propre, cybersécurité et algorithmie avancée — avec la rigueur d'un senior dev.</div>
-          <div class="exp-rect-tags"><span class="exp-rect-tag">Code</span><span class="exp-rect-tag">Débogage</span><span class="exp-rect-tag">Architecture</span><span class="exp-rect-tag">DevOps</span><span class="exp-rect-tag">Cybersécurité</span><span class="exp-rect-tag">Algorithmie</span></div>
-        </div>
-        <div class="exp-rect-num">01</div>
-      </div>
+  <div class="exp-grid">
+
+    <div class="exp-card" style="--ec:#9B59F0;--ecr:155,89,240">
+      <span class="exp-status live" data-fr="Disponible" data-en="Available">Disponible</span>
+      <div class="exp-flag"><svg width="12" height="12" aria-hidden="true"><use href="#ic-scale"/></svg><span data-fr="Nouveau . RAG OHADA" data-en="New . OHADA RAG">Nouveau . RAG OHADA</span></div>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#9B59F0" aria-hidden="true"><use href="#ic-scale"/></svg></div><div class="exp-name" data-fr="Expert Droit" data-en="Law Expert">Expert Droit</div></div>
+      <div class="exp-desc" data-fr="Information juridique fondée sur 14 codes OHADA, CIMA et camerounais, soit 8460 articles. Droit des affaires, civil, pénal, travail et foncier. Ne remplace pas un avocat." data-en="Legal information grounded in 14 OHADA, CIMA and Cameroonian codes, 8460 articles. Business, civil, criminal, labor and land law. Not a substitute for a lawyer.">Information juridique fondée sur 14 codes OHADA, CIMA et camerounais, soit 8460 articles. Droit des affaires, civil, pénal, travail et foncier. Ne remplace pas un avocat.</div>
+      <div class="exp-tags"><span class="exp-tag">OHADA</span><span class="exp-tag">Droit civil</span><span class="exp-tag">Affaires</span><span class="exp-tag">Travail</span></div>
     </div>
 
-    <div class="exp-rect" style="--er-color:#E2AB0A;--er-rgb:226,171,10">
-      <div class="exp-rect-inner">
-        <div class="exp-rect-icon"><svg width="52" height="52" color="#E2AB0A"><use href="#ic-trend"/></svg></div>
-        <div class="exp-rect-body">
-          <div class="exp-rect-label" data-fr="MODE EXPERT · 02" data-en="EXPERT MODE · 02">MODE EXPERT · 02</div>
-          <div class="exp-rect-title">EXPERT <span class="exp-mode-word">FINANCE ET BUSINESS</span></div>
-          <div class="exp-rect-desc" data-fr="Votre analyste financier personnel disponible 24h/24. Analyse de marchés, stratégie d'investissement, comptabilité, gestion de trésorerie et plans d'affaires construits avec rigueur." data-en="Your personal financial analyst available 24/7. Market analysis, investment strategy, accounting, cash flow management and business plans built with rigor.">Votre analyste financier personnel disponible 24h/24. Analyse de marchés, stratégie d'investissement, comptabilité, gestion de trésorerie et plans d'affaires construits avec rigueur.</div>
-          <div class="exp-rect-tags"><span class="exp-rect-tag">Marchés</span><span class="exp-rect-tag">Investissements</span><span class="exp-rect-tag">Comptabilité</span><span class="exp-rect-tag">Stratégie</span><span class="exp-rect-tag">Entrepreneuriat</span></div>
-        </div>
-        <div class="exp-rect-num">02</div>
-      </div>
+    <div class="exp-card" style="--ec:#E35406;--ecr:227,84,6">
+      <span class="exp-status live" data-fr="Disponible" data-en="Available">Disponible</span>
+      <div class="exp-flag"><svg width="12" height="12" aria-hidden="true"><use href="#ic-cook"/></svg><span data-fr="RAG Cameroun" data-en="Cameroon RAG">RAG Cameroun</span></div>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#E35406" aria-hidden="true"><use href="#ic-cook"/></svg></div><div class="exp-name" data-fr="Cuisine et Vie" data-en="Cooking and Life">Cuisine et Vie</div></div>
+      <div class="exp-desc" data-fr="Ton chef personnel nourri d'un corpus propriétaire de 107 recettes camerounaises. Recettes sur mesure, substitutions d'ingrédients, astuces du quotidien." data-en="Your personal chef powered by a proprietary corpus of 107 Cameroonian recipes. Custom recipes, ingredient swaps, daily tips.">Ton chef personnel nourri d'un corpus propriétaire de 107 recettes camerounaises. Recettes sur mesure, substitutions d'ingrédients, astuces du quotidien.</div>
+      <div class="exp-tags"><span class="exp-tag">Recettes</span><span class="exp-tag">Nutrition</span><span class="exp-tag">Astuces</span></div>
     </div>
 
-    <div class="exp-rect" style="--er-color:#D97706;--er-rgb:217,119,6">
-      <div class="exp-rect-inner">
-        <div class="exp-rect-icon"><svg width="52" height="52" color="#D97706"><use href="#ic-globe"/></svg></div>
-        <div class="exp-rect-body">
-          <div class="exp-rect-label" data-fr="MODE EXPERT · 03" data-en="EXPERT MODE · 03">MODE EXPERT · 03</div>
-          <div class="exp-rect-title">EXPERT <span class="exp-mode-word">LANGUES</span></div>
-          <div class="exp-rect-desc" data-fr="Un polyglotte numérique maîtrisant des dizaines de langues. Traduction précise avec nuances culturelles, correction grammaticale avancée, apprentissage accéléré et rédaction professionnelle multilingue." data-en="A digital polyglot mastering dozens of languages. Precise translation with cultural nuances, advanced grammar correction, accelerated learning and professional multilingual writing.">Un polyglotte numérique maîtrisant des dizaines de langues. Traduction précise avec nuances culturelles, correction grammaticale avancée, apprentissage accéléré et rédaction professionnelle multilingue.</div>
-          <div class="exp-rect-tags"><span class="exp-rect-tag">Traduction</span><span class="exp-rect-tag">Grammaire</span><span class="exp-rect-tag">Apprentissage</span><span class="exp-rect-tag">Rédaction</span><span class="exp-rect-tag">Cultures</span></div>
-        </div>
-        <div class="exp-rect-num">03</div>
-      </div>
+    <div class="exp-card" style="--ec:#17B130;--ecr:23,177,48">
+      <span class="exp-status live" data-fr="Disponible" data-en="Available">Disponible</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#17B130" aria-hidden="true"><use href="#ic-monitor"/></svg></div><div class="exp-name" data-fr="Informatique" data-en="Computer Science">Informatique</div></div>
+      <div class="exp-desc" data-fr="Une IA taillée pour les développeurs et ingénieurs. Débogage précis, revue d'architecture, code propre, cybersécurité et algorithmie avancée." data-en="An AI built for developers and engineers. Precise debugging, architecture review, clean code, cybersecurity and advanced algorithms.">Une IA taillée pour les développeurs et ingénieurs. Débogage précis, revue d'architecture, code propre, cybersécurité et algorithmie avancée.</div>
+      <div class="exp-tags"><span class="exp-tag">Code</span><span class="exp-tag">Débogage</span><span class="exp-tag">Architecture</span><span class="exp-tag">Cybersécurité</span></div>
     </div>
 
-    <div class="exp-rect" style="--er-color:#E35406;--er-rgb:227,84,6">
-      <div class="exp-rect-inner">
-        <div class="exp-rect-icon"><svg width="52" height="52" color="#E35406"><use href="#ic-cook"/></svg></div>
-        <div class="exp-rect-body">
-          <div class="exp-rect-label" data-fr="MODE EXPERT · 04" data-en="EXPERT MODE · 04">MODE EXPERT · 04</div>
-          <div class="exp-rect-title">EXPERT <span class="exp-mode-word">CUISINES</span></div>
-          <div class="exp-rect-desc" data-fr="Votre chef personnel aux commandes. Recettes sur mesure selon vos ingrédients, plans nutritionnels adaptés, découverte des cuisines du monde — saveurs et expertise réunies." data-en="Your personal chef in command. Custom recipes based on your ingredients, tailored nutrition plans, discovery of world cuisines — flavors and expertise combined.">Votre chef personnel aux commandes. Recettes sur mesure selon vos ingrédients, plans nutritionnels adaptés, découverte des cuisines du monde — saveurs et expertise réunies.</div>
-          <div class="exp-rect-tags"><span class="exp-rect-tag">Recettes</span><span class="exp-rect-tag">Nutrition</span><span class="exp-rect-tag">Cuisine du monde</span><span class="exp-rect-tag">Pâtisserie</span><span class="exp-rect-tag">Santé</span></div>
-        </div>
-        <div class="exp-rect-num">04</div>
-      </div>
+    <div class="exp-card" style="--ec:#35A3F5;--ecr:53,163,245">
+      <span class="exp-status live" data-fr="Disponible" data-en="Available">Disponible</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#35A3F5" aria-hidden="true"><use href="#ic-beaker"/></svg></div><div class="exp-name" data-fr="Sciences et Maths" data-en="Science and Maths">Sciences et Maths</div></div>
+      <div class="exp-desc" data-fr="Physique, chimie, biologie et mathématiques, avec des démonstrations rigoureuses en notation LaTeX et des explications qui partent de zéro." data-en="Physics, chemistry, biology and maths, with rigorous LaTeX demonstrations and explanations that start from scratch.">Physique, chimie, biologie et mathématiques, avec des démonstrations rigoureuses en notation LaTeX et des explications qui partent de zéro.</div>
+      <div class="exp-tags"><span class="exp-tag">Physique</span><span class="exp-tag">Chimie</span><span class="exp-tag">Maths</span><span class="exp-tag">Recherche</span></div>
     </div>
 
-    <div class="exp-rect" style="--er-color:#35A3F5;--er-rgb:53,163,245">
-      <div class="exp-rect-inner">
-        <div class="exp-rect-icon"><svg width="52" height="52" color="#35A3F5"><use href="#ic-beaker"/></svg></div>
-        <div class="exp-rect-body">
-          <div class="exp-rect-label" data-fr="MODE EXPERT · 05" data-en="EXPERT MODE · 05">MODE EXPERT · 05</div>
-          <div class="exp-rect-title">EXPERT <span class="exp-mode-word">SCIENCE ET MATHS</span></div>
-          <div class="exp-rect-desc" data-fr="Un chercheur virtuel à portée de main. Physique, chimie, biologie, mathématiques — des démonstrations rigoureuses, des explications claires, et un accompagnement expert pour vos travaux de recherche." data-en="A virtual researcher at your fingertips. Physics, chemistry, biology, mathematics — rigorous demonstrations, clear explanations, and expert support for your research work.">Un chercheur virtuel à portée de main. Physique, chimie, biologie, mathématiques — des démonstrations rigoureuses, des explications claires, et un accompagnement expert pour vos travaux de recherche.</div>
-          <div class="exp-rect-tags"><span class="exp-rect-tag">Physique</span><span class="exp-rect-tag">Chimie</span><span class="exp-rect-tag">Biologie</span><span class="exp-rect-tag">Mathématiques</span><span class="exp-rect-tag">Statistiques</span><span class="exp-rect-tag">Recherche</span></div>
-        </div>
-        <div class="exp-rect-num">05</div>
-      </div>
+    <div class="exp-card" style="--ec:#D97706;--ecr:217,119,6">
+      <span class="exp-status live" data-fr="Disponible" data-en="Available">Disponible</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#D97706" aria-hidden="true"><use href="#ic-globe"/></svg></div><div class="exp-name" data-fr="Langues" data-en="Languages">Langues</div></div>
+      <div class="exp-desc" data-fr="Un polyglotte numérique. Traduction nuancée avec le contexte culturel, correction grammaticale avancée, apprentissage accéléré et rédaction multilingue." data-en="A digital polyglot. Nuanced translation with cultural context, advanced grammar correction, accelerated learning and multilingual writing.">Un polyglotte numérique. Traduction nuancée avec le contexte culturel, correction grammaticale avancée, apprentissage accéléré et rédaction multilingue.</div>
+      <div class="exp-tags"><span class="exp-tag">Traduction</span><span class="exp-tag">Grammaire</span><span class="exp-tag">Apprentissage</span></div>
+    </div>
+
+    <div class="exp-card" style="--ec:#2E9BF0;--ecr:46,155,240">
+      <span class="exp-status live" data-fr="Disponible" data-en="Available">Disponible</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#2E9BF0" aria-hidden="true"><use href="#ic-spark"/></svg></div><div class="exp-name" data-fr="Général" data-en="General">Général</div></div>
+      <div class="exp-desc" data-fr="Ton assistant polyvalent pour tout le reste. Réponses précises et personnalisées, avec la mémoire de tes échanges et un aiguillage intelligent vers le bon expert." data-en="Your all-round assistant for everything else. Precise, personalized answers, with memory of your chats and smart routing to the right expert.">Ton assistant polyvalent pour tout le reste. Réponses précises et personnalisées, avec la mémoire de tes échanges et un aiguillage intelligent vers le bon expert.</div>
+      <div class="exp-tags"><span class="exp-tag">Polyvalent</span><span class="exp-tag">Mémoire</span><span class="exp-tag">Aiguillage</span></div>
+    </div>
+
+    <div class="exp-card soon" style="--ec:#E2AB0A;--ecr:226,171,10">
+      <span class="exp-status soon" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#E2AB0A" aria-hidden="true"><use href="#ic-trend"/></svg></div><div class="exp-name" data-fr="Finance et Business" data-en="Finance and Business">Finance et Business</div></div>
+      <div class="exp-desc" data-fr="Ton analyste financier disponible 24h sur 24. Analyse de marchés, stratégie d'investissement, comptabilité et business plans en contexte OHADA et Mobile Money." data-en="Your financial analyst, 24/7. Market analysis, investment strategy, accounting and business plans in an OHADA and Mobile Money context.">Ton analyste financier disponible 24h sur 24. Analyse de marchés, stratégie d'investissement, comptabilité et business plans en contexte OHADA et Mobile Money.</div>
+      <div class="exp-tags"><span class="exp-tag">Marchés</span><span class="exp-tag">Comptabilité</span><span class="exp-tag">Stratégie</span></div>
+    </div>
+
+    <div class="exp-card soon" style="--ec:#F04E6E;--ecr:240,78,110">
+      <span class="exp-status soon" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#F04E6E" aria-hidden="true"><use href="#ic-img"/></svg></div><div class="exp-name" data-fr="NEXYA Studio" data-en="NEXYA Studio">NEXYA Studio</div></div>
+      <div class="exp-desc" data-fr="Génération d'images premium. Crée des visuels uniques à partir d'une simple description, avec marquage NEXYA et conformité AI Act." data-en="Premium image generation. Create unique visuals from a simple description, with NEXYA watermark and AI Act compliance.">Génération d'images premium. Crée des visuels uniques à partir d'une simple description, avec marquage NEXYA et conformité AI Act.</div>
+      <div class="exp-tags"><span class="exp-tag">Images</span><span class="exp-tag">Créatif</span><span class="exp-tag">C2PA</span></div>
+    </div>
+
+    <div class="exp-card soon" style="--ec:#0EA5A5;--ecr:14,165,165">
+      <span class="exp-status soon" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#0EA5A5" aria-hidden="true"><use href="#ic-gear"/></svg></div><div class="exp-name" data-fr="Ingénierie" data-en="Engineering">Ingénierie</div></div>
+      <div class="exp-desc" data-fr="Génie civil, mécanique, électrique, énergies et télécoms. Calculs détaillés, choix de matériaux et normes ISO, EN et NF, calibrés pour le terrain." data-en="Civil, mechanical, electrical, energy and telecom engineering. Detailed calculations, material choices and ISO, EN, NF standards, built for the field.">Génie civil, mécanique, électrique, énergies et télécoms. Calculs détaillés, choix de matériaux et normes ISO, EN et NF, calibrés pour le terrain.</div>
+      <div class="exp-tags"><span class="exp-tag">Calculs</span><span class="exp-tag">Matériaux</span><span class="exp-tag">Normes</span></div>
+    </div>
+
+    <div class="exp-card soon" style="--ec:#16A34A;--ecr:22,163,74">
+      <span class="exp-status soon" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#16A34A" aria-hidden="true"><use href="#ic-target"/></svg></div><div class="exp-name" data-fr="Productivité et Vie" data-en="Productivity and Life">Productivité et Vie</div></div>
+      <div class="exp-desc" data-fr="Organisation du temps, prise de décision, routines et gestion de projets personnels. Méthodes GTD, Eisenhower et OKR, appliquées à ta vie réelle." data-en="Time management, decision making, routines and personal project management. GTD, Eisenhower and OKR methods, applied to your real life.">Organisation du temps, prise de décision, routines et gestion de projets personnels. Méthodes GTD, Eisenhower et OKR, appliquées à ta vie réelle.</div>
+      <div class="exp-tags"><span class="exp-tag">Organisation</span><span class="exp-tag">Habitudes</span><span class="exp-tag">Décision</span></div>
+    </div>
+
+    <div class="exp-card soon" style="--ec:#EF4444;--ecr:239,68,68">
+      <span class="exp-status soon" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+      <div class="exp-top"><div class="exp-icon"><svg width="24" height="24" style="color:#EF4444" aria-hidden="true"><use href="#ic-pulse"/></svg></div><div class="exp-name" data-fr="Médecine" data-en="Medicine">Médecine</div></div>
+      <div class="exp-desc" data-fr="Information médicale générale, prévention et orientation, avec une rigueur clinique stricte. Jamais de diagnostic ni de prescription. Ne remplace pas un médecin." data-en="General medical information, prevention and guidance, with strict clinical rigor. Never a diagnosis or prescription. Not a substitute for a doctor.">Information médicale générale, prévention et orientation, avec une rigueur clinique stricte. Jamais de diagnostic ni de prescription. Ne remplace pas un médecin.</div>
+      <div class="exp-tags"><span class="exp-tag">Information</span><span class="exp-tag">Prévention</span><span class="exp-tag">Orientation</span></div>
     </div>
 
   </div>
@@ -458,34 +624,115 @@ footer{position:relative;z-index:1;padding:52px 32px 36px;border-top:1px solid v
 
 <div class="sep-line"></div>
 
-<section id="waitlist"><div class="wrap-sm" style="text-align:center">
-  <div class="sec-header rv"><div class="sec-badge">WAITLIST</div><h2 class="sec-title"><span data-fr="Soyez parmi les " data-en="Be among the ">Soyez parmi les </span><span class="hl" data-fr="premiers au lancement" data-en="first at launch">premiers au lancement</span></h2><div class="divider"></div><p class="sec-desc" data-fr="Inscrivez-vous pour être notifié dès le lancement officiel — 18 Juin 2026." data-en="Sign up to be notified on the official launch — June 18, 2026.">Inscrivez-vous pour être notifié dès le lancement officiel — 18 Juin 2026.</p></div>
-  <div class="rv" id="wl-wrap"><form class="wl-form" onsubmit="submitWL(event)"><input class="wl-input" type="email" id="wl-email" placeholder="votre@email.com" required/><button class="wl-btn" type="submit"><span data-fr="Me notifier 🚀" data-en="Notify Me 🚀">Me notifier 🚀</span></button></form><div class="wl-ok" id="wl-ok"><span id="wl-ok-msg"></span></div><p class="wl-count" id="wl-count"></p></div>
+<section id="diff"><div class="wrap">
+  <div class="sec-header rv"><div class="sec-badge" data-fr="PENSÉE POUR L'AFRIQUE ET AU-DELÀ" data-en="BUILT FOR AFRICA AND BEYOND">PENSÉE POUR L'AFRIQUE ET AU-DELÀ</div><h2 class="sec-title"><span data-fr="Ce que les autres IA " data-en="What other AIs ">Ce que les autres IA </span><span class="hl" data-fr="ne font pas" data-en="don't do">ne font pas</span></h2><div class="divider"></div><p class="sec-desc" data-fr="NEXYA est conçue pour la réalité du terrain : réseau capricieux, droit OHADA, paiement mobile, langues locales." data-en="NEXYA is built for real-world conditions: shaky networks, OHADA law, mobile payment, local languages.">NEXYA est conçue pour la réalité du terrain : réseau capricieux, droit OHADA, paiement mobile, langues locales.</p></div>
+  <div class="diff-grid">
+    <div class="diff-card"><div class="diff-icon"><svg width="22" height="22" aria-hidden="true"><use href="#ic-scale"/></svg></div><div class="diff-name" data-fr="Savoir africain intégré" data-en="African knowledge built in">Savoir africain intégré</div><div class="diff-desc" data-fr="Un corpus juridique OHADA et camerounais et des recettes du pays, directement intégrés dans NEXYA. Une expertise locale qu'aucune IA généraliste n'offre." data-en="An OHADA and Cameroonian legal corpus and local recipes, built right into NEXYA. Local expertise no generic AI offers.">Un corpus juridique OHADA et camerounais et des recettes du pays, directement intégrés dans NEXYA. Une expertise locale qu'aucune IA généraliste n'offre.</div></div>
+    <div class="diff-card"><div class="diff-icon"><svg width="22" height="22" aria-hidden="true"><use href="#ic-wifi"/></svg></div><div class="diff-name" data-fr="Optimisé jusqu'à la 2G" data-en="Optimized down to 2G">Optimisé jusqu'à la 2G</div><div class="diff-desc" data-fr="Cache hors-ligne, délais adaptés et compression. NEXYA reste utilisable quand le réseau faiblit, là où les autres applications abandonnent." data-en="Offline cache, adaptive timeouts and compression. NEXYA stays usable when the network drops, where other apps give up.">Cache hors-ligne, délais adaptés et compression. NEXYA reste utilisable quand le réseau faiblit, là où les autres applications abandonnent.</div></div>
+    <div class="diff-card"><div class="diff-icon"><svg width="22" height="22" aria-hidden="true"><use href="#ic-money"/></svg></div><div class="diff-name" data-fr="Conçu pour le Mobile Money" data-en="Built for Mobile Money">Conçu pour le Mobile Money</div><div class="diff-desc" data-fr="NEXYA prépare le paiement par Orange Money, MTN, Wave et Airtel, et par carte bancaire pour la diaspora. Tu payeras comme tu as l'habitude de payer." data-en="NEXYA is preparing payment via Orange Money, MTN, Wave and Airtel, and by bank card for the diaspora. You will pay the way you already do.">NEXYA prépare le paiement par Orange Money, MTN, Wave et Airtel, et par carte bancaire pour la diaspora. Tu payeras comme tu as l'habitude de payer.</div></div>
+    <div class="diff-card"><div class="diff-icon"><svg width="22" height="22" aria-hidden="true"><use href="#ic-shield"/></svg></div><div class="diff-name" data-fr="Confidentialité sérieuse" data-en="Serious privacy">Confidentialité sérieuse</div><div class="diff-desc" data-fr="Conforme au RGPD et à l'AI Act européen. Tes données ne servent jamais à entraîner un modèle par défaut. Export et suppression à tout moment." data-en="GDPR and EU AI Act compliant. Your data never trains a model by default. Export and deletion at any time.">Conforme au RGPD et à l'AI Act européen. Tes données ne servent jamais à entraîner un modèle par défaut. Export et suppression à tout moment.</div></div>
+  </div>
 </div></section>
 
 <div class="sep-line"></div>
 
-<section id="contact"><div class="wrap" style="max-width:740px">
-  <div class="founder-card rv"><div class="founder-av">LN</div><div class="founder-name">Loth Ngassa</div><div class="founder-role" data-fr="Fondateur · NEXYA Labs" data-en="Founder · NEXYA Labs">Fondateur · NEXYA Labs</div><p class="founder-bio" data-fr="Une question sur NEXYA ? Une idée à partager ? Contactez directement le fondateur sur WhatsApp — réponse garantie." data-en="A question about NEXYA? An idea to share? Contact the founder directly on WhatsApp — response guaranteed.">Une question sur NEXYA ? Une idée à partager ? Contactez directement le fondateur sur WhatsApp — réponse garantie.</p><a class="btn-wa" href="https://wa.me/237673158050" target="_blank" rel="noopener noreferrer" style="display:inline-flex;margin:0 auto"><svg><use href="#ic-wa"/></svg><span data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp">Écrire sur WhatsApp</span></a></div>
+<section id="power"><div class="wrap">
+  <div class="sec-header rv"><div class="sec-badge" data-fr="TROIS MODES DE PUISSANCE" data-en="THREE POWER MODES">TROIS MODES DE PUISSANCE</div><h2 class="sec-title"><span data-fr="Toi qui " data-en="You ">Toi qui </span><span class="hl" data-fr="choisis le rythme" data-en="set the pace">choisis le rythme</span></h2><div class="divider"></div><p class="sec-desc" data-fr="Un seul tap pour passer de la rapidité à la profondeur. NEXYA ajuste le modèle et la réflexion selon ton besoin." data-en="One tap to switch from speed to depth. NEXYA tunes the model and reasoning to your need.">Un seul tap pour passer de la rapidité à la profondeur. NEXYA ajuste le modèle et la réflexion selon ton besoin.</p></div>
+  <div class="pills-grid">
+    <div class="pill-card" style="--pc:#9B59F0;--pcr:155,89,240"><div class="pill-badge"><svg width="26" height="26" aria-hidden="true"><use href="#ic-brain"/></svg></div><div class="pill-name">GEEK</div><div class="pill-tag" data-fr="Puissance maximale" data-en="Maximum power">Puissance maximale</div><div class="pill-desc" data-fr="Le modèle le plus capable avec une réflexion approfondie. Pour les sujets complexes, l'analyse fine et le raisonnement exigeant." data-en="The most capable model with deep reasoning. For complex topics, fine analysis and demanding reasoning.">Le modèle le plus capable avec une réflexion approfondie. Pour les sujets complexes, l'analyse fine et le raisonnement exigeant.</div></div>
+    <div class="pill-card" style="--pc:#2E9BF0;--pcr:46,155,240"><div class="pill-badge"><svg width="26" height="26" aria-hidden="true"><use href="#ic-bolt"/></svg></div><div class="pill-name">LOTH</div><div class="pill-tag" data-fr="Équilibré" data-en="Balanced">Équilibré</div><div class="pill-desc" data-fr="Le meilleur compromis qualité et vitesse. Le mode quotidien, juste et rapide, pour la grande majorité de tes échanges." data-en="The best balance of quality and speed. The everyday mode, sharp and fast, for most of your chats.">Le meilleur compromis qualité et vitesse. Le mode quotidien, juste et rapide, pour la grande majorité de tes échanges.</div></div>
+    <div class="pill-card" style="--pc:#E8A020;--pcr:232,160,32"><div class="pill-badge"><svg width="26" height="26" aria-hidden="true"><use href="#ic-spark"/></svg></div><div class="pill-name">JUSTO</div><div class="pill-tag" data-fr="Express" data-en="Express">Express</div><div class="pill-desc" data-fr="Réponse immédiate pour les questions simples. Quand tu veux une réponse juste, tout de suite, sans attendre." data-en="Instant answer for simple questions. When you want a right answer, right now, no waiting.">Réponse immédiate pour les questions simples. Quand tu veux une réponse juste, tout de suite, sans attendre.</div></div>
+  </div>
 </div></section>
+
+<div class="sep-line"></div>
+
+<section id="join"><div class="wrap">
+  <div class="join-card rv">
+    <div class="join-left">
+      <h2 class="join-title"><span data-fr="Sois parmi les " data-en="Be among the ">Sois parmi les </span><span class="hl" data-fr="premiers à l'essayer" data-en="first to try it">premiers à l'essayer</span></h2>
+      <p class="join-desc" data-fr="NEXYA arrive sur le Google Play Store le 21 juin 2026. Écris-nous sur WhatsApp pour être prévenu dès l'ouverture et faire partie des premiers utilisateurs." data-en="NEXYA lands on the Google Play Store on June 21, 2026. Message us on WhatsApp to be notified at launch and join the very first users.">NEXYA arrive sur le Google Play Store le 21 juin 2026. Écris-nous sur WhatsApp pour être prévenu dès l'ouverture et faire partie des premiers utilisateurs.</p>
+      <div class="join-cta">
+        <a class="btn-wa" href="https://wa.me/237673158050?text=Bonjour%2C%20je%20veux%20%C3%AAtre%20pr%C3%A9venu%20au%20lancement%20de%20NEXYA" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#ic-wa"/></svg><span data-fr="Me prévenir au lancement" data-en="Notify me at launch">Me prévenir au lancement</span></a>
+        <span class="play-badge" role="img" aria-label="Bientôt disponible sur Google Play">
+          <svg class="pg-ic" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="pgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E9BF0"/><stop offset="1" stop-color="#E8A020"/></linearGradient></defs><path d="M3 2.5v19c0 .8.9 1.3 1.6.9l16-9.5c.6-.4.6-1.3 0-1.7l-16-9.5C3.9 1.2 3 1.7 3 2.5z" fill="url(#pgg)"/></svg>
+          <span class="pg-txt"><small data-fr="Bientôt sur" data-en="Soon on">Bientôt sur</small><b>Google Play</b></span>
+          <span class="pg-soon" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+        </span>
+      </div>
+      <p class="join-note" data-fr="Lancement officiel le 21 juin 2026 à 21h21 (heure du Cameroun)." data-en="Official launch on June 21, 2026 at 9:21 PM (Cameroon time).">Lancement officiel le 21 juin 2026 à 21h21 (heure du Cameroun).</p>
+    </div>
+    <div class="join-right">
+      <div class="phone" aria-hidden="true">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="ph-status"><span>21:21</span><span class="sig"><i></i><i></i><i></i><i></i></span></div>
+            <div class="ph-header"><div class="ph-logo">N</div><span class="ph-name">NEXYA</span><span class="ph-expert" style="background:rgba(155,89,240,.12);border-color:rgba(155,89,240,.3);color:#b78cf5"><span class="d" style="background:#b78cf5"></span>Droit</span></div>
+            <div class="ph-chat">
+              <div class="ph-bubble ph-user">Comment créer une SARL au Cameroun (OHADA) ?</div>
+              <div class="ph-bubble ph-ai">Voici les étapes principales selon l'Acte uniforme OHADA : statuts, capital, déclaration au registre du commerce, et publication légale.<br><br>Je te détaille chaque étape ?</div>
+              <div class="ph-bubble ph-ai"><span class="ph-typing"><i></i><i></i><i></i></span></div>
+            </div>
+            <div class="ph-input">
+              <div class="ph-pills"><span class="ph-pill geek">GEEK</span><span class="ph-pill loth">LOTH</span><span class="ph-pill justo">JUSTO</span></div>
+              <div class="ph-inrow"><span class="txt">Pose ta question...</span><span class="ph-send"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-send"/></svg></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<div class="sep-line"></div>
+
+<section id="contact"><div class="wrap" style="max-width:760px">
+  <div class="founder-card rv">
+    <div class="founder-av">LN</div>
+    <div class="founder-name">Loth Ivan Ngassa Yimga</div>
+    <div class="founder-role" data-fr="Fondateur de Nexyalabs" data-en="Founder of Nexyalabs">Fondateur de Nexyalabs</div>
+    <p class="founder-bio" data-fr="Développeur basé à Douala, j'ai conçu NEXYA pour donner à l'Afrique francophone un assistant IA de niveau mondial, qui parle OHADA, qui tient en 2G et qui connait nos recettes. Une question, une idée, un partenariat ? Écris-moi directement." data-en="A developer based in Douala, I built NEXYA to give French-speaking Africa a world-class AI assistant that speaks OHADA, holds up on 2G and knows our recipes. A question, an idea, a partnership? Write to me directly.">Développeur basé à Douala, j'ai conçu NEXYA pour donner à l'Afrique francophone un assistant IA de niveau mondial, qui parle OHADA, qui tient en 2G et qui connait nos recettes. Une question, une idée, un partenariat ? Écris-moi directement.</p>
+    <a class="btn-wa" href="https://wa.me/237673158050" target="_blank" rel="noopener noreferrer" style="display:inline-flex;margin:0 auto"><svg aria-hidden="true"><use href="#ic-wa"/></svg><span data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp">Écrire sur WhatsApp</span></a>
+  </div>
+</div></section>
+
+</main>
 
 <footer>
-  <img src="assets/images/logo_nexya_studio.png" alt="NEXYA Studio" class="footer-logo"/>
-  <div class="footer-links">
-    <a class="footer-link" href="#hero" data-fr="Accueil" data-en="Home">Accueil</a>
-    <a class="footer-link" href="#about" data-fr="À propos" data-en="About">À propos</a>
-    <a class="footer-link" href="#features" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
-    <a class="footer-link" href="#experts" data-fr="Modes Experts" data-en="Expert Modes">Modes Experts</a>
-    <a class="footer-link" href="#waitlist">Waitlist</a>
-    <a class="footer-link" href="https://wa.me/237673158050" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <picture><source srcset="assets/images/logo_nexya.webp" type="image/webp"/><img src="assets/images/logo_nexya_opt.png" alt="NEXYA" width="23" height="32" loading="lazy" decoding="async"/></picture>
+      <p data-fr="L'assistant IA multi-expert et multi-modèles, conçu par Nexyalabs pour l'Afrique et au-delà." data-en="The multi-expert, multi-model AI assistant, built by Nexyalabs for Africa and beyond.">L'assistant IA multi-expert et multi-modèles, conçu par Nexyalabs pour l'Afrique et au-delà.</p>
+      <p class="loc" data-fr="Douala, Cameroun" data-en="Douala, Cameroon">Douala, Cameroun</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+      <a href="#about" data-fr="Le produit" data-en="Product">Le produit</a>
+      <a href="#features" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+      <a href="#experts" data-fr="Modes experts" data-en="Expert modes">Modes experts</a>
+      <a href="#join" data-fr="Lancement" data-en="Launch">Lancement</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+      <a href="/privacy" data-fr="Politique de confidentialité" data-en="Privacy policy">Politique de confidentialité</a>
+      <a href="/privacy#droits" data-fr="Tes droits RGPD" data-en="Your GDPR rights">Tes droits RGPD</a>
+      <a href="/privacy#partage" data-fr="Sous-traitants" data-en="Subprocessors">Sous-traitants</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+      <a href="https://wa.me/237673158050" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="mailto:ngassayimgal@gmail.com" data-fr="Email" data-en="Email">Email</a>
+    </div>
   </div>
-  <p class="footer-copy">© 2026 NEXYA Labs · nexyalabs.com · <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2026 <strong>Nexyalabs</strong> . nexyalabs.com . <span data-fr="Pour l'Afrique et au-delà. Tous droits réservés." data-en="For Africa and beyond. All rights reserved.">Pour l'Afrique et au-delà. Tous droits réservés.</span></p>
+  </div>
 </footer>
 
 <script>
 'use strict';
 
-/* ── COUNTDOWN — valeurs déjà calculées dans <head> ── */
+/* COUNTDOWN, valeurs deja calculees dans le head */
 (function(){
   var cd = window._CD;
   if(!cd) return;
@@ -497,9 +744,7 @@ footer{position:relative;z-index:1;padding:52px 32px 36px;border-top:1px solid v
 
 var _LAUNCH = window._LAUNCH;
 var _pv = {d:-1,h:-1,m:-1,s:-1};
-
 function _pad(n){ return String(n).padStart(2,'0'); }
-
 function _flip(key, val){
   var box  = document.getElementById('fb-'+key);
   var face = document.getElementById('v-'+key);
@@ -509,7 +754,6 @@ function _flip(key, val){
   setTimeout(function(){ face.textContent=val; }, 220);
   setTimeout(function(){ box.classList.remove('go'); }, 450);
 }
-
 function _tick(){
   var diff = _LAUNCH.getTime() - Date.now();
   if(diff<=0){ ['d','h','m','s'].forEach(function(k){ var f=document.getElementById('v-'+k); if(f) f.textContent='00'; }); return; }
@@ -521,33 +765,33 @@ function _tick(){
 }
 setInterval(_tick, 1000);
 
-/* ── THÈME ── */
+/* THEME */
 var _theme = localStorage.getItem('nx-theme')||'dark';
 _applyTheme(_theme, false);
 function _applyTheme(t, save){
   document.documentElement.setAttribute('data-theme',t);
   var btn=document.getElementById('theme-btn');
-  if(btn) btn.textContent = t==='dark'?'🌙':'☀️';
+  if(btn) btn.innerHTML = t==='dark'?'&#9790;':'&#9728;';
+  var meta=document.querySelector('meta[name=theme-color]');
+  if(meta) meta.setAttribute('content', t==='dark'?'#09090f':'#f4f4fe');
   if(save!==false) localStorage.setItem('nx-theme',t);
 }
 function toggleTheme(){ _applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); }
 
-/* ── LANGUE ── */
+/* LANGUE */
 var LANG = localStorage.getItem('nx-lang')||'fr';
 function setLang(l){
   LANG=l;
-  document.documentElement.setAttribute('data-lang',l);
+  document.documentElement.setAttribute('lang',l);
   document.querySelectorAll('[data-fr][data-en]').forEach(function(el){ el.textContent=el.getAttribute('data-'+l); });
   var f=document.getElementById('btn-fr'), e=document.getElementById('btn-en');
   if(f) f.classList.toggle('on',l==='fr');
   if(e) e.classList.toggle('on',l==='en');
-  var inp=document.getElementById('wl-email');
-  if(inp) inp.placeholder=l==='fr'?'votre@email.com':'your@email.com';
   localStorage.setItem('nx-lang',l);
-  updateWLCount();
+  restartStream();
 }
 
-/* ── PARTICULES ── */
+/* PARTICULES */
 var cvs=document.getElementById('cvs'), cx=cvs.getContext('2d');
 function rsz(){ cvs.width=innerWidth; cvs.height=innerHeight; }
 rsz(); window.addEventListener('resize',rsz);
@@ -562,63 +806,60 @@ Pt.prototype.reset=function(){
 };
 Pt.prototype.step=function(){ this.x+=this.vx; this.y+=this.vy; this.ph+=.015; if(this.x<0||this.x>cvs.width||this.y<0||this.y>cvs.height) this.reset(); };
 Pt.prototype.draw=function(){ var o=this.a*(.6+.4*Math.sin(this.ph)); cx.beginPath(); cx.arc(this.x,this.y,this.r,0,Math.PI*2); cx.fillStyle=this.c+o+')'; cx.fill(); };
-var PTS=[]; for(var i=0;i<100;i++) PTS.push(new Pt());
+var COUNT = innerWidth < 768 ? 55 : 100;
+var PTS=[]; for(var i=0;i<COUNT;i++) PTS.push(new Pt());
 function drawLines(){ var dark=document.documentElement.getAttribute('data-theme')==='dark'; for(var i=0;i<PTS.length;i++){ for(var j=i+1;j<PTS.length;j++){ var dx=PTS[i].x-PTS[j].x, dy=PTS[i].y-PTS[j].y, d=Math.hypot(dx,dy); if(d<100){ cx.beginPath(); cx.moveTo(PTS[i].x,PTS[i].y); cx.lineTo(PTS[j].x,PTS[j].y); var a=(dark?.1:.06)*(1-d/100); cx.strokeStyle=dark?'rgba(46,155,240,'+a+')':'rgba(26,125,212,'+a+')'; cx.lineWidth=.5; cx.stroke(); } } } }
-function loop(){ cx.clearRect(0,0,cvs.width,cvs.height); PTS.forEach(function(p){p.step();p.draw();}); drawLines(); requestAnimationFrame(loop); }
-loop();
+var _reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function loop(){ cx.clearRect(0,0,cvs.width,cvs.height); PTS.forEach(function(p){p.step();p.draw();}); drawLines(); if(!_reduce) requestAnimationFrame(loop); }
+if(!_reduce){ loop(); } else { cx.clearRect(0,0,cvs.width,cvs.height); PTS.forEach(function(p){p.draw();}); drawLines(); }
 
-/* ── STREAMING ── */
+/* STREAMING */
 var TEXTS={
-  fr:"Bonjour. Je suis NEXYA.\n\nJe ne suis pas un simple chatbot. Je suis une plateforme IA nouvelle génération qui orchestre les meilleurs modèles au monde — GPT, Gemini, Qwen — pour vous offrir des réponses précises, contextuelles et personnalisées.\n\nBesoin d'un expert ? J'ai 5 Modes Experts calibrés : Informatique pour déboguer votre code, Finance pour analyser vos investissements, Sciences pour vos recherches, Langues pour vos traductions, Cuisine pour vos recettes.\n\nNEXYA. L'IA qui travaille pour vous. 🌍",
-  en:"Hello. I'm NEXYA.\n\nI'm not just a chatbot. I'm a next-generation AI platform that orchestrates the world's best models — GPT, Gemini, Qwen — to deliver precise, contextual, and personalized responses.\n\nNeed an expert? I have 5 calibrated Expert Modes: Computer Science, Finance, Sciences, Languages, Cooking.\n\nNEXYA. The AI that works for you. 🌍"
+  fr:"Bonjour. Je suis NEXYA.\n\nJe ne suis pas un simple chatbot. Je suis une plateforme IA qui orchestre les meilleurs modèles du monde pour te donner des réponses précises, contextuelles et personnalisées.\n\nBesoin d'un expert ? J'en ai 11. Le Droit pour l'OHADA, la Cuisine pour 107 recettes du pays, l'Informatique pour ton code, les Sciences, les Langues, et bien plus.\n\nJe me souviens de toi d'une conversation à l'autre. Je planifie tes rappels. J'analyse tes photos. Je génère images, voix et documents pro.\n\nEt je fonctionne même quand le réseau faiblit, jusqu'à la 2G.\n\nNEXYA. L'IA pensée pour l'Afrique et au-delà.",
+  en:"Hello. I'm NEXYA.\n\nI'm not just a chatbot. I'm an AI platform that orchestrates the world's best models to give you precise, contextual and personalized answers.\n\nNeed an expert? I have 11. Law for OHADA, Cooking for 107 local recipes, Computer Science for your code, Sciences, Languages and much more.\n\nI remember you from one conversation to the next. I schedule your reminders. I analyze your photos. I create images, voice and pro documents.\n\nAnd I keep working even when the network drops, down to 2G.\n\nNEXYA. AI built for Africa and beyond."
 };
 var stTimer=null, stDone=false, stRunning=false;
+function restartStream(){
+  stDone=false; stRunning=false;
+  var out=document.getElementById('stream-out'), cur=document.getElementById('stream-cur');
+  if(out) out.textContent='';
+  if(cur) cur.style.display='inline-block';
+  if(stTimer){ clearTimeout(stTimer); stTimer=null; }
+  var el=document.getElementById('terminal-el');
+  if(el){ var r=el.getBoundingClientRect(); if(r.top<innerHeight && r.bottom>0) startStream(); }
+}
 function startStream(){
   if(stDone||stRunning) return;
   stRunning=true;
   var text=TEXTS[LANG]||TEXTS.fr, out=document.getElementById('stream-out');
   if(!out) return;
+  if(_reduce){ out.textContent=text; stDone=true; var c0=document.getElementById('stream-cur'); if(c0) c0.style.display='none'; return; }
   out.textContent=''; var i=0;
-  function type(){ if(i<text.length){ out.textContent+=text[i]; i++; var d=text[i]==='\n'?90:Math.random()*16+7; stTimer=setTimeout(type,d); } else { stDone=true; var c=document.getElementById('stream-cur'); if(c) c.style.display='none'; } }
-  setTimeout(type,600);
+  function type(){ if(i<text.length){ out.textContent+=text[i]; i++; var d=text[i]==='\n'?80:Math.random()*14+6; stTimer=setTimeout(type,d); } else { stDone=true; var c=document.getElementById('stream-cur'); if(c) c.style.display='none'; } }
+  setTimeout(type,500);
 }
 var termEl=document.getElementById('terminal-el');
 if('IntersectionObserver' in window && termEl){ new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) startStream(); }); },{threshold:.15}).observe(termEl); }
 
-/* ── SCROLL REVEAL (.rv, .feat-card, .orb-card) ── */
+/* SCROLL REVEAL */
 if('IntersectionObserver' in window){
-  var rv=new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('vis'); rv.unobserve(x.target); } }); },{threshold:.06});
-  document.querySelectorAll('.rv,.feat-card,.orb-card').forEach(function(el){ rv.observe(el); });
+  var rv=new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('vis'); rv.unobserve(x.target); } }); },{threshold:.08});
+  document.querySelectorAll('.rv,.feat-card,.stat,.exp-card,.diff-card,.pill-card').forEach(function(el){ rv.observe(el); });
 }
 
-/* ── TILT HOVER CARTES EXPERT ── */
-document.querySelectorAll('.exp-rect').forEach(function(card){
-  card.addEventListener('mousemove',function(e){ var r=card.getBoundingClientRect(), y=(e.clientY-r.top)/r.height-.5; card.style.transform='translateY(-8px) rotateX('+(- y*4)+'deg)'; });
-  card.addEventListener('mouseleave',function(){ card.style.transform=''; });
-});
-
-/* ── WAITLIST ── */
-function updateWLCount(){
-  var stored=JSON.parse(localStorage.getItem('nx-wl')||'[]'), el=document.getElementById('wl-count');
-  if(!el) return;
-  var n=847+stored.length;
-  el.innerHTML=LANG==='fr'?'<strong>'+n+'</strong> personnes sont déjà inscrites.':'<strong>'+n+'</strong> people are already signed up.';
-}
-updateWLCount();
-function submitWL(e){
-  e.preventDefault();
-  var email=document.getElementById('wl-email').value.trim(); if(!email) return;
-  var stored=JSON.parse(localStorage.getItem('nx-wl')||'[]');
-  if(!stored.includes(email)){ stored.push(email); localStorage.setItem('nx-wl',JSON.stringify(stored)); }
-  var form=document.querySelector('#wl-wrap form'); if(form) form.style.display='none';
-  var ok=document.getElementById('wl-ok'), msg=document.getElementById('wl-ok-msg');
-  if(ok) ok.style.display='block';
-  if(msg) msg.textContent=LANG==='fr'?'✅ Parfait ! Vous serez notifié le 18 Juin 2026 à 17h00.':"✅ Perfect! You'll be notified on June 18, 2026 at 5:00 PM.";
-  updateWLCount();
+/* TILT HOVER CARTES EXPERT */
+if(!_reduce){
+  document.querySelectorAll('.exp-card').forEach(function(card){
+    card.addEventListener('mousemove',function(e){ var r=card.getBoundingClientRect(), y=(e.clientY-r.top)/r.height-.5; card.style.transform='translateY(-7px) rotateX('+(-y*3)+'deg)'; });
+    card.addEventListener('mouseleave',function(){ card.style.transform=''; });
+  });
 }
 
-/* ── SMOOTH SCROLL ── */
-document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var t=document.querySelector(a.getAttribute('href')); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } }); });
+/* SMOOTH SCROLL ancres internes */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length<2) return; var t=document.querySelector(id); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } }); });
+
+/* Init langue au chargement */
+if(LANG!=='fr'){ setLang(LANG); }
 </script>
 </body>
 </html>
