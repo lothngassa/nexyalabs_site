@@ -166,12 +166,33 @@ section{position:relative;z-index:1}
 /* HERO RIGHT - PHONE */
 .hero-stage{position:relative;display:flex;justify-content:center;align-items:center}
 .hero-stage::before{content:'';position:absolute;width:115%;height:115%;background:radial-gradient(circle,rgba(var(--vr),.22),transparent 62%);filter:blur(20px)}
+.hero-bird{position:relative;display:flex;align-items:center;justify-content:center;z-index:2;width:100%;animation:birdFloat 6s ease-in-out infinite}
+.hero-bird img{width:min(330px,76%);height:auto;position:relative;z-index:2;filter:drop-shadow(0 26px 64px rgba(var(--pr),.5))}
+.hero-bird-ring{position:absolute;width:min(440px,100%);aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,rgba(var(--pr),.2) 0%,transparent 60%);animation:ringPulse 4.5s ease-in-out infinite}
+@keyframes birdFloat{0%,100%{transform:translateY(0) rotate(-.6deg)}33%{transform:translateY(-16px) rotate(.6deg)}66%{transform:translateY(-8px) rotate(-.3deg)}}
+@keyframes ringPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.12);opacity:1}}
 .float-pill{position:absolute;z-index:3;display:flex;align-items:center;gap:9px;padding:11px 15px;border-radius:16px;background:var(--glass);border:1px solid var(--line2);box-shadow:var(--shadow);backdrop-filter:blur(20px);font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;animation:bob var(--d,6s) ease-in-out infinite}
 .float-pill svg{width:18px;height:18px}
 .fp-1{top:8%;left:-6%;--d:5.5s}
 .fp-2{bottom:14%;right:-8%;--d:6.5s;animation-delay:.6s}
 .fp-3{top:46%;right:-10%;--d:7s;animation-delay:.3s}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ===== SHOWCASE (captures app, bascule sombre/clair) ===== */
+.shot-row{display:flex;justify-content:center;align-items:flex-start;gap:30px;flex-wrap:wrap}
+.shot-item{display:flex;flex-direction:column;align-items:center;gap:16px}
+.shot-item:nth-child(2) .shot-device{margin-top:-26px}
+.shot-device{width:238px;border-radius:38px;padding:9px;background:#05050b;position:relative;box-shadow:0 44px 90px rgba(0,0,0,.55),0 0 0 1.5px rgba(255,255,255,.06),inset 0 0 0 1px rgba(255,255,255,.04);transition:transform .45s var(--ease),box-shadow .45s}
+.shot-device::after{content:'';position:absolute;inset:0;border-radius:38px;background:linear-gradient(140deg,rgba(255,255,255,.1),transparent 36%);pointer-events:none;z-index:3}
+.shot-item:hover .shot-device{transform:translateY(-12px);box-shadow:0 56px 110px rgba(0,0,0,.6),0 0 0 1.5px rgba(var(--pr),.32)}
+.shot-screen{border-radius:30px;overflow:hidden;display:block;background:#0a0a12;line-height:0}
+.shot-screen img{width:100%;height:auto;display:block}
+.shot-screen .shot-light{display:none}
+[data-theme="light"] .shot-screen .shot-dark{display:none}
+[data-theme="light"] .shot-screen .shot-light{display:block}
+.shot-cap{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3)}
+.join-right .shot-device{animation:bob 7s ease-in-out infinite}
+@media(max-width:680px){.shot-item:nth-child(2) .shot-device{margin-top:0}.shot-device{width:210px}.join-right .shot-device{animation:none}}
 
 /* PHONE MOCKUP */
 .phone{position:relative;width:280px;z-index:2;animation:bob 7s ease-in-out infinite}
@@ -471,20 +492,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);background:r
       <div class="float-pill fp-1"><svg style="color:#8B5CF6" aria-hidden="true"><use href="#ic-brain"/></svg><span data-fr="Mémoire IA" data-en="AI Memory">Mémoire IA</span></div>
       <div class="float-pill fp-2"><svg style="color:#E8A020" aria-hidden="true"><use href="#ic-mic"/></svg><span data-fr="Voix naturelle" data-en="Natural voice">Voix naturelle</span></div>
       <div class="float-pill fp-3"><svg style="color:#2E9BF0" aria-hidden="true"><use href="#ic-img"/></svg><span data-fr="Images" data-en="Images">Images</span></div>
-      <div class="phone" aria-hidden="true">
-        <div class="phone-frame"><div class="phone-screen">
-          <div class="ph-status"><span>21:21</span><span class="sig"><i></i><i></i><i></i><i></i></span></div>
-          <div class="ph-header"><div class="ph-logo">N</div><span class="ph-name">NEXYA</span><span class="ph-expert"><span class="d"></span>Informatique</span></div>
-          <div class="ph-chat">
-            <div class="ph-bubble ph-user">Explique async/await en Python avec un exemple.</div>
-            <div class="ph-bubble ph-ai">Avec plaisir. <code>async/await</code> permet d'attendre une opération sans bloquer le reste du programme.<br><br>Imagine un serveur : pendant qu'une requête attend la base de données, il sert d'autres clients.</div>
-            <div class="ph-bubble ph-ai"><span class="ph-typing"><i></i><i></i><i></i></span></div>
-          </div>
-          <div class="ph-input">
-            <div class="ph-pills"><span class="ph-pill geek">GEEK</span><span class="ph-pill loth">LOTH</span><span class="ph-pill justo">JUSTO</span></div>
-            <div class="ph-inrow"><span class="txt">Pose ta question...</span><span class="ph-send"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-send"/></svg></span></div>
-          </div>
-        </div></div>
+      <div class="hero-bird" aria-hidden="true">
+        <span class="hero-bird-ring"></span>
+        <picture><source srcset="assets/images/logo_nexya.webp" type="image/webp"/><img src="assets/images/logo_nexya_opt.png" alt="" width="311" height="440" decoding="async"/></picture>
       </div>
     </div>
   </div>
@@ -521,6 +531,38 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);background:r
     <div class="bcell b-pla" style="--cc:139,92,246"><div class="bi"><svg width="22" height="22" aria-hidden="true"><use href="#ic-cal"/></svg></div><div class="bn" data-fr="Planificateur" data-en="Scheduler">Planificateur</div><div class="bd" data-fr="Crée un rappel depuis le chat. NEXYA s'occupe du reste." data-en="Create a reminder from the chat. NEXYA handles the rest.">Crée un rappel depuis le chat. NEXYA s'occupe du reste.</div></div>
     <div class="bcell b-pro" style="--cc:227,84,6"><div class="bi"><svg width="22" height="22" aria-hidden="true"><use href="#ic-folder"/></svg></div><div class="bn" data-fr="Projets" data-en="Projects">Projets</div><div class="bd" data-fr="Dépose tes fichiers, NEXYA les comprend." data-en="Drop your files, NEXYA understands them.">Dépose tes fichiers, NEXYA les comprend.</div></div>
     <div class="bcell b-dra" style="--cc:47,209,106"><div class="bi"><svg width="22" height="22" aria-hidden="true"><use href="#ic-send"/></svg></div><div class="bn" data-fr="Brouillons actionnables" data-en="Actionable drafts">Brouillons actionnables</div><div class="bd" data-fr="Demande un email, un WhatsApp, un SMS, un post LinkedIn ou un tweet. NEXYA le rédige, tu l'envoies en un tap." data-en="Ask for an email, a WhatsApp, an SMS, a LinkedIn post or a tweet. NEXYA writes it, you send it in one tap.">Demande un email, un WhatsApp, un SMS, un post LinkedIn ou un tweet. NEXYA le rédige, tu l'envoies en un tap.</div></div>
+  </div>
+</div></section>
+
+<!-- ===== SHOWCASE ===== -->
+<section id="showcase" class="sec-pad"><div class="shell">
+  <div class="sec-head rv">
+    <div class="sec-tag" data-fr="L'APPLICATION" data-en="THE APP">L'APPLICATION</div>
+    <h2 class="sec-title font-d"><span data-fr="Vois NEXYA " data-en="See NEXYA ">Vois NEXYA </span><span class="grad-text" data-fr="en vrai" data-en="for real">en vrai</span></h2>
+    <p class="sec-sub" data-fr="Une interface soignée, en clair comme en sombre. Bascule le thème du site en haut a droite, les aperçus suivent." data-en="A polished interface, in light and dark. Switch the site theme top-right, the previews follow.">Une interface soignée, en clair comme en sombre. Bascule le thème du site en haut a droite, les aperçus suivent.</p>
+  </div>
+  <div class="shot-row rv">
+    <div class="shot-item">
+      <div class="shot-device"><div class="shot-screen">
+        <img class="shot shot-dark" src="assets/images/app/accueil-dark.webp" alt="Écran d'accueil de l'application NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+        <img class="shot shot-light" src="assets/images/app/accueil-light.webp" alt="Écran d'accueil de l'application NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+      </div></div>
+      <span class="shot-cap" data-fr="Accueil" data-en="Home">Accueil</span>
+    </div>
+    <div class="shot-item">
+      <div class="shot-device"><div class="shot-screen">
+        <img class="shot shot-dark" src="assets/images/app/experts-dark.webp" alt="Les modes experts de NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+        <img class="shot shot-light" src="assets/images/app/experts-light.webp" alt="Les modes experts de NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+      </div></div>
+      <span class="shot-cap" data-fr="Modes experts" data-en="Expert modes">Modes experts</span>
+    </div>
+    <div class="shot-item">
+      <div class="shot-device"><div class="shot-screen">
+        <img class="shot shot-dark" src="assets/images/app/modeles-dark.webp" alt="Sélection du mode de puissance dans NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+        <img class="shot shot-light" src="assets/images/app/modeles-light.webp" alt="Sélection du mode de puissance dans NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+      </div></div>
+      <span class="shot-cap" data-fr="Modes de puissance" data-en="Power modes">Modes de puissance</span>
+    </div>
   </div>
 </div></section>
 
@@ -610,20 +652,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);background:r
       <p class="join-note" data-fr="Lancement officiel le 21 juin 2026 à 21h21 (heure du Cameroun)." data-en="Official launch on June 21, 2026 at 9:21 PM (Cameroon time).">Lancement officiel le 21 juin 2026 à 21h21 (heure du Cameroun).</p>
     </div>
     <div class="join-right">
-      <div class="phone" aria-hidden="true">
-        <div class="phone-frame"><div class="phone-screen">
-          <div class="ph-status"><span>21:21</span><span class="sig"><i></i><i></i><i></i><i></i></span></div>
-          <div class="ph-header"><div class="ph-logo">N</div><span class="ph-name">NEXYA</span><span class="ph-expert" style="background:rgba(232,160,32,.14);border-color:rgba(232,160,32,.32);color:#f0b94e"><span class="d" style="background:#f0b94e"></span>Cuisine</span></div>
-          <div class="ph-chat">
-            <div class="ph-bubble ph-user">Une idée de plat avec ce que j'ai au frigo ?</div>
-            <div class="ph-bubble ph-ai">Avec plaisir. Dis-moi tes ingrédients et le temps que tu as, je te propose une recette complète, étape par étape.<br><br>Je peux aussi l'adapter si tu n'as pas tout.</div>
-            <div class="ph-bubble ph-ai"><span class="ph-typing"><i></i><i></i><i></i></span></div>
-          </div>
-          <div class="ph-input">
-            <div class="ph-pills"><span class="ph-pill geek">GEEK</span><span class="ph-pill loth">LOTH</span><span class="ph-pill justo">JUSTO</span></div>
-            <div class="ph-inrow"><span class="txt">Pose ta question...</span><span class="ph-send"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-send"/></svg></span></div>
-          </div>
-        </div></div>
+      <div class="shot-device">
+        <div class="shot-screen">
+          <img class="shot shot-dark" src="assets/images/app/expert-dark.webp" alt="Un mode expert dans l'application NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+          <img class="shot shot-light" src="assets/images/app/expert-light.webp" alt="Un mode expert dans l'application NEXYA" width="540" height="1169" loading="lazy" decoding="async"/>
+        </div>
       </div>
     </div>
   </div>
