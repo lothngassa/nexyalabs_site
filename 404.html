@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, follow"/>
+<title>Page introuvable - NEXYA AI</title>
+<meta name="description" content="Cette page n'existe pas. Reviens à l'accueil pour découvrir NEXYA AI, l'assistant IA multi-expert pour l'Afrique et au-delà."/>
+<meta name="theme-color" content="#09090f"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090f;--text:#f0f0ff;--text2:#8888aa;--primary:#2E9BF0;--gold:#E8A020}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;overflow:hidden;position:relative}
+.glow{position:fixed;top:-120px;left:50%;transform:translateX(-50%);width:680px;height:480px;background:radial-gradient(ellipse,rgba(46,155,240,.14) 0%,transparent 70%);pointer-events:none}
+.glow2{position:fixed;bottom:-120px;left:20%;width:380px;height:380px;background:radial-gradient(circle,rgba(232,160,32,.08) 0%,transparent 65%);pointer-events:none}
+.box{position:relative;z-index:1;max-width:520px;display:flex;flex-direction:column;align-items:center}
+.logo{width:74px;height:auto;margin-bottom:26px;filter:drop-shadow(0 0 24px rgba(46,155,240,.5));animation:lev 5s ease-in-out infinite}
+@keyframes lev{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.code{font-family:'JetBrains Mono',monospace;font-size:clamp(80px,22vw,150px);font-weight:700;line-height:1;letter-spacing:6px;background:linear-gradient(130deg,#fff,var(--primary) 50%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+h1{font-size:clamp(22px,4vw,30px);font-weight:900;margin-bottom:14px}
+p{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:34px;max-width:400px}
+.btn{padding:14px 30px;border-radius:100px;background:linear-gradient(135deg,var(--primary),#1266b8);color:#fff;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 8px 32px rgba(46,155,240,.3);transition:transform .3s,box-shadow .3s;display:inline-flex;align-items:center;gap:9px}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(46,155,240,.45)}
+.btn svg{width:17px;height:17px}
+@media(prefers-reduced-motion:reduce){.logo{animation:none}}
+</style>
+</head>
+<body>
+<div class="glow"></div><div class="glow2"></div>
+<div class="box">
+  <picture><source srcset="/assets/images/logo_nexya.webp" type="image/webp"/><img class="logo" src="/assets/images/logo_nexya_opt.png" alt="NEXYA" width="52" height="74"/></picture>
+  <div class="code">404</div>
+  <h1>Cette page n'existe pas</h1>
+  <p>La page que tu cherches a été déplacée ou n'a jamais existé. Reviens à l'accueil pour découvrir NEXYA.</p>
+  <a class="btn" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>Retour à l'accueil</a>
+</div>
+</body>
+</html>
