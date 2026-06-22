@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Se désabonner - NEXYA AI</title>
+<meta name="theme-color" content="#09090f"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090f; --bg2:#111118; --bg3:#1a1a26;
+  --primary:#2E9BF0; --pr:46,155,240; --gold:#E8A020;
+  --text:#f0f0ff; --text2:#a6a6c2; --text3:#7a7a98;
+  --border:rgba(255,255,255,.07); --border2:rgba(255,255,255,.11);
+  --ok:#28c76f; --err:#ff5b6e;
+  --rmd:14px; --rlg:20px; --rpill:100px; --t:.3s;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg-glow::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:760px;height:520px;background:radial-gradient(ellipse,rgba(var(--pr),.10) 0%,transparent 70%)}
+.bg-glow::after{content:'';position:absolute;bottom:-160px;left:10%;width:420px;height:420px;background:radial-gradient(circle,rgba(232,160,32,.06) 0%,transparent 65%)}
+.card{position:relative;z-index:1;width:100%;max-width:440px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rlg);padding:38px 30px;box-shadow:0 24px 60px rgba(0,0,0,.4);text-align:center}
+.logo{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:26px;margin:0 auto 22px;box-shadow:0 10px 36px rgba(var(--pr),.3)}
+.ico{font-size:46px;margin-bottom:14px;display:none}
+.ico.show{display:block}
+h1{font-size:23px;font-weight:800;margin-bottom:8px}
+.sub{font-size:14px;color:var(--text2);margin-bottom:26px}
+button{width:100%;padding:14px;border:none;border-radius:var(--rpill);background:linear-gradient(135deg,var(--primary),var(--gold));color:#fff;font-size:15px;font-weight:800;font-family:inherit;cursor:pointer;transition:transform var(--t),opacity var(--t)}
+button:hover:not(:disabled){transform:translateY(-1px)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.foot{margin-top:26px;font-size:12px;color:var(--text3);letter-spacing:.5px}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="card">
+  <div class="logo">N</div>
+  <div class="ico" id="ico"></div>
+  <div id="content"></div>
+  <div class="foot">NEXYA AI - Nexyalabs</div>
+</div>
+<script>
+const API = 'https://api.nexyalabs.com';
+const token = new URLSearchParams(location.search).get('token');
+const content = document.getElementById('content');
+const ico = document.getElementById('ico');
+
+function setIco(emoji){ ico.textContent = emoji; ico.classList.add('show'); }
+
+if (!token) {
+  setIco('⚠️');
+  content.innerHTML = '<h1>Lien invalide</h1><p class="sub">Ce lien de désinscription est incomplet. Tu peux gérer tes préférences directement dans l\'application NEXYA.</p>';
+} else {
+  content.innerHTML =
+    '<h1>Se désabonner</h1>' +
+    '<p class="sub">Confirme que tu ne souhaites plus recevoir ce type d\'emails de la part de NEXYA.</p>' +
+    '<button id="go">Me désinscrire</button>';
+
+  document.getElementById('go').addEventListener('click', async () => {
+    const btn = document.getElementById('go');
+    btn.disabled = true;
+    btn.textContent = 'Traitement...';
+    try {
+      const r = await fetch(API + '/notifications/unsubscribe/' + encodeURIComponent(token), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.success !== false) {
+        setIco('✅');
+        content.innerHTML = '<h1>Désinscription confirmée</h1><p class="sub">Tu ne recevras plus ce type d\'emails. Tu peux réactiver tes préférences à tout moment dans l\'application NEXYA.</p>';
+      } else {
+        const code = (j && j.code) || '';
+        let text;
+        if (code.indexOf('SECURITY') !== -1) {
+          text = "Les alertes de sécurité ne peuvent pas être désactivées : elles protègent ton compte.";
+        } else if (code.indexOf('EXPIRED') !== -1 || code.indexOf('INVALID') !== -1) {
+          text = "Ce lien a expiré ou n'est plus valide. Gère tes préférences dans l'application NEXYA.";
+        } else {
+          text = (j && j.error) || "Une erreur est survenue. Réessaie dans un instant.";
+        }
+        setIco('⚠️');
+        content.innerHTML = '<h1>Action impossible</h1><p class="sub">' + text + '</p>';
+      }
+    } catch (e) {
+      setIco('⚠️');
+      content.innerHTML = '<h1>Connexion impossible</h1><p class="sub">Impossible de joindre le serveur. Vérifie ta connexion et réessaie.</p>';
+    }
+  });
+}
+</script>
+</body>
+</html>
