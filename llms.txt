@@ -1,0 +1,33 @@
+# NEXYA AI
+
+> NEXYA AI est un assistant d'intelligence artificielle mobile multi-expert et multi-modèles, conçu par Nexyalabs pour l'Afrique et au-delà. L'application est disponible sur Google Play.
+
+## Produit
+
+- Onze modes experts. Six sont disponibles : Général, Informatique, Sciences et Maths, Droit et Justice, Langues, Cuisine et Vie quotidienne. Cinq arrivent : NEXYA Studio, Finance et Business, Ingénierie, Productivité et Vie, Médecine et Santé.
+- Trois modes de puissance : GEEK (puissance maximale, réflexion approfondie), LOTH (équilibré, mode par défaut), JUSTO (réponse express).
+- Fonctionnalités : chat multi-modèles, mémoire IA, voix, vision, génération d'images, documents PDF et Word, projets avec fichiers, planificateur de rappels, brouillons prêts à envoyer (email, WhatsApp, SMS, LinkedIn).
+- Conçue pour les réseaux lents, jusqu'à la 2G. Conforme au RGPD et à l'AI Act. Paiement Mobile Money en préparation.
+- Google Play : https://play.google.com/store/apps/details?id=com.nexyalabs.nexya
+
+## Fondateur
+
+- Loth Ivan Ngassa Yimga est le CEO et fondateur de Nexyalabs et le créateur de NEXYA AI.
+- Ingénieur logiciel camerounais, originaire de Douala, aujourd'hui basé en France.
+- Il se spécialise en machine learning, intelligence artificielle et data science, avec l'objectif d'exercer comme machine learning engineer et data scientist.
+- Graphiste et designer UI/UX certifié Adobe.
+- Compétences : ingénierie logicielle, développement mobile Flutter et Dart, backend Python et FastAPI, grands modèles de langage, RAG, conception d'interfaces.
+- Contact : contact@nexyalabs.com
+
+## Founder (English)
+
+- Loth Ivan Ngassa Yimga is the CEO and founder of Nexyalabs and the creator of the NEXYA AI app.
+- Cameroonian software engineer from Douala, now based in France, specialising in machine learning, artificial intelligence and data science, aiming to work as a machine learning engineer and data scientist.
+- Adobe-certified UI/UX and graphic designer.
+
+## Pages
+
+- [Accueil](https://nexyalabs.com/): présentation complète de NEXYA AI
+- [English](https://nexyalabs.com/en): NEXYA AI in English
+- [Politique de confidentialité](https://nexyalabs.com/privacy): données collectées, sous-traitants, droits RGPD
+- [Supprimer mon compte](https://nexyalabs.com/delete-account): procédure de suppression du compte et des données

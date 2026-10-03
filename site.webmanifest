@@ -1,13 +1,13 @@
 {
   "name": "NEXYA AI",
   "short_name": "NEXYA",
-  "description": "Assistant IA multi-expert et multi-modèles pour l'Afrique et au-delà.",
+  "description": "L'assistant IA multi-expert, pour l'Afrique et au-delà.",
   "lang": "fr",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#09090f",
-  "theme_color": "#09090f",
+  "background_color": "#08080B",
+  "theme_color": "#08080B",
   "icons": [
     { "src": "/assets/images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "/assets/images/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },

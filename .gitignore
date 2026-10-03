@@ -1,0 +1,7 @@
+# Captures brutes de l'application : sources de travail, jamais publiees
+captures decrans/
+
+# Outils
+__pycache__/
+*.pyc
+.vercel
