@@ -9,6 +9,7 @@
 - Fonctionnalités : chat multi-modèles, mémoire IA, voix, vision, génération d'images, documents PDF et Word, projets avec fichiers, planificateur de rappels, brouillons prêts à envoyer (email, WhatsApp, SMS, LinkedIn).
 - Conçue pour les réseaux lents, jusqu'à la 2G. Conforme au RGPD et à l'AI Act. Paiement Mobile Money en préparation.
 - Google Play : https://play.google.com/store/apps/details?id=com.nexyalabs.nexya
+- iPhone : version iOS bientôt disponible sur l'App Store.
 
 ## Fondateur
 

@@ -38,10 +38,21 @@ Le script s'arrête avec une erreur si une traduction n'a pas pu être appliqué
 
 - Un seul accent de couleur, le bleu NEXYA. Aucun dégradé sur du texte.
 - Contraste AA partout : ne pas utiliser de gris plus clair que `--text-3`.
-- Aucune animation en boucle, sauf l'invite « Défiler » du haut de page.
+- Aucune animation CSS en boucle, sauf l'invite « Défiler » du haut de page. La démonstration avance seule mais reste toujours pilotable (pause, étapes, clavier).
 - Tout mouvement respecte `prefers-reduced-motion`.
 - Les captures de l'application vont par paire `nom-dark.webp` / `nom-light.webp` (540 px de large minimum, 1080 px idéalement). Le téléphone affiche automatiquement celle du thème actif.
 - Les polices sont auto-hébergées (RGPD) et réduites aux caractères utilisés. Pour ajouter un caractère hors Latin-1, élargir le sous-ensemble dans `assets/fonts/` et la `unicode-range` de `base.css`.
+
+## La démonstration (section « L'application »)
+
+Le téléphone rejoue de vrais gestes à partir des captures, empilées en calques dans `[data-demo]` :
+
+- `demo__chrome` et `demo__nav` : barre d'état et barre de navigation fixes (capture d'accueil) ;
+- `scr` : contenu de chaque écran, découpé entre ces deux barres pour que seul le contenu glisse ;
+- `demo__scrim` : voile noir à 54 % (mesuré sur la capture réelle) ;
+- `demo__sheet` : panneau des modes (`sheet-dark.webp` / `sheet-light.webp`, découpé à y = 620 px avec des coins de 28 px).
+
+Les points de toucher sont en pourcentage de l'écran dans les scénarios `T` du script ; les annotations dans les attributs `data-x` / `data-y` des éléments `.note`. Si une capture change, recaler ces valeurs sur la nouvelle image (540 × 1169 px). La lecture automatique se met en pause au survol, hors écran et via le bouton Pause ; elle est désactivée si le visiteur a demandé moins d'animations.
 
 ## Déploiement
 
