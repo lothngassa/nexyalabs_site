@@ -6,7 +6,7 @@
 <title>NEXYA AI - Eleven experts, one app | Nexyalabs</title>
 <meta name="description" content="NEXYA AI is a mobile AI assistant bringing together eleven expert modes, AI memory, voice, vision and document generation. Available on Google Play, smooth even on 2G.">
 <meta name="theme-color" content="#08080B">
-<script>(function(d){var r=d.documentElement,t;try{t=localStorage.getItem('nx-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}r.setAttribute('data-theme',t);r.classList.add('js');if(t==='light'){var m=d.querySelector('meta[name="theme-color"]');if(m)m.content='#FBFBFD'}})(document)</script>
+<script>(function(d){var r=d.documentElement,t;try{t=localStorage.getItem('nx-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}r.setAttribute('data-theme',t);r.classList.add('js');var l=d.createElement('link');l.rel='preload';l.as='image';l.href='/assets/images/app/accueil-'+t+'.webp';l.setAttribute('fetchpriority','high');d.head.appendChild(l);if(t==='light'){var m=d.querySelector('meta[name="theme-color"]');if(m)m.content='#FBFBFD'}})(document)</script>
 <meta name="author" content="Loth Ivan Ngassa Yimga">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://nexyalabs.com/en">
@@ -486,7 +486,7 @@ html:not(.js) .tour__bars,html:not(.js) .tour__count{display:none}
       <div class="tilt" data-tilt>
         <figure class="device device-in" role="img" aria-label="Home screen of the NEXYA app">
           <div class="device__screen">
-            <img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" fetchpriority="high" decoding="async">
+            <img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async">
             <img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async">
             <span class="device__wake" aria-hidden="true"></span>
             <span class="device__glint" aria-hidden="true"></span>
