@@ -482,12 +482,17 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
   .founder{grid-template-columns:1fr}
   .founder__id{position:static}
 }
-@media (max-width:900px) and (max-height:500px) and (orientation:landscape){
+/* Telephone tenu en paysage, y compris les grands modeles de plus de 900 px de large */
+@media (orientation:landscape) and (max-height:500px) and (pointer:coarse),(orientation:landscape) and (max-height:500px) and (max-width:900px){
   .gal__view{--ch:max(240px,calc(100svh - 92px))}
   @supports not (height:1svh){ .gal__view{--ch:max(240px,calc(100vh - 92px))} }
-  .gal__card{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);text-align:left}
+  .gal__card{height:var(--ch);grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);text-align:left}
   .gal__txt{align-self:center;min-height:0;padding:0 8px 0 28px}
-  .gal__stage{align-items:center;padding:12px 0}
+  .gal__step,.gal__desc{display:none}
+  .gal__sub{display:block;margin-top:.3rem;font-size:var(--fs-sm);line-height:1.4;color:var(--text-2)}
+  .gal__stage{align-items:center;justify-content:center;padding:12px 0}
+  .gal__phone{margin-left:0}
+  .gal__glow{left:50%;top:50%}
 }
 @media (max-width:640px){
   .grid9,.why{grid-template-columns:1fr}
@@ -1116,6 +1121,7 @@ if(gal)(function(){
   var userPaused=reduce.matches,ended=false,hovering=false,focusIn=false,inView=false,started=false;
   var touched=false,touching=false,wheeling=false,nudging=false,nudged=false,replayNext=false,announce=false;
   var animId=0,animTo=-1,settleT=0,wheelT=0,tipT=0,nudgeT=0,fxTick=false,spent=null,tx=0,ty=0,axis=0,prevDis=null,nextDis=null;
+  var snapT=-1,snapAPI=false,lastS=0,vel=0;
   var SCRIM=.54,START=[0,0,1,2],END=[0,1,2,3];
   var DWELL=[5200,5400,6200,6600];               /* temps passe sur chaque carte en lecture automatique */
   var RING=[[49.4,7.7],[10.4,6.9],[42,76],null];  /* la ou le doigt touchera a l'etape suivante */
@@ -1313,10 +1319,14 @@ if(gal)(function(){
       ph.txt.style.opacity=m?(1-.55*a).toFixed(3):'';
     });
     if(active>-1&&Math.abs(p-active)>.02)phones[active].hideNotes();
-    /* l'etape change des que le doigt quitte l'ecran : le geste part pendant que la carte s'aimante */
-    if(started&&r!==active&&!nudging){
-      if(animId){if(r===animTo)activate(r)}
-      else if(!touching&&!wheeling)activate(r);
+    /* l'etape change des que le doigt quitte l'ecran, vers la carte ou l'aimantation va s'arreter :
+       cible annoncee par le navigateur (Chrome), sinon la plus proche si le mouvement y va bien */
+    if(started&&!nudging){
+      if(animId){if(r===animTo&&r!==active)activate(r)}
+      else if(!touching&&!wheeling){
+        var t=snapAPI&&snapT>-1?snapT:((r-p)*vel>=0||Math.abs(p-r)<.1?r:-1);
+        if(t>-1&&t!==active)activate(t);
+      }
     }
   }
   function onScroll(){
@@ -1330,13 +1340,14 @@ if(gal)(function(){
     if(k!==active)activate(k);else{announce=false;phones[k].showNotes()}
     sync();
   }
-  track.addEventListener('scroll',onScroll,{passive:true});
+  track.addEventListener('scroll',function(){var x=track.scrollLeft;if(x!==lastS){vel=x-lastS;lastS=x}onScroll()},{passive:true});
+  track.addEventListener('scrollsnapchanging',function(e){var k=cardEls.indexOf(e.snapTargetInline);if(k>-1){snapAPI=true;snapT=k;onScroll()}});
   if('onscrollend' in window)track.addEventListener('scrollend',function(){clearTimeout(settleT);settle()});
 
   /* ----- Defilement programme, doux, sans combattre l'aimantation ----- */
   function cancelAnim(){if(animId){cancelAnimationFrame(animId);animId=0;animTo=-1;nudging=false;replayNext=false;track.classList.remove('is-free')}}
   function scrollAnim(to,dur,done){
-    cancelAnim();
+    cancelAnim();snapT=-1;
     var from=track.scrollLeft,dist=to-from,t0=performance.now();
     if(!moving()||Math.abs(dist)<1){track.scrollLeft=to;if(done)done();return}
     track.classList.add('is-free');
@@ -1362,7 +1373,7 @@ if(gal)(function(){
     o=o||{};
     if(k===active&&!o.again){announce=false;return}
     var prev=active,fwd=prev<0||k>prev,m=moving(),ph=phones[k];
-    active=k;started=true;
+    active=k;started=true;snapT=-1;
     if(k<N-1)ended=false;
     tabs.forEach(function(t,i){t.setAttribute('aria-current',String(i===k))});
     dots.forEach(function(d,i){d.setAttribute('aria-current',String(i===k))});
@@ -1465,7 +1476,7 @@ if(gal)(function(){
     }
     userPaused=!userPaused;sync();
   });
-  track.addEventListener('touchstart',function(e){var t=e.touches[0];tx=t.clientX;ty=t.clientY;axis=0;touching=true;sync()},{passive:true});
+  track.addEventListener('touchstart',function(e){var t=e.touches[0];tx=t.clientX;ty=t.clientY;axis=0;snapT=-1;vel=0;touching=true;sync()},{passive:true});
   /* l'axe du geste se decide une fois : seul un geste horizontal prend la main sur la galerie */
   track.addEventListener('touchmove',function(e){
     if(axis)return;
@@ -1478,8 +1489,9 @@ if(gal)(function(){
   track.addEventListener('touchend',release,{passive:true});
   track.addEventListener('touchcancel',release,{passive:true});
   track.addEventListener('wheel',function(e){
-    if(Math.abs(e.deltaX)<=Math.abs(e.deltaY))return;
-    wheeling=true;clearTimeout(wheelT);wheelT=setTimeout(function(){wheeling=false;onScroll()},200);
+    if(!(Math.abs(e.deltaX)>Math.abs(e.deltaY)||(e.shiftKey&&!e.deltaX&&e.deltaY)))return;
+    if(!wheeling)snapT=-1;
+    wheeling=true;clearTimeout(wheelT);wheelT=setTimeout(function(){wheeling=false},200);
     manual();
   },{passive:true});
   track.addEventListener('keydown',function(e){
