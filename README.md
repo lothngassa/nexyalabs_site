@@ -45,14 +45,29 @@ Le script s'arrête avec une erreur si une traduction n'a pas pu être appliqué
 
 ## La démonstration (section « L'application »)
 
-Le téléphone rejoue de vrais gestes à partir des captures, empilées en calques dans `[data-demo]` :
+Une galerie façon apple.com : quatre cartes (Accueil, Experts, Puissance, Interface) qui défilent à l'horizontale avec l'aimantation native du navigateur. Sur mobile, la carte active est calée à gauche, la suivante dépasse à droite, et étapes, carte et commandes tiennent dans un seul écran. Sur ordinateur, la carte est centrée et ses annotations se dessinent à côté du téléphone.
+
+Chaque carte rejoue un geste réel de l'application, et l'écran final d'une carte est l'écran de départ de la suivante. Règle de repos : à gauche de la carte active, les téléphones montrent leur état final ; à droite, leur état de départ. Le récit ne se coupe jamais, dans un sens comme dans l'autre.
+
+Le téléphone est fait de captures empilées en calques dans `[data-demo]` :
 
 - `demo__chrome` et `demo__nav` : barre d'état et barre de navigation fixes (capture d'accueil) ;
 - `scr` : contenu de chaque écran, découpé entre ces deux barres pour que seul le contenu glisse ;
 - `demo__scrim` : voile noir à 54 % (mesuré sur la capture réelle) ;
-- `demo__sheet` : panneau des modes (`sheet-dark.webp` / `sheet-light.webp`, découpé à y = 620 px avec des coins de 28 px).
+- `demo__sheet` : panneau des modes (`sheet-dark.webp` / `sheet-light.webp`, découpé à y = 620 px avec des coins de 28 px) ;
+- `demo__dip` : fondu à la couleur de fond de l'application, pour changer d'état sans coupe franche.
 
-Les points de toucher sont en pourcentage de l'écran dans les scénarios `T` du script ; les annotations dans les attributs `data-x` / `data-y` des éléments `.note`. Si une capture change, recaler ces valeurs sur la nouvelle image (540 × 1169 px). La lecture automatique se met en pause au survol, hors écran et via le bouton Pause ; elle est désactivée si le visiteur a demandé moins d'animations.
+Mouvements :
+
+- la lentille des étapes et les points suivent le doigt au pixel près (variable `--sp`) ; les libellés s'allument exactement sous la lentille (rangée `.gal__lit`, découpée par `clip-path`) ;
+- l'étape change dès que le doigt quitte l'écran : le geste démarre pendant que la carte s'aimante ;
+- en lecture automatique, une seule horloge, le remplissage du point actif (durées dans `DWELL`) ; un anneau pulse là où le doigt touchera ensuite (positions dans `RING`) ;
+- à la première visite sur écran tactile, la galerie glisse d'elle-même de quelques pixels et affiche « Fais glisser », une seule fois par session ;
+- toucher le téléphone de la carte active rejoue son geste.
+
+La lecture se met en pause au survol, au clavier dans la galerie, hors écran, onglet masqué et via le bouton Pause ; à la fin, le même bouton propose de revoir depuis le début. Elle est désactivée si le visiteur a demandé moins d'animations : chaque carte montre alors directement son état final. Sans JavaScript, la galerie reste un défilement natif et chaque carte montre son état final.
+
+Les points de toucher sont en pourcentage de l'écran dans les scénarios `T` du script ; les annotations dans les attributs `data-x` / `data-y` des éléments `.note`. Si une capture change, recaler ces valeurs sur la nouvelle image (540 × 1169 px).
 
 ## Déploiement
 

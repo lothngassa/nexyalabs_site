@@ -86,8 +86,8 @@
       "alternateName": ["Loth Ngassa", "Ivan Ngassa", "Loth Ivan Ngassa"],
       "url": "https://nexyalabs.com/#fondateur",
       "jobTitle": "CEO et Fondateur de Nexyalabs",
-      "description": "Loth Ivan Ngassa Yimga est un ingénieur logiciel camerounais, CEO et fondateur de Nexyalabs et créateur de NEXYA AI, un assistant d'intelligence artificielle mobile multi-expert. Originaire de Douala et désormais basé en France, il se spécialise en machine learning, intelligence artificielle et data science, avec l'objectif de devenir machine learning engineer et data scientist. Il est également graphiste et designer UI/UX certifié Adobe.",
-      "disambiguatingDescription": "Cameroonian software engineer, CEO and founder of Nexyalabs and creator of the NEXYA AI app. Based in France, specialising in machine learning, artificial intelligence and data science, aiming to work as a machine learning engineer and data scientist. Adobe-certified UI/UX and graphic designer.",
+      "description": "Loth Ivan Ngassa Yimga est un ingénieur logiciel camerounais, CEO et fondateur de Nexyalabs et créateur de NEXYA AI, un assistant d'intelligence artificielle mobile multi-expert. Originaire du Cameroun et désormais basé en France, il est ingénieur logiciel et designer UI/UX professionnel certifié Adobe, et se forme pour devenir machine learning engineer, data scientist et ingénieur IA. Son ambition : rendre NEXYA le plus utile possible pour ses utilisateurs, partout dans le monde.",
+      "disambiguatingDescription": "Cameroonian software engineer, CEO and founder of Nexyalabs and creator of the NEXYA AI app. Based in France. Software engineer and Adobe-certified professional UI/UX designer, training to become a machine learning engineer, data scientist and AI engineer.",
       "worksFor": { "@id": "https://nexyalabs.com/#organisation" },
       "nationality": { "@type": "Country", "name": "Cameroun" },
       "homeLocation": { "@type": "Place", "name": "France", "address": { "@type": "PostalAddress", "addressCountry": "FR" } },
@@ -199,45 +199,54 @@
 .manifesto__text{max-width:20em;margin-inline:auto;text-align:center;font:600 clamp(1.75rem,1rem + 2.8vw,3.3rem)/1.2 var(--font-display);letter-spacing:-.035em;text-wrap:balance}
 .js .manifesto__text .lw{opacity:.14;transition:opacity .2s linear}
 
-/* --- Demonstration : la vraie application, rejouee geste par geste --- */
-.tour{overflow-x:clip;padding-bottom:0}
-.tour .sec-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
-.tour__grid{display:grid;grid-template-columns:minmax(17rem,24rem) 1fr;align-items:center;gap:clamp(2rem,5vw,4.5rem)}
-.tour__tabs{display:grid;gap:.35rem}
-.tab{position:relative;display:grid;grid-template-columns:2.4rem 1fr;align-items:start;width:100%;padding:1.05rem 1.2rem 1.1rem;border-radius:18px;border:1px solid transparent;text-align:left;color:var(--text-3);transition:background-color var(--t),border-color var(--t),color var(--t)}
-.tab:hover{color:var(--text-2);background:var(--hover)}
-.tab.is-on{color:var(--text);background:var(--surface);border-color:var(--line)}
-.tab__n{font:600 var(--fs-xs)/1.95 var(--font-ui);letter-spacing:.1em;font-variant-numeric:tabular-nums;transition:color var(--t)}
-.tab.is-on .tab__n{color:var(--accent)}
-.tab__short{display:none}
-.tab__title{grid-column:2;font:600 1.08rem/1.35 var(--font-display);letter-spacing:-.02em}
-.tab__desc{grid-column:2;display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
-.tab.is-on .tab__desc,html:not(.js) .tab__desc{grid-template-rows:1fr}
-.tab__desc-in{overflow:hidden}
-.tab__desc-in>span{display:block;padding-top:.5rem;color:var(--text-2);font-size:var(--fs-body);line-height:1.6;opacity:0;transform:translateY(6px);transition:opacity .45s var(--ease) .1s,transform .45s var(--ease) .1s}
-.tab.is-on .tab__desc-in>span,html:not(.js) .tab__desc-in>span{opacity:1;transform:none}
-.tab__bar{grid-column:2;position:relative;height:2px;margin-top:1rem;border-radius:2px;background:var(--line);overflow:hidden;display:none}
-.js .tab.is-on .tab__bar{display:block}
-.tab__bar i{position:absolute;inset:0;background:var(--accent-solid);transform:scaleX(0);transform-origin:left center}
-.tour__ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;margin-top:1.3rem;padding-left:1.2rem}
-html:not(.js) .tour__ctrl{display:none}
-.tour__play{display:inline-flex;align-items:center;gap:.45rem;height:34px;padding:0 .95rem 0 .8rem;border-radius:var(--r-pill);border:1px solid var(--line-2);font-size:var(--fs-xs);font-weight:600;color:var(--text-2);transition:color var(--t-fast),border-color var(--t-fast)}
-.tour__play:hover{color:var(--text);border-color:var(--line-ui)}
-.tour__play svg{width:13px;height:13px}
-.tour__play .i-play,.tour__play[data-state="paused"] .i-pause{display:none}
-.tour__play[data-state="paused"] .i-play{display:block}
-.tour__hint{font-size:var(--fs-xs);color:var(--text-3)}
-.tour__hint .m{display:none}
-.tour__caption{display:none}
+/* --- Demonstration : galerie facon Apple, un geste par carte --- */
+.gal{--lens:color-mix(in srgb,var(--text) 11%,var(--surface-2));overflow-x:hidden;overflow-x:clip;padding-bottom:0}
+:root[data-theme="light"] .gal{--lens:var(--surface)}
+.gal .sec-head{margin-bottom:clamp(1.75rem,3.5vw,2.5rem)}
 
-.tour__stage{position:relative;display:flex;align-items:center;--w:min(300px,calc((100svh - 220px) / 2.113));min-height:calc(var(--w) * 2.113 + 2rem);perspective:1700px;touch-action:pan-y}
-.tour__glow{position:absolute;left:calc(clamp(0rem,6%,4rem) + var(--w) / 2);top:50%;width:min(640px,120%);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;z-index:-1;transition:opacity 1.4s var(--ease)}
-.tour__glow--blue{background:radial-gradient(closest-side,var(--glow),transparent)}
-.tour__glow--green{background:radial-gradient(closest-side,rgba(76,175,80,.2),transparent);opacity:0}
-.tour__stage.is-green .tour__glow--green{opacity:1}
-.tour__stage.is-green .tour__glow--blue{opacity:.3}
-.tour__scroll{position:relative;margin-left:clamp(0rem,6%,4rem);transform-style:preserve-3d;will-change:transform}
-.tour .device{--w:inherit}
+/* Etapes : une lentille qui suit le doigt, et des lettres qui s'allument exactement sous elle */
+.gal__nav{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:clamp(1rem,2.4vw,1.6rem)}
+.gal__arrow{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);background:var(--surface);color:var(--text-2);transition:color var(--t-fast),border-color var(--t-fast),opacity var(--t),transform var(--t-fast) var(--ease)}
+.gal__arrow:hover:not([aria-disabled="true"]){color:var(--text);border-color:var(--line-ui)}
+.gal__arrow:active:not([aria-disabled="true"]){transform:scale(.92)}
+.gal__arrow[aria-disabled="true"]{opacity:.3;cursor:default}
+.gal__arrow svg{width:16px;height:16px}
+.gal__seg{position:relative;container-type:inline-size;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:min(100%,30rem);padding:4px;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--surface-2)}
+.gal__pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px) / 4);border-radius:var(--r-pill);border:1px solid var(--line-2);background:var(--lens);box-shadow:var(--shadow-sm);transform:translateX(calc(var(--sp,0) * 100%));will-change:transform;pointer-events:none}
+.gal__tab,.gal__lit span{height:38px;padding:0 .35rem;font:600 var(--fs-sm)/1 var(--font-ui);font-size:min(var(--fs-sm),3.9cqi);white-space:nowrap}
+.gal__tab{position:relative;z-index:1;border-radius:var(--r-pill);color:var(--text-3);transition:color var(--t)}
+.gal__tab:hover{color:var(--text-2)}
+.gal__lit{position:absolute;inset:4px;z-index:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));color:var(--text);pointer-events:none;clip-path:inset(0 calc(100% - (var(--sp,0) + 1) * 25%) 0 calc(var(--sp,0) * 25%) round 999px)}
+.gal__lit span{display:grid;place-items:center}
+
+/* Rail : defilement natif aimante, une carte par geste */
+.gal__view{--gap:24px;--cw:min(1080px,calc(100cqi - 240px));--side:calc((100cqi - var(--cw)) / 2);--ch:clamp(min(420px,calc(100svh - 96px)),calc(100svh - 248px),720px);--veil:.45;position:relative;container-type:inline-size}
+.js .gal__view[data-reveal]{transform:translateX(72px)}
+.js .gal__view[data-reveal].in{transform:none}
+.gal__track{position:relative;display:flex;gap:var(--gap);padding-block:2px 6px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-tap-highlight-color:transparent}
+.gal__track::-webkit-scrollbar{display:none}
+.gal__track::before,.gal__track::after{content:'';flex:none;width:max(0px,calc(var(--side) - var(--gap)))}
+.gal__track.is-free{scroll-snap-type:none}
+.gal__track:focus-visible{outline-offset:-4px}
+.gal__card{--w:calc((var(--ch) - 56px) / 2.113);position:relative;flex:none;width:var(--cw);min-height:var(--ch);scroll-snap-align:center;scroll-snap-stop:always;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);align-items:center;border-radius:28px;border:1px solid var(--line);background:var(--surface);overflow:hidden;isolation:isolate;-webkit-user-select:none;user-select:none}
+.js .gal__card:not(.is-active),.js .gal__card.is-active .gal__phone{cursor:pointer}
+.gal__veil{position:absolute;inset:0;z-index:6;background:var(--bg);opacity:0;pointer-events:none}
+.gal__txt{position:relative;z-index:2;padding:clamp(2rem,4vw,3.5rem);will-change:transform,opacity}
+.gal__step{margin-bottom:1.1rem;font:600 var(--fs-xs)/1 var(--font-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.gal__title{font:600 clamp(1.9rem,1.2rem + 1.6vw,2.6rem)/1.08 var(--font-display);letter-spacing:-.04em;text-wrap:balance}
+.gal__sub{display:none}
+.gal__desc{max-width:26rem;margin-top:1rem;font-size:var(--fs-lead);line-height:1.6;color:var(--text-2)}
+.gal__stage{position:relative;display:flex;align-items:center;height:100%;perspective:1600px}
+.gal__glow{position:absolute;left:calc(2.5rem + var(--w) / 2);top:50%;width:min(560px,130%);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none;z-index:-1;transition:opacity 1.2s var(--ease)}
+.gal__glow--green{background:radial-gradient(closest-side,rgba(76,175,80,.2),transparent);opacity:0}
+.gal__card.is-green .gal__glow--green{opacity:1}
+.gal__card.is-green .gal__glow:not(.gal__glow--green){opacity:.3}
+.gal__phone{position:relative;margin-left:2.5rem;transform-style:preserve-3d;will-change:transform}
+
+/* Etat final de chaque telephone sans JavaScript */
+.gal__card[data-k="1"] .scr[data-scr="1"] .scr__in,.gal__card[data-k="3"] .scr[data-scr="3"] .scr__in{opacity:1}
+.gal__card[data-k="2"] .demo__scrim{opacity:.54}
+.gal__card[data-k="2"] .demo__sheet{opacity:1;transform:none}
 
 /* Ecran rejoue : chrome fixe, contenu qui glisse, voile, panneau, toucher */
 .demo{--app:#0B131A;background:var(--app)}
@@ -252,9 +261,12 @@ html:not(.js) .tour__ctrl{display:none}
 .demo__sheet{z-index:6;opacity:0;transform:translateY(48%)}
 .demo__dip{z-index:7;background:var(--app);opacity:0;clip-path:inset(3.764% 0 5.817% 0)}
 .demo__nav{z-index:8;clip-path:inset(94.183% 0 0 0)}
+.demo__glint{position:absolute;inset:0;z-index:9;pointer-events:none;background:linear-gradient(112deg,transparent 38%,rgba(255,255,255,.16) 50%,transparent 62%);background-size:260% 100%;background-position:130% 0}
 .demo__tap{position:absolute;z-index:9;width:13%;aspect-ratio:1;border-radius:50%;opacity:0;pointer-events:none;transform:translate(-50%,-50%);
   background:radial-gradient(circle,rgba(255,255,255,.6) 0 30%,rgba(255,255,255,.16) 32% 100%);box-shadow:0 0 0 1.5px rgba(255,255,255,.6),0 6px 18px rgba(0,0,0,.35)}
 :root[data-theme="light"] .demo__tap{background:radial-gradient(circle,rgba(20,24,32,.42) 0 30%,rgba(20,24,32,.12) 32% 100%);box-shadow:0 0 0 1.5px rgba(20,24,32,.45),0 6px 18px rgba(0,0,0,.14)}
+.demo__ring{position:absolute;z-index:9;width:13%;aspect-ratio:1;border-radius:50%;border:2px solid rgba(255,255,255,.9);opacity:0;pointer-events:none;transform:translate(-50%,-50%)}
+:root[data-theme="light"] .demo__ring{border-color:rgba(20,24,32,.6)}
 
 /* Annotations : un trait part de l'ecran vers une legende */
 .notes{position:absolute;inset:0;pointer-events:none;z-index:4}
@@ -264,11 +276,54 @@ html:not(.js) .tour__ctrl{display:none}
 .note-dot,.note-halo{transform-box:fill-box;transform-origin:center}
 .note-dot{fill:var(--accent-solid)}
 .note-halo{fill:var(--accent-solid);fill-opacity:.22}
-.note{position:absolute;max-width:13.5rem;transform:translate(-6px,-50%);opacity:0;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.note{position:absolute;max-width:12.5rem;transform:translate(-6px,-50%);opacity:0;transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .note.on{opacity:1;transform:translate(0,-50%)}
 .note b{display:block;font:600 var(--fs-sm)/1.3 var(--font-ui);color:var(--text)}
 .note small{display:block;margin-top:.15rem;font-size:var(--fs-xs);line-height:1.4;color:var(--text-2)}
 @media (max-width:1099px){ .notes{display:none} }
+
+/* Commandes facon Apple : points liquides et lecture */
+.gal__ctrl{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:clamp(1rem,2.4vw,1.5rem)}
+.gal__dots{display:flex;align-items:center;gap:.65rem;height:52px;padding:0 1.3rem;border-radius:var(--r-pill);background:var(--surface-2);contain:layout}
+.gal__dot{position:relative;flex:none;width:8px;height:8px;border-radius:var(--r-pill);background:var(--line-ui);transition:background-color var(--t)}
+.gal__dot::before{content:'';position:absolute;inset:-18px -5px}
+.gal__dot[aria-current="true"]{width:46px;background:color-mix(in srgb,var(--text) 20%,transparent)}
+.gal__dot i{position:absolute;inset:0;border-radius:inherit;background:var(--text);transform:scaleX(0);transform-origin:left center}
+.gal__dot:not([aria-current="true"]) i{opacity:0}
+:root[data-theme="light"] .gal__dot:not([aria-current="true"]){background:color-mix(in srgb,var(--text-3) 50%,var(--line-ui))}
+@media (forced-colors:active){
+  .gal__dot,:root[data-theme] .gal__dot:not([aria-current="true"]){forced-color-adjust:none;background:GrayText}
+  .gal__dot[aria-current="true"]{background:Canvas;box-shadow:inset 0 0 0 1px CanvasText}
+  .gal__dot i{background:Highlight}
+  .gal__dot:focus-visible{outline-color:Highlight}
+  .gal__pill{border-color:Highlight}
+}
+.gal__play{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:50%;background:var(--surface-2);color:var(--text);transition:transform var(--t-fast) var(--ease),background-color var(--t-fast)}
+.gal__play:hover{background:color-mix(in srgb,var(--text) 7%,var(--surface-2))}
+.gal__play:active{transform:scale(.92)}
+.gal__play svg{grid-area:1/1;width:18px;height:18px;opacity:0;transform:scale(.55);transition:opacity .2s var(--ease),transform .4s var(--ease)}
+.gal__play[data-state="playing"] .i-pa,.gal__play[data-state="paused"] .i-pl,.gal__play[data-state="ended"] .i-rp{opacity:1;transform:none}
+
+/* Replis : navigateurs sans unites de conteneur, sans svh ou sans color-mix (Safari 15, Chrome Android ancien) */
+@supports not (width:1cqi){
+  .gal__view{--cw:min(1080px,calc(100vw - 240px));--side:calc((100vw - var(--cw)) / 2)}
+}
+@supports not (height:1svh){
+  .gal__view{--ch:clamp(min(420px,calc(100vh - 96px)),calc(100vh - 248px),720px)}
+}
+@supports not (color:color-mix(in srgb,red,red)){
+  .gal{--lens:rgba(255,255,255,.1)}
+  :root[data-theme="light"] .gal{--lens:var(--surface)}
+}
+
+/* Invite ephemere : elle accompagne le coup de pouce, puis s'efface pour de bon */
+.gal__swipe{position:absolute;left:calc(var(--side) + var(--cw) / 2);bottom:30px;z-index:8;display:flex;align-items:center;gap:.4rem;padding:.55rem .9rem;border-radius:var(--r-pill);border:1px solid var(--line-2);background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);box-shadow:var(--shadow-md);font:600 var(--fs-xs)/1 var(--font-ui);color:var(--text);white-space:nowrap;opacity:0;transform:translate(-50%,10px);transition:opacity .35s var(--ease),transform .6s var(--ease);pointer-events:none}
+.gal__swipe.on{opacity:1;transform:translate(-50%,0)}
+.gal__swipe svg{width:15px;height:15px}
+.gal__swipe.on svg{animation:galSwipe 1s var(--ease) .25s 2}
+@keyframes galSwipe{50%{transform:translateX(-5px)}}
+@media (hover:hover) and (pointer:fine){ .gal__swipe{display:none} }
+html:not(.js) .gal__ctrl,html:not(.js) .gal__nav,html:not(.js) .gal__swipe{display:none}
 
 /* --- Fonctionnalites --- */
 .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
@@ -331,9 +386,6 @@ html:not(.js) .tour__ctrl{display:none}
 .why__item svg{width:22px;height:22px;color:var(--accent)}
 .why__item h3{font:600 1.25rem/1.3 var(--font-display);letter-spacing:-.02em;margin-bottom:.65rem}
 .why__item p{color:var(--text-2)}
-.weight{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.25rem;margin-top:1.25rem;padding:1.3rem 1.6rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);color:var(--text-2);font-size:var(--fs-sm)}
-.weight b{font:600 1.65rem/1 var(--font-display);letter-spacing:-.03em;color:var(--text);font-variant-numeric:tabular-nums}
-.weight svg{width:20px;height:20px;color:var(--accent)}
 
 /* --- Telechargement : trois telephones en eventail --- */
 .cta{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:clamp(3rem,7vw,5.5rem) clamp(1.25rem,5vw,4rem) 0;border:1px solid var(--line);border-radius:28px;background:var(--surface)}
@@ -379,7 +431,7 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
 
 /* --- Signature geante --- */
 .wordmark{overflow:hidden;height:clamp(4.6rem,17.5vw,15.2rem);margin-top:3.5rem;pointer-events:none;user-select:none;-webkit-user-select:none}
-.wordmark__in{display:block;text-align:center;white-space:nowrap;font:700 clamp(5.5rem,24vw,21.5rem)/.82 var(--font-display);letter-spacing:-.06em}
+.wordmark__in{display:block;text-align:center;white-space:nowrap;font:700 clamp(4rem,24vw,21.5rem)/.82 var(--font-display);letter-spacing:-.06em}
 .wordmark .wi,html:not(.js) .wordmark__in{color:transparent;background:linear-gradient(180deg,color-mix(in srgb,var(--text) 14%,transparent) 0%,color-mix(in srgb,var(--text) 4%,transparent) 62%,transparent 92%);-webkit-background-clip:text;background-clip:text}
 .js .wordmark .wi{transform:translateY(105%);transition:transform 1.4s var(--ease);transition-delay:calc(var(--wi) * 70ms)}
 .js .wordmark.in .wi{transform:none}
@@ -402,24 +454,26 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
   .proof__in{grid-template-columns:repeat(2,1fr)}
   .proof__item:nth-child(3){border-left:0}
   .proof__item:nth-child(n+3){border-top:1px solid var(--line)}
-  .tour__grid{grid-template-columns:minmax(0,1fr);gap:1.1rem}
-  .tour__side{display:contents}
-  .tour__tabs{order:1;display:flex;gap:.3rem;width:max-content;max-width:100%;margin-inline:auto;overflow-x:auto;scrollbar-width:none;padding:2px}
-  .tour__tabs.is-scroll{-webkit-mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 22px),transparent)}
-  .tour__tabs::-webkit-scrollbar{display:none}
-  .tab{display:block;flex:none;width:auto;padding:.5rem .8rem .62rem;border-radius:var(--r-pill);border-color:var(--line-2);text-align:center}
-  .tab__n,.tab__title,.tab__desc{display:none}
-  .tab__short{display:block;font:600 .84rem/1.2 var(--font-ui)}
-  .tab.is-on{background:var(--surface-2);border-color:var(--line-ui)}
-  .js .tab.is-on .tab__bar{position:absolute;left:.8rem;right:.8rem;bottom:.28rem;height:2px;margin:0}
-  .tour__stage{order:2;justify-content:center;--w:min(244px,calc((100svh - 330px) / 2.113))}
-  .tour__scroll{margin-left:0}
-  .tour__glow{left:50%}
-  .tour__caption{order:3;display:block;text-align:center;min-height:7.5rem;padding-inline:.5rem}
-  .tour__cap-t{font:600 1.35rem/1.25 var(--font-display);letter-spacing:-.03em}
-  .tour__cap-d{margin:.55rem auto 0;max-width:28rem;color:var(--text-2)}
-  .tour__ctrl{order:4;justify-content:center;padding-left:0;margin-top:0}
-  .tour__hint .d{display:none}.tour__hint .m{display:inline}
+  .gal__nav{margin-bottom:10px}
+  .gal__arrow{display:none}
+  .gal__seg{width:100%;max-width:26rem}
+  .gal__tab,.gal__lit span{height:36px;padding:0 .2rem;font-size:.8rem;font-size:min(.84rem,3.9cqi)}
+  .gal__view{--in:max(20px,6cqi);--gap:max(12px,5cqi);--cw:calc(100cqi - 2 * var(--in) - var(--gap));--side:var(--in);--ch:clamp(300px,calc(100svh - 206px),780px);--veil:.18}
+  .gal__track{scroll-padding-inline:var(--in)}
+  .gal__card{height:var(--ch);scroll-snap-align:start;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);align-items:stretch;border-radius:26px;text-align:center}
+  .gal__txt{min-height:var(--txth,0px);padding:18px 16px 0}
+  .gal__step,.gal__desc{display:none}
+  .gal__title{font-size:1.4rem;font-size:clamp(1.2rem,5.4cqi,1.55rem);letter-spacing:-.03em}
+  .gal__sub{display:block;margin-top:.3rem;font-size:var(--fs-sm);line-height:1.4;color:var(--text-2);text-wrap:balance}
+  .gal__stage{justify-content:center;align-items:flex-end;min-height:0;padding:12px 0 14px}
+  .gal__phone{margin-left:0;height:100%}
+  .gal__phone .device{width:auto;height:min(100%,calc((var(--cw) - 40px) * 2.1127))}
+  .gal__glow{left:50%;top:60%}
+  .gal__ctrl{gap:12px;margin-top:12px}
+  .gal__dots{height:48px;padding:0 1.15rem}
+  .gal__play{width:48px;height:48px}
+  @supports not (width:1cqi){ .gal__view{--in:max(20px,6vw);--gap:max(12px,5vw);--cw:calc(100vw - 2 * var(--in) - var(--gap))} }
+  @supports not (height:1svh){ .gal__view{--ch:clamp(300px,calc(100vh - 206px),780px)} }
   .experts{grid-template-columns:1fr}
   .power{grid-template-columns:1fr}
   .mode+.mode{border-left:0;border-top:1px solid var(--line)}
@@ -427,6 +481,13 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
   .fan .device{--w:clamp(140px,38vw,170px)}
   .founder{grid-template-columns:1fr}
   .founder__id{position:static}
+}
+@media (max-width:900px) and (max-height:500px) and (orientation:landscape){
+  .gal__view{--ch:max(240px,calc(100svh - 92px))}
+  @supports not (height:1svh){ .gal__view{--ch:max(240px,calc(100vh - 92px))} }
+  .gal__card{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);text-align:left}
+  .gal__txt{align-self:center;min-height:0;padding:0 8px 0 28px}
+  .gal__stage{align-items:center;padding:12px 0}
 }
 @media (max-width:640px){
   .grid9,.why{grid-template-columns:1fr}
@@ -467,7 +528,6 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
 <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
 <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
 <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
-<symbol id="i-feather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><path d="M16 8 2 22M17.5 15H9"/></symbol>
 <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
 <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></symbol>
 </defs></svg>
@@ -574,94 +634,122 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
 </section>
 
 <!-- ===================== Demonstration ===================== -->
-<section class="section tour" id="produit" aria-labelledby="produit-title" data-tour>
+<section class="section gal" id="produit" aria-labelledby="produit-title" data-gallery>
   <div class="wrap">
     <header class="sec-head sec-head--center">
       <p class="kicker" data-reveal data-en="The app">L'application</p>
       <h2 class="h2" id="produit-title" data-reveal data-split data-en="Designed to get straight to the point.">Pensée pour aller droit au but.</h2>
-      <p class="lead" data-reveal style="--d:3" data-en="Watch NEXYA in action, one gesture at a time. Or pick a step.">Regarde NEXYA en action, geste après geste. Ou choisis une étape.</p>
+      <p class="lead" data-reveal style="--d:3" data-en="Swipe through, or let NEXYA show you, one gesture at a time.">Fais glisser, ou laisse NEXYA te montrer, geste après geste.</p>
     </header>
-
-    <div class="tour__grid">
-      <div class="tour__side" data-reveal>
-        <div class="tour__tabs" role="tablist" aria-label="Étapes de la démonstration" data-en-aria-label="Demo steps" data-tabs>
-          <button class="tab is-on" type="button" role="tab" id="tour-tab-1" aria-selected="true" aria-controls="tour-stage" tabindex="0" data-tab>
-            <span class="tab__n" aria-hidden="true">01</span>
-            <span class="tab__short" data-en="Home">Accueil</span>
-            <span class="tab__title" data-en="A home screen that is ready for you.">Un accueil qui t'attend.</span>
-            <span class="tab__desc"><span class="tab__desc-in"><span data-en="Ask anything, or let NEXYA suggest a starting point: write, create an image, code, think something through.">Pose ta question, ou laisse NEXYA te proposer un point de départ&#8239;: écrire, créer une image, coder, réfléchir à voix haute.</span></span></span>
-            <span class="tab__bar" aria-hidden="true"><i></i></span>
-          </button>
-          <button class="tab" type="button" role="tab" id="tour-tab-2" aria-selected="false" aria-controls="tour-stage" tabindex="-1" data-tab>
-            <span class="tab__n" aria-hidden="true">02</span>
-            <span class="tab__short" data-en="Experts">Experts</span>
-            <span class="tab__title" data-en="Pick your expert.">Choisis ton expert.</span>
-            <span class="tab__desc"><span class="tab__desc-in"><span data-en="One tap on the selector, and each field has its specialist: computer science, sciences, law, languages, cooking.">Un geste sur le sélecteur, et chaque domaine a son spécialiste&#8239;: informatique, sciences, droit, langues, cuisine.</span></span></span>
-            <span class="tab__bar" aria-hidden="true"><i></i></span>
-          </button>
-          <button class="tab" type="button" role="tab" id="tour-tab-3" aria-selected="false" aria-controls="tour-stage" tabindex="-1" data-tab>
-            <span class="tab__n" aria-hidden="true">03</span>
-            <span class="tab__short" data-en="Power">Puissance</span>
-            <span class="tab__title" data-en="Set the power.">Règle la puissance.</span>
-            <span class="tab__desc"><span class="tab__desc-in"><span data-en="Geek for complex questions, Loth for everyday use, Justo for an express answer. One tap is enough.">Geek pour les questions complexes, Loth pour le quotidien, Justo pour une réponse express. Un geste suffit.</span></span></span>
-            <span class="tab__bar" aria-hidden="true"><i></i></span>
-          </button>
-          <button class="tab" type="button" role="tab" id="tour-tab-4" aria-selected="false" aria-controls="tour-stage" tabindex="-1" data-tab>
-            <span class="tab__n" aria-hidden="true">04</span>
-            <span class="tab__short" data-en="Interface">Interface</span>
-            <span class="tab__title" data-en="The interface adapts.">L'interface s'adapte.</span>
-            <span class="tab__desc"><span class="tab__desc-in"><span data-en="Choose an expert: NEXYA changes its colour and shortcuts to put what matters right at hand.">Choisis un expert&#8239;: NEXYA change de couleur et de raccourcis pour mettre ce qui compte à portée de main.</span></span></span>
-            <span class="tab__bar" aria-hidden="true"><i></i></span>
-          </button>
-        </div>
-        <div class="tour__ctrl">
-          <button class="tour__play" type="button" data-play data-state="playing" aria-label="Mettre la démonstration en pause" data-en-aria-label="Pause the demo">
-            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L8.5 4.64A1 1 0 0 0 7 5.5z"/></svg>
-            <span data-play-label>Pause</span>
-          </button>
-          <span class="tour__hint"><span class="d" data-en="Click a step to replay it.">Clique sur une étape pour la rejouer.</span><span class="m" data-en="Swipe the phone to change step.">Fais glisser le téléphone pour changer d'étape.</span></span>
-        </div>
+    <div class="gal__nav" data-reveal>
+      <button class="gal__arrow" type="button" aria-label="Étape précédente" data-en-aria-label="Previous step" data-prev aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="gal__seg" role="group" aria-label="Étapes" data-en-aria-label="Steps" data-seg>
+        <span class="gal__pill" aria-hidden="true"></span>
+          <button class="gal__tab" type="button" aria-controls="gal-card-1" aria-current="true" data-tab data-en="Home">Accueil</button>
+          <button class="gal__tab" type="button" aria-controls="gal-card-2" aria-current="false" data-tab data-en="Experts">Experts</button>
+          <button class="gal__tab" type="button" aria-controls="gal-card-3" aria-current="false" data-tab data-en="Power">Puissance</button>
+          <button class="gal__tab" type="button" aria-controls="gal-card-4" aria-current="false" data-tab data-en="Interface">Interface</button>
+        <span class="gal__lit" aria-hidden="true"><span data-en="Home">Accueil</span><span data-en="Experts">Experts</span><span data-en="Power">Puissance</span><span data-en="Interface">Interface</span></span>
       </div>
-
-      <div class="tour__stage" id="tour-stage" role="tabpanel" aria-labelledby="tour-tab-1" data-stage>
-        <span class="tour__glow tour__glow--blue" aria-hidden="true"></span>
-        <span class="tour__glow tour__glow--green" aria-hidden="true"></span>
-        <div class="tour__scroll" data-tour-scroll>
-          <figure class="device" data-device="demo" role="img" aria-label="Un accueil qui t'attend." data-en-aria-label="A home screen that is ready for you.">
-            <div class="device__screen demo" data-demo>
-              <div class="demo__chrome" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div>
-              <div class="scr" data-scr="0"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div>
-              <div class="scr" data-scr="3"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/expert-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/expert-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div>
-              <div class="scr" data-scr="1"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/experts-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/experts-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div>
-              <div class="demo__scrim" data-scrim></div>
-              <div class="demo__sheet" data-sheet><img class="shot" data-v="dark" src="/assets/images/app/sheet-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/sheet-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div>
-              <div class="demo__dip" data-dip></div>
-              <div class="demo__nav" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div>
-              <span class="demo__tap" data-tap aria-hidden="true"></span>
-            </div>
-            <picture class="device__frame"><source srcset="/assets/images/device-frame.webp" type="image/webp"><img src="/assets/images/device-frame.png" alt="" width="568" height="1200" loading="lazy" decoding="async"></picture>
-          </figure>
-        </div>
-        <div class="notes" data-notes aria-hidden="true">
-          <svg></svg>
-          <div class="note" data-k="0" data-x="74" data-y="67.5"><b data-en="Suggestions to get started">Des suggestions pour démarrer</b><small data-en="Write, create, code, think">Écrire, créer, coder, réfléchir</small></div>
-          <div class="note" data-k="0" data-x="87" data-y="89.2"><b data-en="Text, voice or image">Texte, voix ou image</b><small data-en="All through a single bar">Tout passe par une seule barre</small></div>
-          <div class="note" data-k="1" data-x="90.5" data-y="16.1"><b data-en="Six experts available">Six experts disponibles</b><small data-en="One tap to switch">Un geste pour en changer</small></div>
-          <div class="note" data-k="1" data-x="87" data-y="67.7"><b data-en="Five more on the way">Cinq autres en préparation</b><small data-en="Finance, engineering, health and more">Finance, ingénierie, santé et plus</small></div>
-          <div class="note" data-k="2" data-x="93.5" data-y="65.4"><b data-en="Geek">Geek</b><small data-en="Deep reasoning">Réflexion approfondie</small></div>
-          <div class="note" data-k="2" data-x="93.5" data-y="76"><b data-en="Loth">Loth</b><small data-en="The default mode">Le mode par défaut</small></div>
-          <div class="note" data-k="2" data-x="93.5" data-y="86.6"><b data-en="Justo">Justo</b><small data-en="Express answer">Réponse express</small></div>
-          <div class="note" data-k="3" data-x="82" data-y="8"><b data-en="A colour for each expert">Une couleur par expert</b><small data-en="The interface changes identity">L'interface change d'identité</small></div>
-          <div class="note" data-k="3" data-x="79.8" data-y="60.1"><b data-en="Dedicated shortcuts">Des raccourcis dédiés</b><small data-en="Built for that field">Pensés pour ce domaine</small></div>
-        </div>
-      </div>
-
-      <div class="tour__caption" aria-hidden="true">
-        <p class="tour__cap-t" data-cap-title data-en="A home screen that is ready for you.">Un accueil qui t'attend.</p>
-        <p class="tour__cap-d" data-cap-desc data-en="Ask anything, or let NEXYA suggest a starting point: write, create an image, code, think something through.">Pose ta question, ou laisse NEXYA te proposer un point de départ&#8239;: écrire, créer une image, coder, réfléchir à voix haute.</p>
-      </div>
+      <button class="gal__arrow" type="button" aria-label="Étape suivante" data-en-aria-label="Next step" data-next><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
+  </div>
+  <div class="gal__view" data-reveal>
+    <div class="gal__track" tabindex="0" role="region" aria-roledescription="carrousel" data-en-aria-roledescription="carousel" aria-label="Démonstration de l'application" data-en-aria-label="App demo" data-track>
+      <article class="gal__card is-active" id="gal-card-1" role="group" aria-roledescription="diapositive" data-en-aria-roledescription="slide" aria-label="1 sur 4" data-en-aria-label="1 of 4" data-card data-k="0">
+        <div class="gal__txt">
+          <p class="gal__step" data-en="Step 1 of 4">Étape 1 sur 4</p>
+          <h3 class="gal__title" data-en="Ready when you are.">Un accueil qui t'attend.</h3>
+          <p class="gal__sub" data-en="Just ask, or let NEXYA guide you.">Pose ta question ou laisse-toi guider.</p>
+          <p class="gal__desc" data-en="Ask anything, or let NEXYA suggest a starting point: write, create an image, code, think something through.">Pose ta question, ou laisse NEXYA te proposer un point de départ&#8239;: écrire, créer une image, coder, réfléchir à voix haute.</p>
+        </div>
+        <div class="gal__stage">
+          <span class="gal__glow" aria-hidden="true"></span>
+          <div class="gal__phone" data-phone>
+            <figure class="device" role="img" aria-label="Écran d'accueil de NEXYA&#8239;: des suggestions pour démarrer (écrire, créer, coder, réfléchir) et une seule barre pour le texte, la voix ou l'image." data-en-aria-label="NEXYA home screen: suggestions to get started (write, create, code, think) and a single bar for text, voice or image.">
+              <div class="device__screen demo" data-demo><div class="demo__chrome" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><div class="scr" data-scr="0"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div><div class="demo__dip" data-dip></div><div class="demo__nav" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><span class="demo__glint" data-glint aria-hidden="true"></span><span class="demo__tap" data-tap aria-hidden="true"></span></div>
+              <picture class="device__frame"><source srcset="/assets/images/device-frame.webp" type="image/webp"><img src="/assets/images/device-frame.png" alt="" width="568" height="1200" loading="lazy" decoding="async"></picture>
+            </figure>
+          </div>
+          <div class="notes" data-notes aria-hidden="true"><svg></svg><div class="note" data-x="74" data-y="67.5"><b data-en="Suggestions to get started">Des suggestions pour démarrer</b><small data-en="Write, create, code, think">Écrire, créer, coder, réfléchir</small></div><div class="note" data-x="87" data-y="89.2"><b data-en="Text, voice or image">Texte, voix ou image</b><small data-en="All through a single bar">Tout passe par une seule barre</small></div></div>
+        </div>
+        <div class="gal__veil" aria-hidden="true"></div>
+      </article>
+      <article class="gal__card" id="gal-card-2" role="group" aria-roledescription="diapositive" data-en-aria-roledescription="slide" aria-label="2 sur 4" data-en-aria-label="2 of 4" data-card data-k="1">
+        <div class="gal__txt">
+          <p class="gal__step" data-en="Step 2 of 4">Étape 2 sur 4</p>
+          <h3 class="gal__title" data-en="Pick your expert.">Choisis ton expert.</h3>
+          <p class="gal__sub" data-en="One tap, one specialist per field.">Un geste, un spécialiste par domaine.</p>
+          <p class="gal__desc" data-en="One tap on the selector, and each field has its specialist: computer science, sciences, law, languages, cooking.">Un geste sur le sélecteur, et chaque domaine a son spécialiste&#8239;: informatique, sciences, droit, langues, cuisine.</p>
+        </div>
+        <div class="gal__stage">
+          <span class="gal__glow" aria-hidden="true"></span>
+          <div class="gal__phone" data-phone>
+            <figure class="device" role="img" aria-label="Liste des experts&#8239;: six experts disponibles et cinq autres en préparation (finance, ingénierie, santé et plus)." data-en-aria-label="Expert list: six experts available and five more on the way (finance, engineering, health and more).">
+              <div class="device__screen demo" data-demo><div class="demo__chrome" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><div class="scr" data-scr="0"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div><div class="scr" data-scr="1"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/experts-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/experts-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div><div class="demo__dip" data-dip></div><div class="demo__nav" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><span class="demo__tap" data-tap aria-hidden="true"></span></div>
+              <picture class="device__frame"><source srcset="/assets/images/device-frame.webp" type="image/webp"><img src="/assets/images/device-frame.png" alt="" width="568" height="1200" loading="lazy" decoding="async"></picture>
+            </figure>
+          </div>
+          <div class="notes" data-notes aria-hidden="true"><svg></svg><div class="note" data-x="90.5" data-y="16.1"><b data-en="Six experts available">Six experts disponibles</b><small data-en="One tap to switch">Un geste pour en changer</small></div><div class="note" data-x="87" data-y="67.7"><b data-en="Five more on the way">Cinq autres en préparation</b><small data-en="Finance, engineering, health and more">Finance, ingénierie, santé et plus</small></div></div>
+        </div>
+        <div class="gal__veil" aria-hidden="true"></div>
+      </article>
+      <article class="gal__card" id="gal-card-3" role="group" aria-roledescription="diapositive" data-en-aria-roledescription="slide" aria-label="3 sur 4" data-en-aria-label="3 of 4" data-card data-k="2">
+        <div class="gal__txt">
+          <p class="gal__step" data-en="Step 3 of 4">Étape 3 sur 4</p>
+          <h3 class="gal__title" data-en="Set the power.">Règle la puissance.</h3>
+          <p class="gal__sub" data-en="Geek, Loth or Justo: your call.">Geek, Loth ou Justo&#8239;: à toi de choisir.</p>
+          <p class="gal__desc" data-en="Geek for complex questions, Loth for everyday use, Justo for an express answer. One tap is enough.">Geek pour les questions complexes, Loth pour le quotidien, Justo pour une réponse express. Un geste suffit.</p>
+        </div>
+        <div class="gal__stage">
+          <span class="gal__glow" aria-hidden="true"></span>
+          <div class="gal__phone" data-phone>
+            <figure class="device" role="img" aria-label="Choix de la puissance&#8239;: Geek pour une réflexion approfondie, Loth par défaut, Justo pour une réponse express." data-en-aria-label="Power setting: Geek for deep reasoning, Loth by default, Justo for an express answer.">
+              <div class="device__screen demo" data-demo><div class="demo__chrome" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><div class="scr" data-scr="0"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div><div class="scr" data-scr="1"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/experts-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/experts-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div><div class="demo__scrim" data-scrim></div><div class="demo__sheet" data-sheet><img class="shot" data-v="dark" src="/assets/images/app/sheet-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/sheet-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><div class="demo__dip" data-dip></div><div class="demo__nav" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><span class="demo__tap" data-tap aria-hidden="true"></span></div>
+              <picture class="device__frame"><source srcset="/assets/images/device-frame.webp" type="image/webp"><img src="/assets/images/device-frame.png" alt="" width="568" height="1200" loading="lazy" decoding="async"></picture>
+            </figure>
+          </div>
+          <div class="notes" data-notes aria-hidden="true"><svg></svg><div class="note" data-x="93.5" data-y="65.4"><b data-en="Geek">Geek</b><small data-en="Deep reasoning">Réflexion approfondie</small></div><div class="note" data-x="93.5" data-y="76"><b data-en="Loth">Loth</b><small data-en="The default mode">Le mode par défaut</small></div><div class="note" data-x="93.5" data-y="86.6"><b data-en="Justo">Justo</b><small data-en="Express answer">Réponse express</small></div></div>
+        </div>
+        <div class="gal__veil" aria-hidden="true"></div>
+      </article>
+      <article class="gal__card" id="gal-card-4" role="group" aria-roledescription="diapositive" data-en-aria-roledescription="slide" aria-label="4 sur 4" data-en-aria-label="4 of 4" data-card data-k="3">
+        <div class="gal__txt">
+          <p class="gal__step" data-en="Step 4 of 4">Étape 4 sur 4</p>
+          <h3 class="gal__title" data-en="The interface adapts.">L'interface s'adapte.</h3>
+          <p class="gal__sub" data-en="A colour and shortcuts of its own.">Une couleur et des raccourcis dédiés.</p>
+          <p class="gal__desc" data-en="Choose an expert: NEXYA changes its colour and shortcuts to put what matters right at hand.">Choisis un expert&#8239;: NEXYA change de couleur et de raccourcis pour mettre ce qui compte à portée de main.</p>
+        </div>
+        <div class="gal__stage">
+          <span class="gal__glow" aria-hidden="true"></span><span class="gal__glow gal__glow--green" aria-hidden="true"></span>
+          <div class="gal__phone" data-phone>
+            <figure class="device" role="img" aria-label="Écran d'un expert&#8239;: l'interface prend sa couleur et propose des raccourcis pensés pour son domaine." data-en-aria-label="An expert's screen: the interface takes on its colour and offers shortcuts built for its field.">
+              <div class="device__screen demo" data-demo><div class="demo__chrome" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><div class="scr" data-scr="0"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div><div class="scr" data-scr="3"><div class="scr__in"><img class="shot" data-v="dark" src="/assets/images/app/expert-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/expert-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div></div><div class="demo__scrim" data-scrim></div><div class="demo__sheet" data-sheet><img class="shot" data-v="dark" src="/assets/images/app/sheet-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/sheet-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><div class="demo__dip" data-dip></div><div class="demo__nav" aria-hidden="true"><img class="shot" data-v="dark" src="/assets/images/app/accueil-dark.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"><img class="shot" data-v="light" src="/assets/images/app/accueil-light.webp" alt="" width="540" height="1169" loading="lazy" decoding="async"></div><span class="demo__tap" data-tap aria-hidden="true"></span></div>
+              <picture class="device__frame"><source srcset="/assets/images/device-frame.webp" type="image/webp"><img src="/assets/images/device-frame.png" alt="" width="568" height="1200" loading="lazy" decoding="async"></picture>
+            </figure>
+          </div>
+          <div class="notes" data-notes aria-hidden="true"><svg></svg><div class="note" data-x="82" data-y="8"><b data-en="A colour for each expert">Une couleur par expert</b><small data-en="The interface changes identity">L'interface change d'identité</small></div><div class="note" data-x="79.8" data-y="60.1"><b data-en="Dedicated shortcuts">Des raccourcis dédiés</b><small data-en="Built for that field">Pensés pour ce domaine</small></div></div>
+        </div>
+        <div class="gal__veil" aria-hidden="true"></div>
+      </article>
+    </div>
+    <p class="gal__swipe" data-swipe aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 6l-6 6 6 6"/><path d="M19 6l-6 6 6 6" opacity=".45"/></svg><span data-en="Swipe">Fais glisser</span></p>
+  </div>
+  <div class="wrap">
+    <div class="gal__ctrl">
+      <div class="gal__dots" data-dots>
+        <button class="gal__dot" type="button" aria-current="true" aria-label="Étape 1 sur 4, Accueil" data-en-aria-label="Step 1 of 4, Home" data-dot><i></i></button>
+        <button class="gal__dot" type="button" aria-current="false" aria-label="Étape 2 sur 4, Experts" data-en-aria-label="Step 2 of 4, Experts" data-dot><i></i></button>
+        <button class="gal__dot" type="button" aria-current="false" aria-label="Étape 3 sur 4, Puissance" data-en-aria-label="Step 3 of 4, Power" data-dot><i></i></button>
+        <button class="gal__dot" type="button" aria-current="false" aria-label="Étape 4 sur 4, Interface" data-en-aria-label="Step 4 of 4, Interface" data-dot><i></i></button>
+      </div>
+      <button class="gal__play" type="button" data-play data-state="playing" aria-label="Mettre la démonstration en pause" data-en-aria-label="Pause the demo">
+        <svg class="i-pa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="i-pl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L8.5 4.64A1 1 0 0 0 7 5.5z"/></svg>
+        <svg class="i-rp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+    <p class="sr-only" aria-live="polite" data-live></p>
   </div>
 </section>
 
@@ -774,7 +862,6 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
       <article class="why__item draw" data-reveal style="--d:0"><div class="why__top"><span class="why__n">03</span><svg aria-hidden="true"><use href="#i-wallet"/></svg></div><h3 data-en="Ready for Mobile Money">Prête pour le Mobile Money</h3><p data-en="Payment with Orange Money, MTN, Wave and Airtel is on the way, along with bank cards.">Le paiement par Orange Money, MTN, Wave et Airtel est en préparation, ainsi que par carte bancaire.</p></article>
       <article class="why__item draw" data-reveal style="--d:1"><div class="why__top"><span class="why__n">04</span><svg aria-hidden="true"><use href="#i-shield"/></svg></div><h3 data-en="Your privacy, for real">Ta vie privée, vraiment</h3><p data-en="GDPR and AI Act compliant. Your data trains no model by default, and you can export or delete everything.">Conforme au RGPD et à l'AI Act. Tes données n'entraînent aucun modèle par défaut, et tu peux tout exporter ou supprimer.</p></article>
     </div>
-    <p class="weight draw" data-reveal><svg aria-hidden="true"><use href="#i-feather"/></svg><b data-weight data-en="&lt;&nbsp;140&nbsp;KB">&lt;&nbsp;140&nbsp;Ko</b><span data-en="That is what the first screen of this page weighs, fonts and images included. The app is built to the same standard.">C'est ce que pèse le premier écran de cette page, polices et images comprises. L'application est construite avec la même exigence.</span></p>
   </div>
 </section>
 
@@ -825,10 +912,10 @@ html:not(.js) .fan [data-fan-i="1"]{transform:translate(62%,9%) rotate(9deg) sca
       </div>
     </div>
     <div data-reveal style="--d:2">
-      <p class="founder__bio" data-en-html="A software engineer and Adobe-certified UI/UX designer, &lt;strong&gt;I designed and built NEXYA&lt;/strong&gt;, from the backend architecture to the mobile app. Trained in Douala, I am now in France specialising in machine learning, artificial intelligence and data science, with a clear goal: to work as a machine learning engineer and data scientist, and to make NEXYA useful everywhere, including where connectivity falls short.">Ingénieur logiciel et designer UI/UX certifié Adobe, <strong>j'ai conçu et développé NEXYA</strong>, de l'architecture backend jusqu'à l'application mobile. Formé à Douala, je poursuis aujourd'hui en France une spécialisation en machine learning, intelligence artificielle et data science, avec un cap clair&#8239;: exercer comme machine learning engineer et data scientist, et rendre NEXYA utile partout, y compris là où la connexion manque.</p>
+      <p class="founder__bio" data-en-html="&lt;strong&gt;A software engineer and professional UI/UX designer&lt;/strong&gt;, I designed and built NEXYA, from the backend architecture to the mobile app. &lt;strong&gt;An aspiring machine learning engineer, data scientist and AI engineer&lt;/strong&gt;, I have one ambition: to make NEXYA as useful as possible for its users, all around the world."><strong>Ingénieur logiciel et designer UI/UX professionnel</strong>, j'ai conçu et développé NEXYA, de l'architecture backend jusqu'à l'application mobile. <strong>Machine learning engineer, data scientist et ingénieur IA en devenir</strong>, j'ai une ambition&#8239;: rendre NEXYA le plus utile possible pour ses utilisateurs, partout dans le monde.</p>
       <dl class="facts">
         <div><dt data-en="Role">Rôle</dt><dd data-en="CEO and founder, Nexyalabs">CEO et fondateur, Nexyalabs</dd></div>
-        <div><dt data-en="Based in">Basé en</dt><dd data-en="France, originally from Douala, Cameroon">France, originaire de Douala au Cameroun</dd></div>
+        <div><dt data-en="Based in">Basé en</dt><dd data-en="France, originally from Cameroon">France, originaire du Cameroun</dd></div>
         <div><dt data-en="Engineering">Ingénierie</dt><dd data-en="Software engineering, Flutter, Python, FastAPI">Ingénierie logicielle, Flutter, Python, FastAPI</dd></div>
         <div><dt data-en="Focus">Spécialisation</dt><dd data-en="Machine learning, artificial intelligence, data science">Machine learning, intelligence artificielle, data science</dd></div>
         <div><dt>Design</dt><dd data-en="UI/UX and graphic design, Adobe certified">Design UI/UX et graphisme, certifié Adobe</dd></div>
@@ -1016,246 +1103,431 @@ if(lit){
   });
 }
 
-/* ---------- Demonstration : la vraie application, rejouee geste par geste ---------- */
-var tour=document.querySelector('[data-tour]');
-if(tour)(function(){
-  var tabs=[].slice.call(tour.querySelectorAll('[data-tab]'));
-  var tabsBox=tour.querySelector('[data-tabs]');
-  var stage=tour.querySelector('[data-stage]');
-  var scroller=tour.querySelector('[data-tour-scroll]');
-  var device=tour.querySelector('[data-device="demo"]');
-  var demo=tour.querySelector('[data-demo]');
-  var playBtn=tour.querySelector('[data-play]'),playLbl=tour.querySelector('[data-play-label]');
-  var capT=tour.querySelector('[data-cap-title]'),capD=tour.querySelector('[data-cap-desc]');
-  var scr={0:demo.querySelector('[data-scr="0"] .scr__in'),1:demo.querySelector('[data-scr="1"] .scr__in'),3:demo.querySelector('[data-scr="3"] .scr__in')};
-  var lay0=demo.querySelector('[data-scr="0"]'),lay3=demo.querySelector('[data-scr="3"]');
-  var scrim=demo.querySelector('[data-scrim]'),sheet=demo.querySelector('[data-sheet]'),dipEl=demo.querySelector('[data-dip]'),tapEl=demo.querySelector('[data-tap]');
-  var N=tabs.length,cur=0,shown=0,busy=null,seq=0,live=[];
-  var DWELL=7200,prog=null,userPaused=reduce.matches,hovering=false,inView=false,entered=false;
-  var SCRIM=.54;
+/* ---------- Demonstration : galerie facon Apple, un geste par carte ---------- */
+var gal=document.querySelector('[data-gallery]');
+if(gal)(function(){
+  var view=gal.querySelector('.gal__view'),track=gal.querySelector('[data-track]');
+  var cardEls=[].slice.call(gal.querySelectorAll('[data-card]'));
+  var tabs=[].slice.call(gal.querySelectorAll('[data-tab]'));
+  var dots=[].slice.call(gal.querySelectorAll('[data-dot]'));
+  var seg=gal.querySelector('[data-seg]'),tip=gal.querySelector('[data-swipe]'),live=gal.querySelector('[data-live]');
+  var prevB=gal.querySelector('[data-prev]'),nextB=gal.querySelector('[data-next]'),playB=gal.querySelector('[data-play]');
+  var N=cardEls.length,active=-1,snaps=[0],veil=.45,prog=null,ringA=null,lastKey='';
+  var userPaused=reduce.matches,ended=false,hovering=false,focusIn=false,inView=false,started=false;
+  var touched=false,touching=false,wheeling=false,nudging=false,nudged=false,replayNext=false,announce=false;
+  var animId=0,animTo=-1,settleT=0,wheelT=0,tipT=0,nudgeT=0,fxTick=false,spent=null,tx=0,ty=0,axis=0,prevDis=null,nextDis=null;
+  var SCRIM=.54,START=[0,0,1,2],END=[0,1,2,3];
+  var DWELL=[5200,5400,6200,6600];               /* temps passe sur chaque carte en lecture automatique */
+  var RING=[[49.4,7.7],[10.4,6.9],[42,76],null];  /* la ou le doigt touchera a l'etape suivante */
   var E={push:'cubic-bezier(.32,.72,0,1)',sheet:'cubic-bezier(.05,.7,.1,1)',accel:'cubic-bezier(.3,0,.8,.15)',wave:'cubic-bezier(.65,0,.35,1)'};
-  var TXT=EN?{play:'Play',pause:'Pause',aPlay:'Play the demo',aPause:'Pause the demo'}
-            :{play:'Lecture',pause:'Pause',aPlay:'Lancer la démonstration',aPause:'Mettre la démonstration en pause'};
-
-  function A(el,kf,o){var a=el.animate(kf,Object.assign({fill:'both'},o));live.push(a);return a.finished.catch(function(){})}
+  var TXT=EN?{pause:'Pause the demo',play:'Play the demo',replay:'Replay from the start',step:'Step ',of:' of ',sep:': '}
+            :{pause:'Mettre la démonstration en pause',play:'Lancer la démonstration',replay:'Revoir depuis le début',step:'Étape ',of:' sur ',sep:'\u202F: '};
+  var wideMQ=matchMedia('(min-width: 1100px)'),NS='http://www.w3.org/2000/svg';
   function wait(ms){return new Promise(function(r){setTimeout(r,ms)})}
-  function reset(el){el.style.transform='';el.style.opacity='';el.style.filter='';el.style.clipPath='';el.style.boxShadow=''}
+  function layer(cls,parent){var e=document.createElement('span');e.className=cls;e.setAttribute('aria-hidden','true');parent.appendChild(e);return e}
+  try{nudged=!!sessionStorage.getItem('nx-nudge')}catch(e){}
 
-  /* Etat final de chaque etape, applique sans animation */
-  function setState(k){
-    live.forEach(function(a){try{a.cancel()}catch(e){}});live=[];
-    [scr[0],scr[1],scr[3],scrim,sheet,dipEl].forEach(reset);
-    lay0.style.zIndex='';lay3.style.zIndex='';tapEl.style.opacity='0';
-    scr[0].style.opacity='1';
-    scr[1].style.opacity=k===1?'1':'0';
-    scr[3].style.opacity=k===3?'1':'0';
-    scrim.style.opacity=k===2?String(SCRIM):'0';
-    sheet.style.opacity=k===2?'1':'0';
-    sheet.style.transform=k===2?'none':'translateY(48%)';
-    stage.classList.toggle('is-green',k===3);
-  }
-
-  /* Un doigt touche l'ecran : le point apparait, presse, puis se dissipe */
-  function tap(x,y){
-    tapEl.style.left=x+'%';tapEl.style.top=y+'%';
-    var a=tapEl.animate([
-      {opacity:0,transform:'translate(-50%,-50%) scale(.5)'},
-      {opacity:1,transform:'translate(-50%,-50%) scale(1)',offset:.3},
-      {opacity:1,transform:'translate(-50%,-50%) scale(.9)',offset:.45},
-      {opacity:0,transform:'translate(-50%,-50%) scale(1.75)'}
-    ],{duration:780,easing:'cubic-bezier(.2,.7,.2,1)'});
-    live.push(a);
-    return wait(320);
-  }
-
-  /* Les scenarios entre deux etapes voisines */
-  var T={
-    '0>1':function(tk){return tap(49.4,7.7).then(function(){if(tk!==seq)return;
-      scr[1].style.opacity='1';
-      return Promise.all([
-        A(scr[1],[{transform:'translateX(100%)',boxShadow:'-28px 0 44px rgba(0,0,0,.5)'},{transform:'translateX(0)',boxShadow:'-28px 0 44px rgba(0,0,0,0)'}],{duration:640,easing:E.push}),
-        A(scr[0],[{transform:'translateX(0)',filter:'brightness(1)'},{transform:'translateX(-28%)',filter:'brightness(.45)'}],{duration:640,easing:E.push})
-      ]);
-    })},
-    '1>2':function(tk){return tap(10.4,6.9).then(function(){if(tk!==seq)return;
-      return Promise.all([
-        A(scr[1],[{transform:'translateX(0)'},{transform:'translateX(100%)'}],{duration:540,easing:E.push}),
-        A(scr[0],[{transform:'translateX(-28%)',filter:'brightness(.45)'},{transform:'translateX(0)',filter:'brightness(1)'}],{duration:540,easing:E.push})
-      ]);
-    }).then(function(){if(tk!==seq)return;return wait(300)})
-      .then(function(){if(tk!==seq)return;return tap(29.6,89.6)})
-      .then(function(){if(tk!==seq)return;
-        sheet.style.opacity='1';
+  /* ----- Un moteur de gestes par telephone ----- */
+  function Phone(card,k){
+    var demo=card.querySelector('[data-demo]');
+    function q(sel){return demo.querySelector(sel)}
+    var P={k:k,card:card,live:[],seq:0,state:END[k],busy:false,notesOn:false,
+      scr:{0:q('[data-scr="0"] .scr__in'),1:q('[data-scr="1"] .scr__in'),3:q('[data-scr="3"] .scr__in')},
+      lay0:q('[data-scr="0"]'),lay3:q('[data-scr="3"]'),scrim:q('[data-scrim]'),sheet:q('[data-sheet]'),
+      dip:q('[data-dip]'),tap:q('[data-tap]'),glint:q('[data-glint]')||layer('demo__glint',demo),ring:RING[k]?layer('demo__ring',demo):null,
+      wrap:card.querySelector('[data-phone]'),device:card.querySelector('.device'),stage:card.querySelector('.gal__stage'),
+      txt:card.querySelector('.gal__txt'),veil:card.querySelector('.gal__veil')};
+    function A(el,kf,o){if(!el)return Promise.resolve();var a=el.animate(kf,Object.assign({fill:'both'},o));P.live.push(a);return a.finished.catch(function(){})}
+    function reset(el){if(!el)return;el.style.transform='';el.style.opacity='';el.style.filter='';el.style.clipPath='';el.style.boxShadow=''}
+    P.set=function(s){
+      P.live.forEach(function(a){try{a.cancel()}catch(e){}});P.live=[];
+      [P.scr[0],P.scr[1],P.scr[3],P.scrim,P.sheet,P.dip].forEach(reset);
+      if(P.lay0)P.lay0.style.zIndex='';if(P.lay3)P.lay3.style.zIndex='';if(P.tap)P.tap.style.opacity='0';
+      if(P.scr[0])P.scr[0].style.opacity='1';
+      if(P.scr[1])P.scr[1].style.opacity=s===1?'1':'0';
+      if(P.scr[3])P.scr[3].style.opacity=s===3?'1':'0';
+      if(P.scrim)P.scrim.style.opacity=s===2?String(SCRIM):'0';
+      if(P.sheet){P.sheet.style.opacity=s===2?'1':'0';P.sheet.style.transform=s===2?'none':'translateY(48%)'}
+      card.classList.toggle('is-green',s===3);
+      P.state=s;
+    };
+    function tap(x,y){
+      if(!P.tap)return wait(0);
+      P.tap.style.left=x+'%';P.tap.style.top=y+'%';
+      var a=P.tap.animate([
+        {opacity:0,transform:'translate(-50%,-50%) scale(.5)'},
+        {opacity:1,transform:'translate(-50%,-50%) scale(1)',offset:.3},
+        {opacity:1,transform:'translate(-50%,-50%) scale(.9)',offset:.45},
+        {opacity:0,transform:'translate(-50%,-50%) scale(1.75)'}
+      ],{duration:780,easing:'cubic-bezier(.2,.7,.2,1)'});
+      P.live.push(a);
+      return wait(320);
+    }
+    var T={
+      intro:function(tk){return Promise.all([
+        A(P.dip,[{opacity:1},{opacity:0}],{duration:900,easing:'ease-out'}),
+        A(P.scr[0],[{transform:'scale(1.05)',filter:'brightness(.55)'},{transform:'none',filter:'none'}],{duration:1150,easing:E.push}),
+        A(P.glint,[{backgroundPosition:'130% 0'},{backgroundPosition:'-40% 0'}],{duration:1500,delay:420,easing:'cubic-bezier(.16,1,.3,1)'})
+      ])},
+      '0>1':function(tk){return wait(450).then(function(){if(tk!==P.seq)return;return tap(49.4,7.7)}).then(function(){if(tk!==P.seq)return;
+        P.scr[1].style.opacity='1';
         return Promise.all([
-          A(scrim,[{opacity:0},{opacity:SCRIM}],{duration:440,easing:'ease-out'}),
-          A(sheet,[{transform:'translateY(48%)'},{transform:'translateY(0)'}],{duration:680,easing:E.sheet})
+          A(P.scr[1],[{transform:'translateX(100%)',boxShadow:'-28px 0 44px rgba(0,0,0,.5)'},{transform:'translateX(0)',boxShadow:'-28px 0 44px rgba(0,0,0,0)'}],{duration:640,easing:E.push}),
+          A(P.scr[0],[{transform:'translateX(0)',filter:'brightness(1)'},{transform:'translateX(-28%)',filter:'brightness(.45)'}],{duration:640,easing:E.push})
         ]);
       })},
-    '2>3':function(tk){return tap(42,76).then(function(){if(tk!==seq)return;
-      return Promise.all([
-        A(sheet,[{transform:'translateY(0)'},{transform:'translateY(48%)'}],{duration:420,easing:E.accel}),
-        A(scrim,[{opacity:SCRIM},{opacity:0}],{duration:420,easing:'ease-in'})
-      ]);
-    }).then(function(){if(tk!==seq)return;return wait(260)})
-      .then(function(){if(tk!==seq)return;return tap(49.4,7.7)})
-      .then(function(){if(tk!==seq)return;
-        scr[3].style.opacity='1';stage.classList.add('is-green');
-        return A(scr[3],[{clipPath:'circle(0% at 50.2% 8%)'},{clipPath:'circle(150% at 50.2% 8%)'}],{duration:1050,easing:E.wave});
-      })},
-    '3>0':function(tk){return tap(50.2,8).then(function(){if(tk!==seq)return;
-      lay0.style.zIndex='3';lay3.style.zIndex='2';stage.classList.remove('is-green');
-      return A(scr[0],[{clipPath:'circle(0% at 50.2% 8%)'},{clipPath:'circle(150% at 50.2% 8%)'}],{duration:980,easing:E.wave});
-    })}
-  };
+      '1>2':function(tk){return wait(450).then(function(){if(tk!==P.seq)return;return tap(10.4,6.9)}).then(function(){if(tk!==P.seq)return;
+        return Promise.all([
+          A(P.scr[1],[{transform:'translateX(0)'},{transform:'translateX(100%)'}],{duration:540,easing:E.push}),
+          A(P.scr[0],[{transform:'translateX(-28%)',filter:'brightness(.45)'},{transform:'translateX(0)',filter:'brightness(1)'}],{duration:540,easing:E.push})
+        ]);
+      }).then(function(){if(tk!==P.seq)return;return wait(300)})
+        .then(function(){if(tk!==P.seq)return;return tap(29.6,89.6)})
+        .then(function(){if(tk!==P.seq)return;
+          P.sheet.style.opacity='1';
+          return Promise.all([
+            A(P.scrim,[{opacity:0},{opacity:SCRIM}],{duration:440,easing:'ease-out'}),
+            A(P.sheet,[{transform:'translateY(48%)'},{transform:'translateY(0)'}],{duration:680,easing:E.sheet})
+          ]);
+        })},
+      '2>3':function(tk){return wait(450).then(function(){if(tk!==P.seq)return;return tap(42,76)}).then(function(){if(tk!==P.seq)return;
+        return Promise.all([
+          A(P.sheet,[{transform:'translateY(0)'},{transform:'translateY(48%)'}],{duration:420,easing:E.accel}),
+          A(P.scrim,[{opacity:SCRIM},{opacity:0}],{duration:420,easing:'ease-in'})
+        ]);
+      }).then(function(){if(tk!==P.seq)return;return wait(260)})
+        .then(function(){if(tk!==P.seq)return;return tap(49.4,7.7)})
+        .then(function(){if(tk!==P.seq)return;
+          P.scr[3].style.opacity='1';card.classList.add('is-green');
+          return A(P.scr[3],[{clipPath:'circle(0% at 50.2% 8%)'},{clipPath:'circle(150% at 50.2% 8%)'}],{duration:1050,easing:E.wave});
+        })}
+    };
+    /* rejoue le geste de la carte depuis son etat de depart ; soft : fondu pour masquer le retour en arriere */
+    P.play=function(soft){
+      var tk=++P.seq;P.busy=true;P.set(START[k]);
+      if(soft&&k>0)A(P.dip,[{opacity:1},{opacity:0}],{duration:420,easing:'ease-out'});
+      var run=k===0?T.intro(tk):T[START[k]+'>'+END[k]](tk);
+      return Promise.resolve(run).then(function(){
+        if(tk!==P.seq)return false;
+        P.set(END[k]);P.busy=false;if(k>0)P.sweep();return true;
+      });
+    };
+    P.stop=function(s){P.seq++;P.busy=false;P.set(s)};
+    /* change d'etat derriere un bref fondu a la couleur de l'application, jamais en coupe franche */
+    P.soft=function(s,delay){
+      if(!moving()){P.stop(s);return}
+      var tk=++P.seq;P.busy=false;
+      wait(delay||0).then(function(){if(tk!==P.seq)return;return A(P.dip,[{opacity:0},{opacity:1}],{duration:150,easing:'ease-in'})})
+        .then(function(){if(tk!==P.seq)return;P.set(s);A(P.dip,[{opacity:1},{opacity:0}],{duration:280,easing:'ease-out'})});
+    };
+    /* reflet de verre a l'arrivee sur l'ecran final */
+    P.sweep=function(){if(moving())A(P.glint,[{backgroundPosition:'130% 0'},{backgroundPosition:'-40% 0'}],{duration:1300,delay:60,easing:'cubic-bezier(.16,1,.3,1)'})};
+    /* anneau d'anticipation : il pulse la ou le doigt va toucher */
+    P.pulse=function(delay){
+      var c=RING[k];P.ring.style.left=c[0]+'%';P.ring.style.top=c[1]+'%';
+      return P.ring.animate([
+        {opacity:0,transform:'translate(-50%,-50%) scale(.5)'},
+        {opacity:.95,transform:'translate(-50%,-50%) scale(.85)',offset:.3},
+        {opacity:0,transform:'translate(-50%,-50%) scale(1.45)'}
+      ],{duration:580,delay:delay,iterations:2,easing:'cubic-bezier(.22,1,.36,1)'});
+    };
 
-  /* Saut entre etapes non voisines : fondu au fond de l'application */
-  function dip(k,tk){
-    return A(dipEl,[{opacity:0},{opacity:1}],{duration:220,easing:'ease-in'}).then(function(){
-      if(tk!==seq)return;
-      setState(k);
-      A(k===1?scr[1]:k===3?scr[3]:scr[0],[{transform:'scale(1.045)'},{transform:'none'}],{duration:720,easing:E.push});
-      return A(dipEl,[{opacity:1},{opacity:0}],{duration:480,easing:'ease-out'});
+    /* annotations */
+    var svg=card.querySelector('[data-notes] svg');
+    P.notes=[].slice.call(card.querySelectorAll('.note')).map(function(el){
+      var g=document.createElementNS(NS,'g'),line=document.createElementNS(NS,'path'),halo=document.createElementNS(NS,'circle'),dot=document.createElementNS(NS,'circle');
+      line.setAttribute('class','note-line');halo.setAttribute('class','note-halo');dot.setAttribute('class','note-dot');
+      halo.setAttribute('r','9');dot.setAttribute('r','3.5');
+      g.appendChild(line);g.appendChild(halo);g.appendChild(dot);g.style.opacity='0';svg.appendChild(g);
+      return {el:el,x:+el.getAttribute('data-x'),y:+el.getAttribute('data-y'),g:g,line:line,halo:halo,dot:dot,len:0,anims:[]};
     });
+    P.layout=function(){
+      var dw=P.device.offsetWidth,dh=P.device.offsetHeight;
+      var ox=P.wrap.offsetLeft+P.device.offsetLeft,oy=P.wrap.offsetTop+P.device.offsetTop;
+      var sx=ox+dw*.026408,sy=oy+dh*.011667,sw=dw*.940141,sh=dh*.9775,lx=ox+dw+28;
+      P.notes.forEach(function(n){
+        var tx=sx+sw*n.x/100,ty=sy+sh*n.y/100;
+        n.el.style.left=lx+'px';n.el.style.top=ty+'px';
+        n.line.setAttribute('d','M'+tx.toFixed(1)+' '+ty.toFixed(1)+'H'+(lx-12).toFixed(1));
+        n.len=Math.max(1,lx-12-tx);
+        [n.halo,n.dot].forEach(function(c){c.setAttribute('cx',tx.toFixed(1));c.setAttribute('cy',ty.toFixed(1))});
+      });
+      var W=P.stage.clientWidth,H=P.stage.clientHeight;
+      P.fit=P.notes.every(function(n){var t=parseFloat(n.el.style.top),h=n.el.offsetHeight/2;return parseFloat(n.el.style.left)+n.el.offsetWidth<=W-8&&t-h>=4&&t+h<=H-4});
+    };
+    P.hideNotes=function(){
+      P.notes.forEach(function(n){n.el.classList.remove('on');n.g.style.opacity='0';n.anims.forEach(function(a){a.cancel()});n.anims=[]});
+      P.notesOn=false;
+    };
+    P.showNotes=function(){
+      if(!wideMQ.matches||P.notesOn||P.busy||P.state!==END[k]||!P.notes.length)return;
+      P.layout();if(!P.fit)return;P.notesOn=true;
+      var m=moving(),tk=P.seq;
+      P.notes.forEach(function(n,i){
+        var d=m?i*150:0;
+        n.g.style.opacity='1';n.line.style.strokeDasharray=n.len;
+        n.anims=[
+          n.line.animate([{strokeDashoffset:n.len},{strokeDashoffset:0}],{duration:m?700:0,delay:d,easing:'cubic-bezier(.65,0,.35,1)',fill:'both'}),
+          n.dot.animate([{transform:'scale(0)'},{transform:'scale(1)'}],{duration:m?420:0,delay:d,easing:'cubic-bezier(.34,1.56,.64,1)',fill:'both'}),
+          n.halo.animate([{transform:'scale(.3)',opacity:0},{transform:'scale(1.5)',opacity:1,offset:.35},{transform:'scale(2.6)',opacity:0}],{duration:m?1300:0,delay:d,fill:'both'})
+        ];
+        setTimeout(function(){if(P.notesOn&&tk===P.seq)n.el.classList.add('on')},m?d+420:0);
+      });
+    };
+    return P;
   }
+  var phones=cardEls.map(function(c,i){return Phone(c,i)});
 
-  /* Annotations */
-  var NS='http://www.w3.org/2000/svg',svg=tour.querySelector('[data-notes] svg');
-  var notes=[].slice.call(tour.querySelectorAll('.note')).map(function(el){
-    var g=document.createElementNS(NS,'g'),line=document.createElementNS(NS,'path'),halo=document.createElementNS(NS,'circle'),dot=document.createElementNS(NS,'circle');
-    line.setAttribute('class','note-line');halo.setAttribute('class','note-halo');dot.setAttribute('class','note-dot');
-    halo.setAttribute('r','9');dot.setAttribute('r','3.5');
-    g.appendChild(line);g.appendChild(halo);g.appendChild(dot);g.style.opacity='0';svg.appendChild(g);
-    return {el:el,k:+el.getAttribute('data-k'),x:+el.getAttribute('data-x'),y:+el.getAttribute('data-y'),g:g,line:line,halo:halo,dot:dot,len:0,anims:[]};
-  });
-  var wideMQ=matchMedia('(min-width: 1100px)'),notesOn=-1;
-  function layout(){
-    var dw=device.offsetWidth,dh=device.offsetHeight;
-    var ox=scroller.offsetLeft+device.offsetLeft,oy=scroller.offsetTop+device.offsetTop;
-    var sx=ox+dw*.026408,sy=oy+dh*.011667,sw=dw*.940141,sh=dh*.9775,lx=ox+dw+30;
-    notes.forEach(function(n){
-      var tx=sx+sw*n.x/100,ty=sy+sh*n.y/100;
-      n.el.style.left=lx+'px';n.el.style.top=ty+'px';
-      n.line.setAttribute('d','M'+tx.toFixed(1)+' '+ty.toFixed(1)+'H'+(lx-12).toFixed(1));
-      n.len=Math.max(1,lx-12-tx);
-      [n.halo,n.dot].forEach(function(c){c.setAttribute('cx',tx.toFixed(1));c.setAttribute('cy',ty.toFixed(1))});
+  /* ----- Geometrie : un point d'arret par carte (la derniere s'arrete calee a droite, comme chez Apple) ----- */
+  function measure(){
+    var W=track.clientWidth,max=Math.max(0,track.scrollWidth-W);
+    var start=getComputedStyle(cardEls[0]).scrollSnapAlign.indexOf('start')>-1;
+    var pad=parseFloat(getComputedStyle(track).scrollPaddingLeft)||0;
+    snaps=cardEls.map(function(c){return clamp(start?c.offsetLeft-pad:c.offsetLeft+c.offsetWidth/2-W/2,0,max)});
+    veil=parseFloat(getComputedStyle(view).getPropertyValue('--veil'))||0;
+    view.style.removeProperty('--txth');
+    var th=0;phones.forEach(function(p){th=Math.max(th,p.txt.offsetHeight)});
+    if(th)view.style.setProperty('--txth',Math.ceil(th)+'px');
+  }
+  /* position continue, de 0 a N-1, calculee par morceaux entre deux points d'arret */
+  function pos(){
+    var S=track.scrollLeft,i;
+    if(S<=snaps[0])return 0;
+    for(i=0;i<N-1;i++)if(S<snaps[i+1])return i+(S-snaps[i])/Math.max(1,snaps[i+1]-snaps[i]);
+    return N-1;
+  }
+  function fx(){
+    fxTick=false;
+    var p=pos(),m=moving(),r=Math.round(p);
+    seg.style.setProperty('--sp',p.toFixed(4));
+    var pd=p<.5,nd=p>N-1.5;
+    if(pd!==prevDis){prevDis=pd;prevB.setAttribute('aria-disabled',String(pd))}
+    if(nd!==nextDis){nextDis=nd;nextB.setAttribute('aria-disabled',String(nd))}
+    /* points liquides : le point actif s'etire et se retracte avec le doigt */
+    dots.forEach(function(d,i){d.style.width=(8+38*Math.max(0,1-Math.abs(p-i))).toFixed(2)+'px'});
+    phones.forEach(function(ph,i){
+      var d=clamp(i-p,-1.5,1.5),a=Math.min(Math.abs(d),1);
+      ph.veil.style.opacity=(a*veil).toFixed(3);
+      ph.wrap.style.transform=m?'translate3d('+(-12*d).toFixed(2)+'%,0,0) rotateY('+(-14*d).toFixed(2)+'deg) scale('+(1-.05*a).toFixed(4)+')':'';
+      ph.txt.style.transform=m?'translate3d('+(36*d).toFixed(1)+'px,0,0)':'';
+      ph.txt.style.opacity=m?(1-.55*a).toFixed(3):'';
     });
-  }
-  function hideNotes(){
-    notes.forEach(function(n){n.el.classList.remove('on');n.g.style.opacity='0';n.anims.forEach(function(a){a.cancel()});n.anims=[]});
-    notesOn=-1;
-  }
-  function showNotes(k,tk){
-    if(!wideMQ.matches||!entered||notesOn===k)return;
-    layout();notesOn=k;
-    var i=0,m=moving();
-    notes.forEach(function(n){
-      if(n.k!==k)return;
-      var d=m?i++*150:0;
-      n.g.style.opacity='1';
-      n.line.style.strokeDasharray=n.len;
-      n.anims=[
-        n.line.animate([{strokeDashoffset:n.len},{strokeDashoffset:0}],{duration:m?700:0,delay:d,easing:'cubic-bezier(.65,0,.35,1)',fill:'both'}),
-        n.dot.animate([{transform:'scale(0)'},{transform:'scale(1)'}],{duration:m?420:0,delay:d,easing:'cubic-bezier(.34,1.56,.64,1)',fill:'both'}),
-        n.halo.animate([{transform:'scale(.3)',opacity:0},{transform:'scale(1.5)',opacity:1,offset:.35},{transform:'scale(2.6)',opacity:0}],{duration:m?1300:0,delay:d,fill:'both'})
-      ];
-      setTimeout(function(){if(tk===seq&&notesOn===k)n.el.classList.add('on')},m?d+420:0);
-    });
-  }
-
-  /* Etat des commandes */
-  function ui(k){
-    tabs.forEach(function(t,i){var on=i===k;t.classList.toggle('is-on',on);t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1});
-    stage.setAttribute('aria-labelledby',tabs[k].id);
-    var title=tabs[k].querySelector('.tab__title').textContent,desc=tabs[k].querySelector('.tab__desc-in>span').textContent;
-    device.setAttribute('aria-label',title);
-    if(capT){
-      if(moving()&&capT.textContent!==title){
-        [capT,capD].forEach(function(el){el.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:500,easing:'cubic-bezier(.16,1,.3,1)'})});
-      }
-      capT.textContent=title;capD.textContent=desc;
+    if(active>-1&&Math.abs(p-active)>.02)phones[active].hideNotes();
+    /* l'etape change des que le doigt quitte l'ecran : le geste part pendant que la carte s'aimante */
+    if(started&&r!==active&&!nudging){
+      if(animId){if(r===animTo)activate(r)}
+      else if(!touching&&!wheeling)activate(r);
     }
-    tabsBox.classList.toggle('is-scroll',tabsBox.scrollWidth>tabsBox.clientWidth+2);
-    if(tabsBox.scrollWidth>tabsBox.clientWidth+2){
-      var t=tabs[k];tabsBox.scrollTo({left:t.offsetLeft-(tabsBox.clientWidth-t.offsetWidth)/2,behavior:moving()?'smooth':'auto'});
+  }
+  function onScroll(){
+    if(!fxTick){fxTick=true;requestAnimationFrame(fx)}
+    clearTimeout(settleT);settleT=setTimeout(settle,140);
+  }
+  function settle(){
+    if(animId||touching||!started)return;
+    var p=pos(),k=Math.round(p);
+    if(Math.abs(p-k)>.04)return;
+    if(k!==active)activate(k);else{announce=false;phones[k].showNotes()}
+    sync();
+  }
+  track.addEventListener('scroll',onScroll,{passive:true});
+  if('onscrollend' in window)track.addEventListener('scrollend',function(){clearTimeout(settleT);settle()});
+
+  /* ----- Defilement programme, doux, sans combattre l'aimantation ----- */
+  function cancelAnim(){if(animId){cancelAnimationFrame(animId);animId=0;animTo=-1;nudging=false;replayNext=false;track.classList.remove('is-free')}}
+  function scrollAnim(to,dur,done){
+    cancelAnim();
+    var from=track.scrollLeft,dist=to-from,t0=performance.now();
+    if(!moving()||Math.abs(dist)<1){track.scrollLeft=to;if(done)done();return}
+    track.classList.add('is-free');
+    function f(now){
+      var t=Math.min(1,(now-t0)/dur),e=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+      track.scrollLeft=from+dist*e;
+      if(t<1){animId=requestAnimationFrame(f)}else{animId=0;animTo=-1;track.classList.remove('is-free');if(done)done();sync()}
     }
+    animId=requestAnimationFrame(f);sync();
+  }
+  function goTo(k){
+    k=clamp(k,0,N-1);hideTip();
+    var d=Math.abs(snaps[k]-track.scrollLeft);
+    scrollAnim(snaps[k],Math.min(1150,560+d*.35),function(){activate(k)});
+    if(animId)animTo=k;
+  }
+  /* cible en cours : deux clics rapides sur Suivante avancent bien de deux etapes */
+  function target(){return animId&&animTo>-1?animTo:(active<0?0:active)}
+  function step(d){var t=clamp(target()+d,0,N-1);if(t===target())return;touched=true;announce=true;goTo(t)}
+
+  /* ----- Etape active. Regle de repos : a gauche, l'etat final ; a droite, l'etat de depart ----- */
+  function activate(k,o){
+    o=o||{};
+    if(k===active&&!o.again){announce=false;return}
+    var prev=active,fwd=prev<0||k>prev,m=moving(),ph=phones[k];
+    active=k;started=true;
+    if(k<N-1)ended=false;
+    tabs.forEach(function(t,i){t.setAttribute('aria-current',String(i===k))});
+    dots.forEach(function(d,i){d.setAttribute('aria-current',String(i===k))});
+    cardEls.forEach(function(c,i){c.classList.toggle('is-active',i===k)});
+    if(announce&&live){live.textContent=TXT.step+(k+1)+TXT.of+N+TXT.sep+tabs[k].textContent+'. '+cardEls[k].querySelector('.gal__title').textContent;announce=false}
+    phones.forEach(function(q,i){
+      if(i===k)return;
+      q.hideNotes();
+      if(!m)return;
+      var want=i<k?END[i]:START[i];
+      if(q.busy||q.state!==want)q.soft(want,i===prev?380:0);
+    });
+    ph.hideNotes();
+    if(!m){ph.stop(END[k]);ph.showNotes()}
+    else if(fwd||o.again||replayNext){
+      var soft=o.again||replayNext;replayNext=false;
+      ph.play(soft).then(function(ok){if(ok&&active===k&&Math.abs(pos()-k)<.02)ph.showNotes()});
+    }else if(ph.busy||ph.state!==END[k])ph.soft(END[k]);
+    restartProgress();
   }
 
-  /* Progression et lecture automatique */
-  function syncPlay(){
-    if(!prog)return;
-    var run=!userPaused&&inView&&!hovering&&!document.hidden;
-    if(run&&prog.playState==='paused')prog.play();
-    else if(!run&&prog.playState==='running')prog.pause();
+  /* ----- Lecture automatique : une seule horloge, le remplissage du point actif ----- */
+  function dwell(k){return DWELL[k]+(wideMQ.matches?1000:0)}
+  function runOK(){return !userPaused&&!ended&&inView&&!hovering&&!focusIn&&!touching&&!document.hidden&&!animId}
+  function paint(){
+    var st=ended?'ended':userPaused?'paused':'playing';
+    if(playB.getAttribute('data-state')===st&&playB.hasAttribute('aria-label'))return;
+    playB.setAttribute('data-state',st);
+    playB.setAttribute('aria-label',st==='ended'?TXT.replay:st==='paused'?TXT.play:TXT.pause);
+  }
+  function clearRing(){if(ringA){ringA.cancel();ringA=null}}
+  function armRing(){
+    clearRing();
+    var ph=phones[active];
+    if(!prog||!ph||!ph.ring||!moving())return;
+    var d=dwell(active)-1250-(prog.currentTime||0);
+    if(d>=0)ringA=ph.pulse(d);
+  }
+  function sync(){
+    var go=runOK();
+    if(go&&!prog&&!ended&&active>-1){restartProgress();return}
+    if(prog){
+      if(go&&prog.playState==='paused'){prog.play();armRing()}
+      else if(!go&&prog.playState==='running'){prog.pause();clearRing()}
+    }
+    paint();
   }
   function restartProgress(){
     if(prog){prog.cancel();prog=null}
-    var bar=tabs[cur].querySelector('.tab__bar i');
-    prog=bar.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:DWELL,easing:'linear',fill:'forwards'});
-    prog.pause();
-    var mine=prog;
-    prog.finished.then(function(){if(mine===prog)go((cur+1)%N,'auto')}).catch(function(){});
-    syncPlay();
+    if(spent){spent.cancel();spent=null}
+    clearRing();
+    var mine=dots[active].querySelector('i').animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:dwell(active),easing:'linear',fill:'forwards'});
+    mine.pause();prog=mine;
+    mine.finished.then(function(){if(mine!==prog)return;announce=false;if(active<N-1){spent=mine;prog=null;goTo(active+1)}else{ended=true;sync()}}).catch(function(){});
+    sync();
   }
-  function paintPlay(){
-    playBtn.setAttribute('data-state',userPaused?'paused':'playing');
-    playLbl.textContent=userPaused?TXT.play:TXT.pause;
-    playBtn.setAttribute('aria-label',userPaused?TXT.aPlay:TXT.aPause);
-  }
-
-  /* Aller a une etape */
-  function go(k,how){
-    if(k===cur&&how!=='init')return;
-    var tk=++seq;
-    if(busy!==null){setState(busy);shown=busy;busy=null}
-    cur=k;ui(k);hideNotes();restartProgress();
-    if(!moving()||how==='init'){setState(k);shown=k;showNotes(k,tk);return}
-    var run=T[shown+'>'+k]?T[shown+'>'+k](tk):dip(k,tk);
-    busy=k;
-    Promise.resolve(run).then(function(){if(tk!==seq)return;setState(k);shown=k;busy=null;showNotes(k,tk)});
+  function manual(){
+    touched=true;announce=true;hideTip();cancelAnim();
+    userPaused=true;
+    sync();
   }
 
-  tabs.forEach(function(t,k){
-    t.addEventListener('click',function(){go(k,'user')});
+  /* ----- Invite ephemere et coup de pouce : la galerie montre elle-meme qu'elle glisse ----- */
+  function showTip(){if(!tip||touched)return;tip.classList.add('on');clearTimeout(tipT);tipT=setTimeout(hideTip,3200)}
+  function hideTip(){if(tip)tip.classList.remove('on')}
+  function nudge(){
+    if(nudged||nudgeT||touched||!moving()||fine.matches)return;
+    nudgeT=setTimeout(function(){
+      nudgeT=0;
+      if(nudged||touched||active!==0||animId||!inView||userPaused)return;
+      nudged=true;try{sessionStorage.setItem('nx-nudge','1')}catch(e){}
+      var base=snaps[0],to=base+Math.min(72,(snaps[1]-snaps[0])*.22);
+      nudging=true;showTip();
+      scrollAnim(to,620,function(){scrollAnim(base,760,function(){nudging=false;sync()})});
+    },2100);
+  }
+
+  /* ----- Commandes ----- */
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){touched=true;announce=true;goTo(i)});
     t.addEventListener('keydown',function(e){
-      var d={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key],to=null;
-      if(d)to=(k+d+N)%N;else if(e.key==='Home')to=0;else if(e.key==='End')to=N-1;
-      if(to===null)return;e.preventDefault();tabs[to].focus();go(to,'user');
+      var to={ArrowRight:i+1,ArrowLeft:i-1,Home:0,End:N-1}[e.key];if(to===undefined)return;
+      e.preventDefault();to=clamp(to,0,N-1);tabs[to].focus();touched=true;announce=true;goTo(to);
     });
   });
-  playBtn.addEventListener('click',function(){userPaused=!userPaused;paintPlay();syncPlay()});
-  var grid=tour.querySelector('.tour__grid');
+  dots.forEach(function(d,i){d.addEventListener('click',function(){touched=true;announce=true;goTo(i)})});
+  prevB.addEventListener('click',function(){step(-1)});
+  nextB.addEventListener('click',function(){step(1)});
+  cardEls.forEach(function(c,i){c.addEventListener('click',function(e){
+    if(i!==active){touched=true;announce=true;goTo(i);return}
+    /* toucher le telephone de la carte active rejoue son geste */
+    if(moving()&&e.target.closest('[data-phone]')){touched=true;hideTip();activate(i,{again:true})}
+  })});
+  playB.addEventListener('click',function(){
+    touched=true;
+    if(ended){
+      ended=false;userPaused=false;
+      if(active===0)activate(0,{again:true});else{goTo(0);replayNext=true}
+      return;
+    }
+    userPaused=!userPaused;sync();
+  });
+  track.addEventListener('touchstart',function(e){var t=e.touches[0];tx=t.clientX;ty=t.clientY;axis=0;touching=true;sync()},{passive:true});
+  /* l'axe du geste se decide une fois : seul un geste horizontal prend la main sur la galerie */
+  track.addEventListener('touchmove',function(e){
+    if(axis)return;
+    var t=e.touches[0],dx=Math.abs(t.clientX-tx),dy=Math.abs(t.clientY-ty);
+    if(dx<8&&dy<8)return;
+    axis=dx>dy?1:2;
+    if(axis===1)manual();
+  },{passive:true});
+  function release(){touching=false;onScroll();sync()}
+  track.addEventListener('touchend',release,{passive:true});
+  track.addEventListener('touchcancel',release,{passive:true});
+  track.addEventListener('wheel',function(e){
+    if(Math.abs(e.deltaX)<=Math.abs(e.deltaY))return;
+    wheeling=true;clearTimeout(wheelT);wheelT=setTimeout(function(){wheeling=false;onScroll()},200);
+    manual();
+  },{passive:true});
+  track.addEventListener('keydown',function(e){
+    var d={ArrowRight:1,ArrowLeft:-1}[e.key];if(!d)return;
+    e.preventDefault();step(d);
+  });
   if(fine.matches){
-    grid.addEventListener('mouseenter',function(){hovering=true;syncPlay()});
-    grid.addEventListener('mouseleave',function(){hovering=false;syncPlay()});
+    view.addEventListener('mouseenter',function(){hovering=true;sync()});
+    view.addEventListener('mouseleave',function(){hovering=false;sync()});
   }
-  document.addEventListener('visibilitychange',syncPlay);
-  /* glisser le telephone (tactile) */
-  var sx=null,sy=null;
-  stage.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'){sx=e.clientX;sy=e.clientY}});
-  stage.addEventListener('pointerup',function(e){
-    if(sx===null)return;var dx=e.clientX-sx,dy=e.clientY-sy;sx=null;
-    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.3)go((cur+(dx<0?1:-1)+N)%N,'user');
-  });
-  stage.addEventListener('pointercancel',function(){sx=null});
+  /* le clavier dans la galerie suspend la lecture (le bouton lecture reste libre) */
+  gal.addEventListener('focusin',function(e){var v=false;try{v=e.target.matches(':focus-visible')}catch(x){}focusIn=v&&e.target!==playB;sync()});
+  gal.addEventListener('focusout',function(e){if(!e.relatedTarget||!gal.contains(e.relatedTarget)){focusIn=false;sync()}});
+  document.addEventListener('visibilitychange',sync);
+
+  /* ----- Premiere apparition ----- */
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){inView=es[0].isIntersecting;syncPlay()},{threshold:.5}).observe(stage);
-  }else{inView=true}
+    new IntersectionObserver(function(es){
+      var r=es[0].intersectionRatio;
+      inView=r>=.35;
+      if(r>=.6){if(!started)activate(clamp(Math.round(pos()),0,N-1));nudge()}
+      sync();
+    },{threshold:[0,.35,.6]}).observe(track);
+  }else{inView=true;activate(0)}
 
-  /* Entree : le telephone pivote vers toi en suivant le defilement */
-  scrub(stage,function(r,vh){
-    var e=clamp((vh-r.top)/(vh*.72),0,1),ee=easeOut(e),k=1-ee;
-    if(moving())scroller.style.transform='translate3d(0,'+(k*90).toFixed(1)+'px,0) rotateX('+(k*24).toFixed(2)+'deg) rotateY('+(k*-22).toFixed(2)+'deg) rotateZ('+(k*3).toFixed(2)+'deg) scale('+(.84+.16*ee).toFixed(4)+')';
-    var now=ee>.985||!moving();
-    if(now!==entered){entered=now;if(entered){if(busy===null)showNotes(cur,seq)}else hideNotes()}
+  /* ----- Taille, mouvement reduit, retour par l'historique ----- */
+  function onResize(){
+    var key=track.clientWidth+'x'+track.clientHeight;if(key===lastKey)return;lastKey=key;
+    measure();
+    if(active>-1){cancelAnim();track.scrollLeft=snaps[active];phones[active].hideNotes();phones[active].showNotes()}
+    fx();sync();
+  }
+  if('ResizeObserver' in window)new ResizeObserver(onResize).observe(track);else addEventListener('resize',onResize);
+  wideMQ.addEventListener('change',function(){phones.forEach(function(p){p.hideNotes()});if(active>-1)phones[active].showNotes()});
+  reduce.addEventListener('change',function(){
+    cancelAnim();
+    if(reduce.matches){userPaused=true;phones.forEach(function(p,i){p.stop(END[i])})}
+    else phones.forEach(function(p,i){if(i>Math.max(active,0))p.stop(START[i])});
+    fx();sync();
   });
-  addEventListener('resize',function(){
-    tabsBox.classList.toggle('is-scroll',tabsBox.scrollWidth>tabsBox.clientWidth+2);
-    if(notesOn>-1){var k=notesOn;hideNotes();showNotes(k,seq)}
-  });
-  wideMQ.addEventListener('change',function(){hideNotes();if(entered&&busy===null)showNotes(cur,seq)});
+  addEventListener('pageshow',function(e){if(e.persisted){lastKey='';onResize();sync()}});
+  /* les polices changent la hauteur des textes : on remesure une fois chargees */
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){lastKey='';onResize()});
 
-  paintPlay();
-  go(0,'init');
+  /* etat initial : chaque carte attend au debut de son geste, sauf la premiere */
+  measure();
+  if(moving())phones.forEach(function(p,i){if(i>0)p.stop(START[i])});
+  paint();fx();
 })();
 
 /* ---------- Telechargement : trois telephones qui se deploient en eventail ---------- */
