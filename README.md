@@ -73,3 +73,7 @@ Les points de toucher sont en pourcentage de l'écran dans les scénarios `T` du
 ## Déploiement
 
 Pousser sur `main` suffit. La configuration Vercel (`vercel.json`) gère les URL sans extension, les en-têtes de sécurité et le cache des images et polices.
+
+## Auteur
+
+Site et application conçus et développés par [Loth Ngassa](https://lothngassa.com), fondateur de Nexyalabs.
