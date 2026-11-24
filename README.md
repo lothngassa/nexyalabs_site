@@ -14,6 +14,7 @@ Site vitrine de NEXYA AI. HTML, CSS et JavaScript sans framework ni étape de co
 | `assets/css/base.css` | Système de design commun : couleurs, polices, navigation, boutons, pages secondaires |
 | `assets/js/page.js` | Thème et navigation des pages secondaires |
 | `llms.txt` | Résumé lisible par les assistants IA (produit et fondateur) |
+| `26c0cb0171aaf1e3b35177fad3d69ad1.txt` | Clé IndexNow : elle prouve à Bing que les annonces de mise à jour viennent du site (publique par nature) |
 | `tools/build_en.py` | Générateur de la version anglaise |
 
 ## Modifier un texte de l'accueil
