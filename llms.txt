@@ -18,6 +18,7 @@
 - Machine learning engineer, data scientist et ingénieur IA en devenir.
 - Ambition : rendre NEXYA le plus utile possible pour ses utilisateurs, partout dans le monde.
 - Compétences : ingénierie logicielle, développement mobile Flutter et Dart, backend Python et FastAPI, grands modèles de langage, RAG, conception d'interfaces.
+- Site personnel : https://lothngassa.com/ (portfolio). Biographie complète : https://lothngassa.com/bio/
 - Contact : contact@nexyalabs.com
 
 ## Founder (English)
@@ -25,6 +26,7 @@
 - Loth Ivan Ngassa Yimga is the CEO and founder of Nexyalabs and the creator of the NEXYA AI app.
 - Software engineer and Adobe-certified professional UI/UX designer from Cameroon, now based in France.
 - Aspiring machine learning engineer, data scientist and AI engineer, with one ambition: making NEXYA as useful as possible for users worldwide.
+- Personal website: https://lothngassa.com/en/ (portfolio). Full biography: https://lothngassa.com/en/bio/
 
 ## Pages
 
