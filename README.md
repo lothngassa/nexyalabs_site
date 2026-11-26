@@ -1,3 +1,11 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lothngassa/nexyalabs_site/main/.github/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/lothngassa/nexyalabs_site/main/.github/banner-light.svg">
+  <img alt="nexyalabs.com. The website of NEXYA AI. HTML, CSS and JavaScript, no framework. By Loth Ngassa." src="https://raw.githubusercontent.com/lothngassa/nexyalabs_site/main/.github/banner-dark.svg" width="100%">
+</picture>
+
+<br>
+
 # nexyalabs.com
 
 Site vitrine de NEXYA AI. HTML, CSS et JavaScript sans framework ni étape de compilation, déployé par Vercel à chaque poussée sur `main`.
